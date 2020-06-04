@@ -1,0 +1,97 @@
+/* This are the color kit for the project
+# How to use it 
+# For backgroud: var(--the name of the color kit)
+# For color: var(--the name of the color kit)
+ */
+
+:root{
+  --blue:#3717FF;
+  --gray:#c4c4c4;
+  --white: #fff;
+  --dack: rgba(0,0,0,.27);
+}
+body{
+  margin: 0;
+  padding: 0;
+}
+.container-fluid{
+  background: var(--white);
+}
+/* header start*/
+.header{
+  background: url("../img/1.jpeg") no-repeat;
+  background-color: transparent;
+  background-size: cover;
+  background-position: center;
+  height: 25vh;
+  /* opacity: .9; */
+}
+.header img{
+  margin: 0;
+  width: 12rem;
+}
+/* .header form{
+  position: absolute;
+  margin-left: 200px;
+  margin-bottom: 400px;
+} */
+.header form input{
+  height: 7vh;
+  width: 40vh;
+  border: 3px solid var(--white);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--white);
+}
+.header form input:hover{
+  border: 3px solid var(--blue);
+  border-radius: 10px;
+}
+.header-div{
+  background: var(--blue);
+  padding: 5px;
+  border-radius: 10px;
+  margin-right: 50px;
+  text-align: center;
+}
+.header-div a{
+  /* padding-left:10px ; */
+  color: var(--white);
+  font-size: 18px;
+
+}
+#header-a{
+  padding-right: 10px;
+  border-right: 2px solid var(--white);
+}
+#header-a-two{
+  padding-left: 10px;
+
+}
+/* header end */
+/* nav */
+.nav{
+  min-height: 5px;
+  border-bottom: 1px solid var(--gray);
+}
+.nav ul li{
+  display: inline-block;
+  padding: 10px 20px 0px;
+  color: var(--blue);
+}
+.nav ul li:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+/* nav end */
+/* main start */
+.main h3{
+  color:  var(--gray);
+}
+.main .main-span{
+  border: 1px solid var(--gray);
+  background-color: var(--dack);
+  width: 60%;
+
+}
+/* main end */
