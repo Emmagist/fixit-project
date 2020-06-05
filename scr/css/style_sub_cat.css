@@ -92,6 +92,19 @@ body{
   border: 1px solid var(--gray);
   background-color: var(--dack);
   width: 60%;
-
+}
+.main-li-div ul li{
+  display: inline-block;
 }
 /* main end */
+/* second main start */
+#main-two{
+  border: 2px solid var(--blue);
+  padding: 2px;
+  margin-right: 15px;
+}
+.span-main-two i{
+  color: var(--blue);
+  /* margin-right: 10px; */
+}
+/* second main end */
