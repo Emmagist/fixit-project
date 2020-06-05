@@ -74,6 +74,8 @@ body{
   min-height: 5px;
   border-bottom: 1px solid var(--gray);
 }
+
+
 .nav ul li{
   display: inline-block;
   padding: 10px 20px 0px;
@@ -85,6 +87,9 @@ body{
 }
 /* nav end */
 /* main start */
+.main {
+  margin: 50px;
+}
 .main h3{
   color:  var(--gray);
 }
@@ -92,6 +97,106 @@ body{
   border: 1px solid var(--gray);
   background-color: var(--dack);
   width: 60%;
-
 }
 /* main end */
+.signup-header{
+  width: 100%;
+  background-image: url(../img/1.jpeg);
+  background-size: cover;
+  /* position: relative; */
+  height: auto;
+}
+
+.find-services::-webkit-input-placeholder {
+  color: #fff; 
+  font-style: italic;
+}
+.header-signup {
+  position: relative;
+}
+.logo-transparent {
+  width: 30%;
+  float:left; 
+}
+
+.find-services {
+  border: solid #fff 3px;
+  background-color: transparent;
+  width:50%;
+  border-radius: 10px;
+  margin-top:30px;
+  position: relative;
+  left:-30;
+}
+
+.title {
+  padding: 10px;
+  padding-top:0px;
+  padding-right: 0px;
+  text-align: center;
+}
+
+.title img {
+  margin-top: -10px;
+  margin-left: -5px;
+}
+
+.logo-white {
+  height: 30px;
+  width: auto;
+  margin-top:3px;
+}
+
+.intro {
+  text-align: center;
+  text-transform: capitalize;
+  padding-bottom: 20px;
+}
+
+.btn-upload {
+  background-color: var(--blue);
+  color: var(--white);
+  border-radius: 20px;
+  width: 100%;
+}
+
+.btn-sign-login{
+  background-color: var(--blue);
+  color: var(--white);
+  border-radius: 20px;
+  width: 70%;
+  border: none;
+  margin: 10px;
+  margin-top:40px;
+  position: relative;
+}
+.login{
+  color:inherit;
+  padding-right: 10px;
+}
+.login:hover{
+  color: var(--gray);
+  text-decoration: none;
+}
+.sign-up{
+  color:inherit;
+  padding-left: 10px;
+  text-decoration: none;
+}
+.sign-up:hover{
+  color: var(--gray);
+  text-decoration: none;
+}
+.file {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#file-label {
+  margin-top: 10px;
+}
+
+.picture-guide {
+  text-transform: capitalize;
+  padding-top:10px;
+}
