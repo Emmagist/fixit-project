@@ -14,7 +14,7 @@ body{
   margin: 0;
   padding: 0;
 }
-.container-fluid{
+.contain{
   background: var(--white);
 }
 /* header start*/
@@ -74,6 +74,8 @@ body{
   min-height: 5px;
   border-bottom: 1px solid var(--gray);
 }
+
+
 .nav ul li{
   display: inline-block;
   padding: 10px 20px 0px;
@@ -85,8 +87,15 @@ body{
 }
 /* nav end */
 /* main start */
+.main {
+  margin: 50px;
+}
 .main h3{
   color:  var(--gray);
+  border-bottom: 5px solid var(--dack);
+  padding-bottom: 4px;
+  width: 100px;
+  border-radius: 3px;
 }
 .main .main-span{
   border: 1px solid var(--gray);
@@ -95,6 +104,9 @@ body{
 }
 .main-li-div ul li{
   display: inline-block;
+}
+.main-li-div ul li i{
+  color: var(--gray);
 }
 /* main end */
 /* second main start */
@@ -107,4 +119,169 @@ body{
   color: var(--blue);
   /* margin-right: 10px; */
 }
+.icon-img{
+  border-radius: 50%;
+  /* border: 1px solid black; */
+  width: 40px;
+  height: 40px;
+}
+.main-card{
+  height: 120px;
+}
+.star-icon{
+  color: gold;
+}
+/* .card{
+  padding: 10px;
+} */
 /* second main end */
+
+.signup-header{
+  width: 100%;
+  background-image: url("../img/1.jpeg");
+  background-size: cover;
+  /* position: relative; */
+  height: auto;
+}
+
+.find-services::-webkit-input-placeholder {
+  color: #fff; 
+  font-style: italic;
+}
+.header-signup {
+  position: relative;
+}
+.logo-transparent {
+  width: 30%;
+  float:left; 
+}
+
+.find-services {
+  border: solid #fff 3px;
+  background-color: transparent;
+  width:50%;
+  border-radius: 10px;
+  margin-top:30px;
+  position: relative;
+  left:-30;
+}
+
+.title {
+  padding: 10px;
+  padding-top:0px;
+  padding-right: 0px;
+  text-align: center;
+}
+
+.title img {
+  margin-top: -10px;
+  margin-left: -5px;
+}
+
+.logo-white {
+  height: 30px;
+  width: auto;
+  margin-top:3px;
+}
+
+.intro {
+  text-align: center;
+  text-transform: capitalize;
+  padding-bottom: 20px;
+}
+
+.btn-upload {
+  background-color: var(--blue);
+  color: var(--white);
+  border-radius: 20px;
+  width: 100%;
+}
+
+.btn-sign-login{
+  background-color: var(--blue);
+  color: var(--white);
+  border-radius: 20px;
+  width: 70%;
+  border: none;
+  margin: 10px;
+  margin-top:40px;
+  position: relative;
+}
+.login{
+  color:inherit;
+  padding-right: 10px;
+}
+.login:hover{
+  color: var(--gray);
+  text-decoration: none;
+}
+.sign-up{
+  color:inherit;
+  padding-left: 10px;
+  text-decoration: none;
+}
+.sign-up:hover{
+  color: var(--gray);
+  text-decoration: none;
+}
+.file {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#file-label {
+  margin-top: 10px;
+}
+
+.picture-guide {
+  text-transform: capitalize;
+  padding-top:10px;
+}
+/* footer start */
+#footer-container{
+  margin-top: 10%;
+}
+#footer{
+  border-bottom: 3px solid var(--gray);
+  padding-bottom: 20px;
+}
+#footer-h3{
+  color: var(--blue);
+}
+.footer{
+  list-style-type: none;
+}
+.footer li{
+  padding: 10px;
+  color: grey;
+  font-size: 18px;
+  font-weight: 600;
+}
+.footer li:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+.media img{
+  width: 17%;
+}
+#footer-two li{
+  padding: 0px 10px;
+  /* color: var(--gray); */
+  color: grey;
+}
+#footer-two #instagram:hover{
+  color: #f46f30;
+}
+#footer-two #google:hover{
+  color: #4285f4;
+}
+#footer-two #facebook:hover{
+  color: #1877f2;
+}
+#footer-two #linkedin:hover{
+  color: #007bb5;
+}
+#footer-two #twitter:hover{
+  color: #1da1f2;
+}
+/* footer end */
