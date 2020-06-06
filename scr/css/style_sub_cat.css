@@ -200,3 +200,15 @@ body{
   text-transform: capitalize;
   padding-top:10px;
 }
+
+/* On the flex container */
+.flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+     
+/* .nowrap{
+  flex-wrap: wrap;
+} */
