@@ -285,3 +285,24 @@ body{
   color: #1da1f2;
 }
 /* footer end */
+
+/* service provider started */
+.main-service-col{
+  margin: 100px 0px 0 80px;
+}
+.main-service-prov{
+  border-bottom: 1px solid var(--gray);
+  border-right: 1px solid var(--gray);
+  border-left: 1px solid var(--gray);
+
+}
+/* #job_profile{
+  min-height: 10px;
+} */
+.job-rate p{
+  color: var(--blue);
+}
+.service-prov-hr{
+  margin-top: 17%;
+}
+/* service provider ends */
