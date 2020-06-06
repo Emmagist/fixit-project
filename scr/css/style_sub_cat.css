@@ -14,7 +14,7 @@ body{
   margin: 0;
   padding: 0;
 }
-.container-fluid{
+.contain{
   background: var(--white);
 }
 /* header start*/
@@ -92,16 +92,53 @@ body{
 }
 .main h3{
   color:  var(--gray);
+  border-bottom: 5px solid var(--dack);
+  padding-bottom: 4px;
+  width: 100px;
+  border-radius: 3px;
 }
 .main .main-span{
   border: 1px solid var(--gray);
   background-color: var(--dack);
   width: 60%;
 }
+.main-li-div ul li{
+  display: inline-block;
+}
+.main-li-div ul li i{
+  color: var(--gray);
+}
 /* main end */
+/* second main start */
+#main-two{
+  border: 2px solid var(--blue);
+  padding: 2px;
+  margin-right: 15px;
+}
+.span-main-two i{
+  color: var(--blue);
+  /* margin-right: 10px; */
+}
+.icon-img{
+  border-radius: 50%;
+  /* border: 1px solid black; */
+  width: 40px;
+  height: 40px;
+}
+.main-card{
+  height: 120px;
+}
+.star-icon{
+  color: gold;
+}
+/* .card{
+  padding: 10px;
+} */
+/* second main end */
+
 .signup-header{
   width: 100%;
-  background-image: url(../img/1.jpeg);
+  background-image: url("../img/1.jpeg");
   background-size: cover;
   /* position: relative; */
   height: auto;
@@ -200,7 +237,6 @@ body{
   text-transform: capitalize;
   padding-top:10px;
 }
-
 /* On the flex container */
 .flex-container {
   display: flex;
@@ -209,6 +245,52 @@ body{
 
 }
      
-/* .nowrap{
-  flex-wrap: wrap;
-} */
+/* footer start */
+#footer-container{
+  margin-top: 10%;
+}
+#footer{
+  border-bottom: 3px solid var(--gray);
+  padding-bottom: 20px;
+}
+#footer-h3{
+  color: var(--blue);
+}
+.footer{
+  list-style-type: none;
+}
+.footer li{
+  padding: 10px;
+  color: grey;
+  font-size: 18px;
+  font-weight: 600;
+}
+.footer li:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+.media img{
+  width: 17%;
+}
+#footer-two li{
+  padding: 0px 10px;
+  /* color: var(--gray); */
+  color: grey;
+}
+#footer-two #instagram:hover{
+  color: #f46f30;
+}
+#footer-two #google:hover{
+  color: #4285f4;
+}
+#footer-two #facebook:hover{
+  color: #1877f2;
+}
+#footer-two #linkedin:hover{
+  color: #007bb5;
+}
+#footer-two #twitter:hover{
+  color: #1da1f2;
+}
+/* footer end */
+
