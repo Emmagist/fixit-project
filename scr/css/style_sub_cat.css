@@ -285,14 +285,15 @@ body{
   display: block;
   margin-top: 10px;
   width: 30%;
-  margin-left: 70px;
   border-radius: 10px;
+  transition: all 0.3s;
 }
 
 #profilebtnupdt1:hover{
   border-color: rgb(204, 172, 129);
   color: wheat;
   background: none;
+  transition: all 0.3s;
   
 }
     
@@ -317,6 +318,53 @@ body{
   border: 1px solid rgb(226, 225, 225);
   border-right: none;
   border-left: none;
+}
+#second-divch2 h6{
+  font-size: 13px;
+}
+
+/* third main */
+#third-main button{
+  display: block;
+  margin-top: 10px;
+  width: 10%;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+
+#profileeditbtn:hover{
+  border-color: rgb(204, 172, 129);
+  color: wheat;
+  background: none;
+  transition: all 0.3s;
+  
+}
+
+#third-main li{
+  list-style: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+#third-main li:hover{
+  color: rgb(206, 155, 89);
+  padding-left: 6px;
+  transition: all 0.3s;
+}
+
+#third-main #profileeditaddressbtn{
+  display: block;
+  margin-top: 10px;
+  width: 20%;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+
+#third-main #profileeditaddressbtn:hover{
+  border-color: rgb(204, 172, 129);
+  color: wheat;
+  background: none;
+  transition: all 0.3s;
 }
 /**
 *USER PROFILE CSS STYLE END HERE
