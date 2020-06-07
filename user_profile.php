@@ -48,7 +48,7 @@
           <p>July 2012</p>
         </div>
         <div class="col-4 mt-2">
-          <h6 class="detail text-muted">Avg Response Time</h6>
+          <h6 class="detail text-muted">AVG RESPONSE TIME</h6>
           <p> 15 minute</p>
         </div>
       </div>
@@ -57,6 +57,27 @@
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis facilis aut molestiae, suscipit recusandae aspernatur quidem mollitia voluptates id, blanditiis sapiente eaque consequuntur quia iure! Temporibus neque itaque aliquid facere.
         </p>
       </div>
+  </main>
+
+  <main class="main" id="third-main">
+  <div class="container">
+        <button class="btn btn-outline-secondary " id="profileeditbtn" type="submit">Edit About</button>
+        <div class="mt-5">
+          <h5>CURRENT SKILLS</h5>
+          <ul class="list-group">
+            <li lass="list-item">
+            <svg class="bi bi-chevron-right" width="32" height="32" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6.646 3.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L12.293 10 6.646 4.354a.5.5 0 010-.708z"/></svg>
+               Graphics designer</li>
+            <li lass="list-item">
+            <svg class="bi bi-chevron-right" width="32" height="32" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6.646 3.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L12.293 10 6.646 4.354a.5.5 0 010-.708z"/></svg>
+              Logo designer</li>
+            <li lass="list-item">
+            <svg class="bi bi-chevron-right" width="32" height="32" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6.646 3.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L12.293 10 6.646 4.354a.5.5 0 010-.708z"/></svg>
+              web developer</li>
+          </ul>
+          <button class="btn btn-outline-secondary mt-5" id="profileeditbtn" type="submit">Edit Skill</button>
+          <button class="btn btn-outline-secondary mt-4" id="profileeditaddressbtn" type="submit">Edit Address</button>
+        </div>
     </div>
   </main>
   
