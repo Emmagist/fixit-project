@@ -17,7 +17,7 @@ body{
 .contain{
   background: var(--white);
 }
-/* header start*/
+/* header start two*/
 .header{
   background: url("../img/1.jpeg") no-repeat;
   background-color: transparent;
@@ -69,6 +69,7 @@ body{
 
 }
 /* header end */
+
 /* nav */
 .nav{
   min-height: 5px;
@@ -286,6 +287,7 @@ body{
   width: 30%;
   border-radius: 10px;
   transition: all 0.3s;
+  margin-left: 10%;
 }
 
 #profilebtnupdt1:hover{
