@@ -3,7 +3,7 @@
   <main class="main">
     <div class="container">
       <div class="row">
-        <div class="col-md-offset-3 col-lg-12">
+        <div class="col-lg-12">
           <div class="title">
             Welcome To <img src="scr/img/fixitwhite.png" alt="Fixit logo" class="logo-white">
           </div>

@@ -10,7 +10,7 @@
     <div class="container">
     <div class="row">
       <div class="col-md-6 col-sm-6 header-signup">
-        <img src="scr/img/Fixitlogo transparent.png" class="logo-transparent" alt="">
+        <img src="scr/img/Fixitlogo transparent.png" class="logo-transparent" alt="Fixit logo">
         <input type="text" placeholder="Find Services" class="find-services form-control">
       </div>
     
