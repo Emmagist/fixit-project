@@ -1,7 +1,7 @@
 <head>
     <title>Fixit</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="scr/css/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="scr/css/bootstrap.min.css">
     <link rel="stylesheet" href="scr/css/style_sub_cat.css">
   </head>
   <body>
@@ -10,7 +10,7 @@
     <div class="container">
     <div class="row">
       <div class="col-md-6 col-sm-6 header-signup">
-        <img src="scr/img/Fixitlogo transparent.png" class="logo-transparent" alt="">
+        <img src="scr/img/Fixitlogo transparent.png" class="logo-transparent" alt="Fixit logo">
         <input type="text" placeholder="Find Services" class="find-services form-control">
       </div>
     
