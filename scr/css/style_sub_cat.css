@@ -398,6 +398,10 @@ body{
   text-decoration: underline;
   cursor: pointer;
 }
+.footer li a{
+  text-decoration: none;
+  color: grey;
+}
 .media img{
   width: 17%;
 }

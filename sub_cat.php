@@ -13,13 +13,37 @@
               <div class="col-md-9"><h4>Salami Toye</h4></div>
           </div>
             <p class="card-text">Some quick example text to build.</p>
-            <i class="fa fa-star star-icon fa-2x"></i> <span>(1k.+)</span>
+            <i class="fa fa-star star-icon"></i> <span>(1k.+)</span>
           </div><hr>
           <div class="row">
             <div class="col-md-6 main-li-div">
               <ul>
-                <li><i class="fa fa-heart mr-1 fa-2x" aria-hidden="true"></i></li>
-                <li><i class="fa fa-heart fa-2x" aria-hidden="true"></i></li>
+                <li><i class="fa fa-heart mr-1" aria-hidden="true"></i></li>
+                <li><i class="fa fa-heart" aria-hidden="true"></i></li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <p class="p">Starting At <strong>#5k</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card">
+          <img src="scr/img/slide1.jpg" class="card-img-top" alt="...">
+          <div class="card-body main-card">
+            <div class="row mb-1">
+              <div class="col-md-2"><img src="scr/img/2.jpg" alt="" class="icon-img"></div>
+              <div class="col-md-9"><h4>Salami Toye</h4></div>
+          </div>
+            <p class="card-text">Some quick example text to build.</p>
+            <i class="fa fa-star star-icon"></i> <span>(1k.+)</span>
+          </div><hr>
+          <div class="row">
+            <div class="col-md-6 main-li-div">
+              <ul>
+                <li><i class="fa fa-heart mr-1" aria-hidden="true"></i></li>
+                <li><i class="fa fa-heart" aria-hidden="true"></i></li>
               </ul>
             </div>
             <div class="col-md-6">
@@ -37,13 +61,13 @@
               <div class="col-md-9"><h4>Salami Toye</h4></div>
           </div>
             <p class="card-text">Some quick example text to build.</p>
-            <i class="fa fa-star star-icon fa-2x"></i> <span>(1k.+)</span>
+            <i class="fa fa-star star-icon"></i> <span>(1k.+)</span>
           </div><hr>
           <div class="row">
             <div class="col-md-6 main-li-div">
               <ul>
                 <li><i class="fa fa-heart mr-1 fa-2x" aria-hidden="true"></i></li>
-                <li><i class="fa fa-heart fa-2x" aria-hidden="true"></i></li>
+                <li><i class="fa fa-heart" aria-hidden="true"></i></li>
               </ul>
             </div>
             <div class="col-md-6">
@@ -61,37 +85,13 @@
               <div class="col-md-9"><h4>Salami Toye</h4></div>
           </div>
             <p class="card-text">Some quick example text to build.</p>
-            <i class="fa fa-star star-icon fa-2x"></i> <span>(1k.+)</span>
+            <i class="fa fa-star star-icon"></i> <span>(1k.+)</span>
           </div><hr>
           <div class="row">
             <div class="col-md-6 main-li-div">
               <ul>
-                <li><i class="fa fa-heart mr-1 fa-2x" aria-hidden="true"></i></li>
-                <li><i class="fa fa-heart fa-2x" aria-hidden="true"></i></li>
-              </ul>
-            </div>
-            <div class="col-md-6">
-            <p class="p">Starting At <strong>#5k</strong></p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="card">
-          <img src="scr/img/slide1.jpg" class="card-img-top" alt="...">
-          <div class="card-body main-card">
-            <div class="row mb-1">
-              <div class="col-md-2"><img src="scr/img/2.jpg" alt="" class="icon-img"></div>
-              <div class="col-md-9"><h4>Salami Toye</h4></div>
-          </div>
-            <p class="card-text">Some quick example text to build.</p>
-            <i class="fa fa-star star-icon fa-2x"></i> <span>(1k.+)</span>
-          </div><hr>
-          <div class="row">
-            <div class="col-md-6 main-li-div">
-              <ul>
-                <li><i class="fa fa-heart mr-1 fa-2x" aria-hidden="true"></i></li>
-                <li><i class="fa fa-heart fa-2x" aria-hidden="true"></i></li>
+                <li><i class="fa fa-heart mr-1" aria-hidden="true"></i></li>
+                <li><i class="fa fa-heart" aria-hidden="true"></i></li>
               </ul>
             </div>
             <div class="col-md-6">
@@ -111,13 +111,13 @@
               <div class="col-md-9"><h4>Salami Toye</h4></div>
           </div>
             <p class="card-text">Some quick example text to build.</p>
-            <i class="fa fa-star star-icon fa-2x"></i> <span>(1k.+)</span>
+            <i class="fa fa-star star-icon"></i> <span>(1k.+)</span>
           </div><hr>
           <div class="row">
             <div class="col-md-6 main-li-div">
               <ul>
-                <li><i class="fa fa-heart mr-1 fa-2x" aria-hidden="true"></i></li>
-                <li><i class="fa fa-heart fa-2x" aria-hidden="true"></i></li>
+                <li><i class="fa fa-heart mr-1" aria-hidden="true"></i></li>
+                <li><i class="fa fa-heart" aria-hidden="true"></i></li>
               </ul>
             </div>
             <div class="col-md-6">
@@ -135,13 +135,13 @@
               <div class="col-md-9"><h4>Salami Toye</h4></div>
           </div>
             <p class="card-text">Some quick example text to build.</p>
-            <i class="fa fa-star star-icon fa-2x"></i> <span>(1k.+)</span>
+            <i class="fa fa-star star-icon"></i> <span>(1k.+)</span>
           </div><hr>
           <div class="row">
             <div class="col-md-6 main-li-div">
               <ul>
-                <li><i class="fa fa-heart mr-1 fa-2x" aria-hidden="true"></i></li>
-                <li><i class="fa fa-heart fa-2x" aria-hidden="true"></i></li>
+                <li><i class="fa fa-heart mr-1" aria-hidden="true"></i></li>
+                <li><i class="fa fa-heart" aria-hidden="true"></i></li>
               </ul>
             </div>
             <div class="col-md-6">
@@ -159,13 +159,13 @@
               <div class="col-md-9"><h4>Salami Toye</h4></div>
           </div>
             <p class="card-text">Some quick example text to build.</p>
-            <i class="fa fa-star star-icon fa-2x"></i> <span>(1k.+)</span>
+            <i class="fa fa-star star-icon"></i> <span>(1k.+)</span>
           </div><hr>
           <div class="row">
             <div class="col-md-6 main-li-div">
               <ul>
-                <li><i class="fa fa-heart mr-1 fa-2x" aria-hidden="true"></i></li>
-                <li><i class="fa fa-heart fa-2x" aria-hidden="true"></i></li>
+                <li><i class="fa fa-heart mr-1" aria-hidden="true"></i></li>
+                <li><i class="fa fa-heart" aria-hidden="true"></i></li>
               </ul>
             </div>
             <div class="col-md-6">
@@ -183,13 +183,13 @@
               <div class="col-md-9"><h4>Salami Toye</h4></div>
           </div>
             <p class="card-text">Some quick example text to build.</p>
-            <i class="fa fa-star star-icon fa-2x"></i> <span>(1k.+)</span>
+            <i class="fa fa-star star-icon"></i> <span>(1k.+)</span>
           </div><hr>
           <div class="row">
             <div class="col-md-6 main-li-div">
               <ul>
-                <li><i class="fa fa-heart mr-1 fa-2x" aria-hidden="true"></i></li>
-                <li><i class="fa fa-heart fa-2x" aria-hidden="true"></i></li>
+                <li><i class="fa fa-heart mr-1" aria-hidden="true"></i></li>
+                <li><i class="fa fa-heart" aria-hidden="true"></i></li>
               </ul>
             </div>
             <div class="col-md-6">

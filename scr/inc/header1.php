@@ -10,7 +10,7 @@
         <div class="logo"><img src="scr/img/Fixitlogo transparent.png" alt="Fixit logo" class="logo-white"></div>
         <nav class="navigation">
             <ul>
-                <li><a href="#">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 <li><a href="#">Directory</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Language <i class="fa fa-chevron-down "></i></a></li>
@@ -48,12 +48,12 @@
  <div class="nav">
     <div class="container">
       <ul>
-        <li>Graphics & Designs</li>
-        <li>Programming & Tech</li>
-        <li>Music & Video</li>
-        <li>Handywork</li>
-        <li>Beauty & Fashion</li>
-        <li>Writing & Translation</li>
+        <li><a href="sub_cat.php">Graphics & Designs</a></li>
+        <li><a href="#">Programming & Tech</a></li>
+        <li><a href="#">Music & Video</a></li>
+        <li><a href="#">Handywork</a></li>
+        <li><a href="#">Beauty & Fashion</a></li>
+        <li><a href="#">Writing & Translation</a></li>
       </ul>
     </div>      
   </div>

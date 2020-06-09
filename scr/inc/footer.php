@@ -4,7 +4,7 @@
       <div class="col-md-4">
         <h3 class="text-center" id="footer-h3">Categories</h3>
         <ul class="footer">
-          <li>Graphics & Design</li>
+          <li><a href="sub_cat.php">Graphics & Design</a></li>
           <li>Degital Marketing</li>
           <li>Writing & Translation</li>
           <li>Video & Animation</li>
@@ -39,7 +39,7 @@
     <div class="mt-4">
       <div class="row">
         <div class="col-md-6 media">
-          <img src="../img/fixitwhite.png" alt="">
+          <img src="img/fixitwhite.png" alt="">
           <p class="mt-2" style="color: gray; font-weight:bold">Fixit <span>&copy; 2020</span></p>
         </div>
         <div class="col-md-6">
