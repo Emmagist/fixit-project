@@ -442,7 +442,7 @@ body{
   background-color: var(--blue);
   color: var(--white);
   border-radius: 20px;
-  /* width: 10%; */
+  text-decoration: none;
   padding: 5px 10px;
   box-shadow: 2px 3px var(--gray);
 }
@@ -495,7 +495,22 @@ body{
   width: 100px;
   height: 100px;
 }
-
+.table_bordered{
+  border: 1px solid var(--gray);
+  width: 100vh;
+}
+.table_bord{
+  /* border-bottom: 1px solid var(--gray); */
+  border-right: 1px solid var(--gray);
+  /* width: 70%; */
+  /* padding-left: 20px; */
+}
+#table_bordered{
+  border-bottom: 1px solid var(--gray);
+  border-right: 1px solid var(--gray);
+  border-left: 1px solid var(--gray);
+  width: 115.8%;
+}
 /* service provider ends */
 
 
