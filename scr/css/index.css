@@ -50,6 +50,7 @@ header {
 
 .navigation ul {
   display: flex;
+  /* position: fixed; */
 }
 
 .navigation ul li {
@@ -213,6 +214,7 @@ left: 0;
   border-top: 1px solid rgb(226, 225, 225);
   border-bottom: 1px solid rgb(226, 225, 225);
   text-align: center;
+  /* position: fixed; */
 }
 
 
@@ -234,17 +236,8 @@ left: 0;
   font-size:  18px;
 }
 
-#first-container ul{
-
-}
-
-
 #first-container ul li{
   list-style: none;
-}
-
-#first-container ul li a{
-  
 }
 
 #product-area .img-container img{
@@ -301,3 +294,19 @@ left: 0;
   color: #1da1f2;
 }
 /* footer end */
+
+
+/* faq start */
+#faq-container{
+  border-top: 2px solid var(--blue);
+  padding-top: 10px;
+  border-radius: 4px;
+}
+
+.faq-col-span img{
+  background: yellow;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+}
+/* faq end */
