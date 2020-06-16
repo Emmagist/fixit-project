@@ -17,7 +17,7 @@
       <div class="col-md-3"></div>
       <div class="col-md-3 log-sign">
         <button class="btn-sign-login">
-          <a href="#" class="login">Login</a>|<a href="#" class="sign-up">Signup</a>
+          <a href="#" class="login">Login</a>|<a href="signup.php" class="sign-up">Signup</a>
         </button>
       </div>
     </div> 
