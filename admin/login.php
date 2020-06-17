@@ -1,5 +1,8 @@
-<!-- Header -->
-<?php include "scr/includes/header.php";?>
+<?php 
+require_once "../process/user.pr.php";
+/* Header */
+include "scr/includes/header.php";
+?>
 <!-- Header End -->
 
     <div class="form-screen">
