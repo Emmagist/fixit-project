@@ -402,6 +402,11 @@ body{
   text-decoration: none;
   color: grey;
 }
+
+.footer li a:hover{
+  padding-left: 40px;
+}
+
 .media img{
   width: 17%;
 }
