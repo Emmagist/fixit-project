@@ -1,3 +1,13 @@
+:root{
+  --blue:#3717FF;
+  --gray:#c4c4c4;
+  --white: #fff;
+  --dack: rgba(0,0,0,.27);
+  --yellow: #f2b200;
+  --grey: #94989b;
+  --skyBlue: #c28fef;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -79,47 +89,44 @@ header {
 left: 0;
 }
 
-
 @media only screen and (max-width: 900px) {
 
   header {
-      padding: 0 5rem;
+    padding: 0 5rem;
   }
 
-.navigation {
-  position: absolute;
-  top: 6rem;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background-color: #24252a;
+  .navigation {
+    position: absolute;
+    top: 6rem;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #24252a;
+  }
+
+  .navigation ul {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navigation ul li {
+    width: 100%;
+    text-align: center;
+    
+  }
+
+  .navigation ul li a {
+  /*     border-bottom: solid .25px rgba(211, 211, 211, .6); */
+    display: block;
+
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
 }
-
-.navigation ul {
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.navigation ul li {
-  width: 100%;
-  text-align: center;
-  
-}
-
-.navigation ul li a {
-/*     border-bottom: solid .25px rgba(211, 211, 211, .6); */
-  display: block;
-
-}
-
-.hamburger {
-  display: block;
-  cursor: pointer;
-}
-
-}
-
 /* MMY STYLE */
 
 #header-container{
@@ -310,3 +317,122 @@ left: 0;
   height: 15px;
 }
 /* faq end */
+
+/* invite_page */
+.invite-container{
+  background: rgb(27, 26, 26);
+  color: #fff;
+}
+
+#invite-page{
+  border-left: 2px solid var(--yellow);
+  padding-left: 15px;
+}
+
+.invite-page h5{
+  font-size: 24px;
+}
+
+.invite-page h3{
+  font-size: 28px;
+}
+.invite-page p{
+  font-size: 15px;
+}
+
+.copy-button{
+  padding: 10px;
+  width: 20%;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+#row-two{
+  margin-top: 90px;
+}
+
+#invit-form{
+  margin-left: 120px;
+}
+
+#invit-form input{
+  height: 50px;
+  width: 70%;
+  background: transparent;
+  color: var(--white);
+  font-size: 18px;
+}
+
+#invit-form button{
+  padding: 10px;
+  width: 20%;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.medial{
+  margin-top: 90px;
+}
+.medial ul li{
+  padding-left: 15px;
+  color: var(--gray);
+}
+
+.whatsapp:hover{
+  color: #25d366;
+  padding-left: 20px;
+}
+
+.instagram:hover{
+  color: #FD1D1D;
+  padding-left: 20px;
+}
+
+.facebook:hover{
+  color: #3b5998;
+  padding-left: 20px;
+}
+
+.google:hover{
+  color: #F56040;
+  padding-left: 20px;
+}
+
+.linkedin:hover{
+  color: #0072b1;
+  padding-left: 20px;
+}
+
+.twitter:hover{
+  color: #00acee;
+  padding-left: 20px;
+}
+/* invite_page end */
+
+/* footer for all */
+.footer li a{
+  text-decoration: none;
+  color: grey;
+}
+/* footer for all end */
+
+/* Media Query */
+@media screen and (max-700){
+  /* invite page */
+.invite-row{
+  display: inline;
+}
+
+.invite-page h3{
+  text-align: center;
+}
+
+#invite-page{
+  border-left: none;
+  margin-top: 100px;
+}
+}
+/* invite page end */
+/* Media Query Ends */
