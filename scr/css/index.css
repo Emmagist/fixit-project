@@ -24,6 +24,7 @@ body {
  
 }
 
+
 header {
   width: 100%;
   height: 6rem;
@@ -436,3 +437,127 @@ left: 0;
 }
 /* invite page end */
 /* Media Query Ends */
+
+
+/* about starts*/
+
+.about-col {
+  padding:20px;
+  text-align:justify;
+  font-size: 1.5rem;
+}
+
+.paragraph {
+  padding-top: 30px;
+  font-size:1.5rem;
+}
+
+.about_span-color {
+  color:#f2b200;
+}
+
+.about_span-size {
+  font-size: 4rem;
+}
+
+@media only screen and (max-width: 56.25em) {
+  .fig-container {
+    text-align: center;
+  }
+  .fig_shape {
+    width: 100%;
+    transform: translateX(80%);
+  }
+}
+
+@media only screen and (max-width: 37.5em) {
+  .fig-container {
+    text-align: center;
+  }
+  .fig_shape {
+    width: 100%;
+    transform: translateX(30%);
+  }
+}
+.fig_shape {
+  border-radius: 3px;
+  width: 20rem;
+  height: 20rem;
+  clip-path: circle(50% at 50% 50%);
+}
+
+.img_shape {
+  height: 100%;
+  transform: translateX(-3rem);
+}
+
+.u-margin-left {
+  text-align:center;
+}
+
+.perfect-middle {
+  padding-top:5rem;
+  padding-bottom:5rem;
+}
+
+
+
+.title-about {
+  padding: 10px;
+  font-size:2rem;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.title-about h1 {
+  font-size: 4rem;
+  padding: 10px;
+}
+/* about ends */
+
+/* terms of use starts*/
+.main {
+  background-color: #444;
+}
+
+.terms {
+  margin-bottom:8rem;
+  padding: 10px;
+  height:30%;
+  color:#fff;
+  font-size:1.3rem;
+}
+
+.terms h1 {
+  color:#f2b200;
+  margin-bottom:1rem;
+}
+
+.terms-input {
+  border: solid #fff 1px;
+  background-color: transparent;
+  height: 5rem;
+  /* width: 80%; */
+  font-size:1.4rem;
+}
+
+.terms-input:focus {
+  outline:none;
+  background-color: transparent;
+  color:#fff;
+}
+
+.border-left {
+  border-left: solid 1px #f2b200;
+}
+
+.submit{
+  float:right;
+  background-color: #fff;
+  color:#000;
+  border-radius:10px;
+  display:inline-block;
+  font-size:1.3rem;
+  width: 10rem;
+}
+/* terms of use ends */
