@@ -417,6 +417,10 @@ left: 0;
   text-decoration: none;
   color: grey;
 }
+
+.footer li a:hover{
+  padding-left: 40px;
+}
 /* footer for all end */
 
 /* Media Query */
