@@ -43,7 +43,7 @@
  </div>
  <div class="container" id="index-loginbtn">
    <a href="" class="btn">SIGN IN</a>
-   <a href="" class="btn">SIGN UP</a>
+   <a href="signup.php" class="btn">SIGN UP</a>
  </div>
  <div class="nav">
     <div class="container">

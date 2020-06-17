@@ -591,3 +591,74 @@ body{
   padding-right: 50px;
   border-radius: 10px;
 }
+
+
+/* signup */
+#form{
+  align-items: center;
+  align-content: center;
+  background: var(--white);
+  width: 60%;
+  margin-left: 20%;
+}
+
+#form-one{
+  margin: 40px 0 60px;
+}
+
+#form-one, .form-two{
+  margin-left: 100px;
+}
+
+.form-h4{
+  font-size: 35px;
+  font-weight: 600;
+}
+
+.form-h4 img{
+  width: 90px;
+  height: 40px;
+}
+
+.form-two-h4{
+  margin-left: 150px;
+  font-size: 28px;
+  color: grey;
+}
+
+#form input, .main-signup{
+  width: 80%;
+  padding: 25px;
+}
+
+.form-p{
+  border-bottom: 2px solid var(--gray);
+  padding-bottom: 10px;
+}
+
+.form-p img{
+  width: 50px;
+  height: 30px
+}
+
+.main-signup{
+  font-size: 24px;
+  padding: 0 0 10px;
+}
+
+.form-col{
+  border-bottom: 3px solid var(--gray);
+  width: 10px;
+}
+
+.col-container{
+  margin-left: 20%;
+}
+
+.col-form{
+  text-transform: uppercase;
+  color: gray;
+  font-weight: bolder;
+  font-size: 60;
+}
+/* signup end */

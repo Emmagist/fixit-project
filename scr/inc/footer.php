@@ -5,34 +5,32 @@
         <h3 class="text-center" id="footer-h3">Categories</h3>
         <ul class="footer">
           <li><a href="sub_cat.php">Graphics & Design</a></li>
-          <li>Degital Marketing</li>
-          <li>Writing & Translation</li>
-          <li>Video & Animation</li>
-          <li>Music & Audio</li>
-          <li>Programming & Tech</li>
-          <li>Business</li>
-          <li>Life Style</li>
-          <li>Sitemap</li>
+          <li><a href="#">Degital Marketing</a></li>
+          <li><a href="#">Writing & Translation</a></li>
+          <li><a href="">Video & Animation</a></li>
+          <li><a href="#">Music & Audio</a></li>
+          <li><a href="#">Programming & Tech</a></li>
+          <li><a href="#">Business</a></li>
+          <li><a href="#">Life Style</a></li>
+          <li><a href="#">Sitemap</a></li>
         </ul>
       </div>
       <div class="col-md-4">
         <h3 class="text-center" id="footer-h3">About</h3>
         <ul class="footer">
-          <li>Graphics & Design</li>
-          <li>Partnerships</li>
-          <li>Privacy Policy</li>
-          <li>Terms Services</li>
-          <li>Intellectual Properties</li>
-          <li>Claims</li>
+          <li><a href="#">Partnerships</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms Services</a></li>
+          <li><a href="#">Claims</a></li>
         </ul>
       </div>
       <div class="col-md-4">
         <h3 class="text-center" id="footer-h3">Support</h3>
         <ul class="footer">
-          <li>Graphics & Design</li>
-          <li>Help & Support</li>
-          <li>Trust & Safety--</li>
-          <li>Invite A Friend</li>
+          <li><a href="invite.php#h3-trust">Help & Support</a></li>
+          <li><a href="invite.php#invite-page">Trust & Safety--</a></li>
+          <li><a href="invite.php#invite">Invite A Friend</a></li>
+          <li><a href="invite.php#intellectual">Intellectual Properties</a></li>
         </ul>
       </div>
     </div>
