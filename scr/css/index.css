@@ -424,20 +424,47 @@ left: 0;
 /* footer for all end */
 
 /* Media Query */
-@media screen and (max-700){
+@media screen and (max-width: 900px), screen and (max-width: 700px){
   /* invite page */
-.invite-row{
-  display: inline;
-}
+  .invite-row{
+    display: inline;
+  }
 
-.invite-page h3{
-  text-align: center;
-}
+  .invite-page h3{
+    text-align: center;
+  }
 
-#invite-page{
-  border-left: none;
-  margin-top: 100px;
-}
+  #invite-page{
+    border-left: none;
+    margin-top: 100px;
+  }
+
+  .h3-trust{
+    margin-top: 40px;
+  }
+
+  #h3-trust{
+    margin-top: 100px;
+  }
+
+  .medial{
+    margin-top: 50px;
+  }
+
+  #invit-form{
+    margin-left: 70px;
+    /* margin-bottom: 20px; */
+  }
+
+  #invit-form button{
+    /* padding: 10px; */
+    width: 30%;
+    margin-bottom: 40px;
+  }
+
+  .intel{
+    margin: 70px 0 20px;
+  }
 }
 /* invite page end */
 /* Media Query Ends */
