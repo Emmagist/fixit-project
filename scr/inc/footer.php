@@ -47,7 +47,7 @@
             <li class="fa fa-facebook-official fa-2x" id="facebook"></li>
             <li class="fa fa-linkedin fa-2x" id="linkedin"></li>
             <li class="fa fa-twitter-square fa-2x" id="twitter"></li>
-            <span style="font-size: 18px; main-footer-span"><strong> @Fixit</strong></span>
+            <span style="font-size: 18px;" class="main-footer-span"><strong> @Fixit</strong></span>
           </ul>
         </div>
       </div>
