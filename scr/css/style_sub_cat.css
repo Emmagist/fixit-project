@@ -270,6 +270,15 @@ body{
   color: rgb(204, 172, 129);
 }
 
+.pic-area #pic-area-name{
+ 
+  margin-bottom: -5%;
+}
+
+.verified-onsmall{
+  display: none;
+}
+
 .verified{
   background: rgb(204, 172, 129);
   color: white;
@@ -708,5 +717,79 @@ body{
   .main-footer-span{
     display: none;
   }
+
+
+
+  /**
+*USER PROFILE CSS STYLE
+ */
+ /* first main arae */
+#first-div{
+  border: 1px solid rgb(226, 225, 225);
+  border-top: none;
+
 }
+.pic-area{
+  display: flex;
+  flex-direction: column;
+  padding-right: 100px;
+}
+
+.pic-area :nth-child(2){
+  display: flex;
+  flex-direction: column;
+}
+.pic-area img{
+  border-radius: 50%;
+  height: 180px;
+  padding-left: 10px;
+  width: 100%;
+  align-content: center;
+}
+
+#star-icon{
+  color: rgb(204, 172, 129);
+}
+
+.pic-area #pic-area-name{
+  margin-bottom: 3px;
+}
+.verified-onsmall{
+  display: block;
+  margin-bottom: -4px;
+}
+.verified{
+  display: none;
+}
+
+.btnpic{
+  display: block;
+  margin-top: 10px;
+  width: 100%;
+  border-radius: 10px;
+  transition: all 0.3s;
+  margin-left: 1%;
+}
+
+/* third main */
+#third-main button{
+  display: block;
+  margin-top: 10px;
+  width: 100%;
+  
+}
+
+#third-main #profileeditaddressbtn{
+  display: block;
+  margin-top: 10px;
+  width: 100%;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+/**
+*USER PROFILE CSS STYLE END HERE
+ */
+
+}
+
 /* @media end*/

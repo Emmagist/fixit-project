@@ -8,7 +8,7 @@
           <div class="pic-area">
             <img src="scr/img/2.jpg" alt="profile-picute">
             <div class="mt-5">
-              <p style="margin-bottom: -5%;"> Salami John </p>
+              <p style="" id="pic-area-name"> Salami John </p>
               <a href="#">Top Rated Seller</a>
               <i class="fa fa-star" id="star-icon">
                 <i class="fa fa-star">
@@ -19,6 +19,7 @@
                 </i>
                 </i>
               </i>
+              <p class="verified-onsmall">VERIFIED</p>
             </div>  
           </div>
           <div>
