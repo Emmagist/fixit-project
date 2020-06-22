@@ -112,7 +112,7 @@ body{
 /* main end */
 /* second main start */
 #main-two{
-  border: 2px solid var(--blue);
+  border: 1px solid var(--gray);
   padding: 2px;
   margin-right: 15px;
 }
@@ -679,3 +679,34 @@ body{
 }
 /* signup end */
 
+/* @media */
+@media screen and (max-width: 900px), screen and (max-width: 700px){
+  #main-two{
+    border: none;
+    padding: 2px;
+    margin-right: 15px;
+  }
+
+  #sub-cat-card{
+    margin-top: 40px;
+    box-shadow: 4px 5px var(--gray);
+  }
+
+  /* #sub-cat-card{
+    width: 270px;
+  }
+  */
+  .card-img-top{
+    height: 200px;
+    /* width: 270px; */
+  }
+
+  .main-card{
+    height: 150px;
+  }
+
+  .main-footer-span{
+    display: none;
+  }
+}
+/* @media end*/

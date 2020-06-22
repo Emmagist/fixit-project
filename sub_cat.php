@@ -5,7 +5,7 @@
     <h3>Logo's</h3>
     <div class="row mb-5">
       <div class="col-md-3">
-        <div class="card">
+        <div class="card" id="sub-cat-card">
           <img src="scr/img/slide1.jpg" class="card-img-top" alt="...">
           <div class="card-body main-card">
             <div class="row mb-1">
@@ -29,7 +29,7 @@
         </div>
       </div>
       <div class="col-md-3">
-        <div class="card">
+        <div class="card"  id="sub-cat-card">
           <img src="scr/img/slide1.jpg" class="card-img-top" alt="...">
           <div class="card-body main-card">
             <div class="row mb-1">
@@ -53,7 +53,7 @@
         </div>
       </div>
       <div class="col-md-3">
-        <div class="card">
+        <div class="card" id="sub-cat-card">
           <img src="scr/img/slide1.jpg" class="card-img-top" alt="...">
           <div class="card-body main-card">
             <div class="row mb-1">
@@ -77,7 +77,7 @@
         </div>
       </div>
       <div class="col-md-3">
-        <div class="card">
+        <div class="card" id="sub-cat-card">
           <img src="scr/img/slide1.jpg" class="card-img-top" alt="...">
           <div class="card-body main-card">
             <div class="row mb-1">
@@ -103,7 +103,7 @@
     </div>
     <div class="row">
       <div class="col-md-3">
-        <div class="card">
+        <div class="card" id="sub-cat-card">
           <img src="scr/img/slide1.jpg" class="card-img-top" alt="...">
           <div class="card-body main-card">
             <div class="row mb-1">
@@ -127,7 +127,7 @@
         </div>
       </div>
       <div class="col-md-3">
-        <div class="card">
+        <div class="card" id="sub-cat-card">
           <img src="scr/img/slide1.jpg" class="card-img-top" alt="...">
           <div class="card-body main-card">
             <div class="row mb-1">
@@ -151,7 +151,7 @@
         </div>
       </div>
       <div class="col-md-3">
-        <div class="card">
+        <div class="card" id="sub-cat-card">
           <img src="scr/img/slide1.jpg" class="card-img-top" alt="...">
           <div class="card-body main-card">
             <div class="row mb-1">
@@ -175,7 +175,7 @@
         </div>
       </div>
       <div class="col-md-3">
-        <div class="card">
+        <div class="card" id="sub-cat-card">
           <img src="scr/img/slide1.jpg" class="card-img-top" alt="...">
           <div class="card-body main-card">
             <div class="row mb-1">
@@ -201,7 +201,7 @@
     </div>
   </div>
   <div class="main-two  ml-5 mr-5 text-center pl-2 pr-3" id="main-two">
-  <h3 class="mb-3 mt-2">Why you need A Logo For Your Business?</h3>
+    <h3 class="mb-3 mt-2">Why you need A Logo For Your Business?</h3>
     <div class="row text-center">
       <div class="col-md-6 text-center">
         <p><span class="span-main-two"><i class="fa fa-check-circle-o mr-3"></i></span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non odit, ipsa assumenda eligendi, perferendis voluptatem blanditiis perspiciatis rem dolores fugiat dolor, dolore fugit. Perspiciatis veritatis pariatur repellat aliquid nulla vitae.</p>
