@@ -3,7 +3,7 @@
     <div class="row" id="footer">
       <div class="col-md-4">
         <h3 class="text-center" id="footer-h3">Categories</h3>
-        <ul class="footer">
+        <ul class="footer text-center">
           <li><a href="sub_cat.php">Graphics & Design</a></li>
           <li><a href="#">Degital Marketing</a></li>
           <li><a href="#">Writing & Translation</a></li>
@@ -17,7 +17,7 @@
       </div>
       <div class="col-md-4">
         <h3 class="text-center" id="footer-h3">About</h3>
-        <ul class="footer">
+        <ul class="footer text-center">
           <li><a href="#">Partnerships</a></li>
           <li><a href="#">Privacy Policy</a></li>
           <li><a href="#">Terms Services</a></li>
@@ -26,7 +26,7 @@
       </div>
       <div class="col-md-4">
         <h3 class="text-center" id="footer-h3">Support</h3>
-        <ul class="footer">
+        <ul class="footer text-center">
           <li><a href="invite.php#h3-trust">Help & Support</a></li>
           <li><a href="invite.php#invite-page">Trust & Safety--</a></li>
           <li><a href="invite.php#invite">Invite A Friend</a></li>
@@ -47,7 +47,7 @@
             <li class="fa fa-facebook-official fa-2x" id="facebook"></li>
             <li class="fa fa-linkedin fa-2x" id="linkedin"></li>
             <li class="fa fa-twitter-square fa-2x" id="twitter"></li>
-            <span style="font-size: 18px;"><strong> @Fixit</strong></span>
+            <span style="font-size: 18px; main-footer-span"><strong> @Fixit</strong></span>
           </ul>
         </div>
       </div>

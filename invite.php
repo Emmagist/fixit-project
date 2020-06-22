@@ -36,7 +36,7 @@
   </div>
   <div class="row invite-row" id="row-two">
     <div class="col-md-6 invite-page mt-5" id="intellectual">
-      <h3>Intellectual Properties</h3>
+      <h3 class="intel">Intellectual Properties</h3>
       <h5>Lorem</h5>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos dicta mollitia fugiat quidem optio esse harum a quasi quam ipsa saepe, sunt eum nam nihil tempore inventore! Ducimus, quis laborum.</p>
       <div class="">

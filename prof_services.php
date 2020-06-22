@@ -79,12 +79,12 @@
       <div class="row">
         <div class="col-md-12">
           <div class="paragraph">
-            <span><i class="fa fa-check-circle-o" style="color:purple;"></i></span> We would love you to be a part of us and explore the work place
+            <span><i class="fa fa-check-circle-o prof_span-color"></i></span> We would love you to be a part of us and explore the work place
           </div>
         </div>
         <div class="col-md-12">
           <div class="paragraph last-paragraph">
-          <span><i class="fa fa-check-circle-o" style="color:purple;"></i></span> We have one of the best verification system, your safety is really our concern
+          <span><i class="fa fa-check-circle-o prof_span-color"></i></span> We have one of the best verification system, your safety is really our concern
           </div>
         </div>
       </div>
@@ -122,23 +122,23 @@
       <div class="row">
         <div class="col-md-6">
           <div class="paragraph">
-            <span><i class="fa fa-check-circle-o" style="color:purple;"></i></span> <b>Lorem Ispur</b>
+            <span><i class="fa fa-check-circle-o prof_span-color"></i></span> <b>Lorem Ispur</b>
           </div>
-          <div style="padding:10px; text-align:justify;">
+          <div class="prof_services-col">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas ratione at corporis deleniti officia dolore commodi tempora excepturi beatae pariatur.
           </div>
        
           <div class="paragraph">
-            <span><i class="fa fa-check-circle-o" style="color:purple;"></i></span> <b>Lorem Ispur</b>
+            <span><i class="fa fa-check-circle-o prof_span-color"></i></span> <b>Lorem Ispur</b>
           </div>
-          <div style="padding:10px; text-align:justify;">
+          <div class="prof_services-col">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas est illum, aspernatur quia animi libero sed voluptatibus dicta pariatur autem.
           </div>
 
           <div class="paragraph">
-            <span><i class="fa fa-check-circle-o" style="color:purple;"></i></span> <b>Lorem Ispur</b>
+            <span><i class="fa fa-check-circle-o prof_span-color"></i></span> <b>Lorem Ispur</b>
           </div>
-          <div style="padding:10px; text-align:justify;">
+          <div class="prof_services-col">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas est illum, aspernatur quia animi libero sed voluptatibus dicta pariatur autem.
           </div>
         </div>
