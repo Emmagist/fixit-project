@@ -4,7 +4,6 @@ require_once "../process/user.pr.php";
 include "scr/includes/header.php";
 ?>
 <!-- Header End -->
-
     <div class="form-screen">
         <a href="index.php" class="easion-logo"><img src="scr/img/Fixitlogo transparent.png" alt="" height="100" width="100"><span class="pr-5">Admin</span></a>
         <div class="card account-dialog">

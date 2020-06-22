@@ -7,3 +7,5 @@ define('DB_NAME', 'tradex');
 
 //DATABASE TABLES
 define('TBL_USER', 'users');
+define('TBL_CATEGORIES', 'categories');
+define('TBL_PRODUCTS', 'products');
