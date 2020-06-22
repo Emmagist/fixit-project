@@ -702,7 +702,13 @@ body{
   }
 
   .main-card{
-    height: 150px;
+    height: 175px;
+  }
+
+  #cat-main-li-div{
+    display: grid;
+    /* grid-template-rows: 100px 100px; */
+    grid-template-columns: 40% 60%;
   }
 
   .main-footer-span{

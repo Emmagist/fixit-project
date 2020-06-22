@@ -15,7 +15,7 @@
             <p class="card-text">Some quick example text to build.</p>
             <i class="fa fa-star star-icon"></i> <span>(1k.+)</span>
           </div><hr>
-          <div class="row">
+          <div class="row" id="cat-main-li-div">
             <div class="col-md-6 main-li-div">
               <ul>
                 <li><i class="fa fa-heart mr-1" aria-hidden="true"></i></li>
@@ -39,7 +39,7 @@
             <p class="card-text">Some quick example text to build.</p>
             <i class="fa fa-star star-icon"></i> <span>(1k.+)</span>
           </div><hr>
-          <div class="row">
+          <div class="row" id="cat-main-li-div">
             <div class="col-md-6 main-li-div">
               <ul>
                 <li><i class="fa fa-heart mr-1" aria-hidden="true"></i></li>
@@ -63,10 +63,10 @@
             <p class="card-text">Some quick example text to build.</p>
             <i class="fa fa-star star-icon"></i> <span>(1k.+)</span>
           </div><hr>
-          <div class="row">
+          <div class="row" id="cat-main-li-div">
             <div class="col-md-6 main-li-div">
               <ul>
-                <li><i class="fa fa-heart mr-1 fa-2x" aria-hidden="true"></i></li>
+                <li><i class="fa fa-heart mr-1" aria-hidden="true"></i></li>
                 <li><i class="fa fa-heart" aria-hidden="true"></i></li>
               </ul>
             </div>
@@ -87,8 +87,8 @@
             <p class="card-text">Some quick example text to build.</p>
             <i class="fa fa-star star-icon"></i> <span>(1k.+)</span>
           </div><hr>
-          <div class="row">
-            <div class="col-md-6 main-li-div">
+          <div class="row" id="cat-main-li-div">
+            <div class="col-md-6 main-li-div"">
               <ul>
                 <li><i class="fa fa-heart mr-1" aria-hidden="true"></i></li>
                 <li><i class="fa fa-heart" aria-hidden="true"></i></li>
@@ -113,7 +113,7 @@
             <p class="card-text">Some quick example text to build.</p>
             <i class="fa fa-star star-icon"></i> <span>(1k.+)</span>
           </div><hr>
-          <div class="row">
+          <div class="row" id="cat-main-li-div">
             <div class="col-md-6 main-li-div">
               <ul>
                 <li><i class="fa fa-heart mr-1" aria-hidden="true"></i></li>
@@ -137,7 +137,7 @@
             <p class="card-text">Some quick example text to build.</p>
             <i class="fa fa-star star-icon"></i> <span>(1k.+)</span>
           </div><hr>
-          <div class="row">
+          <div class="row" id="cat-main-li-div">
             <div class="col-md-6 main-li-div">
               <ul>
                 <li><i class="fa fa-heart mr-1" aria-hidden="true"></i></li>
@@ -161,7 +161,7 @@
             <p class="card-text">Some quick example text to build.</p>
             <i class="fa fa-star star-icon"></i> <span>(1k.+)</span>
           </div><hr>
-          <div class="row">
+          <div class="row" id="cat-main-li-div">
             <div class="col-md-6 main-li-div">
               <ul>
                 <li><i class="fa fa-heart mr-1" aria-hidden="true"></i></li>
@@ -185,7 +185,7 @@
             <p class="card-text">Some quick example text to build.</p>
             <i class="fa fa-star star-icon"></i> <span>(1k.+)</span>
           </div><hr>
-          <div class="row">
+          <div class="row" id="cat-main-li-div">
             <div class="col-md-6 main-li-div">
               <ul>
                 <li><i class="fa fa-heart mr-1" aria-hidden="true"></i></li>
