@@ -87,9 +87,9 @@
       <img src="scr/img/2.jpg" alt="" class="icon-img-three ml-1"><br><br>
       <a href="#" id="chat-btn">Chat With Seller</a>
     </div>
-    <div class="col-md-6 text-center container">
+    <div class="col-md-6 text-center about-wrapper">
       <h3>About Seller</h3>
-      <div class="">
+      <div class="table_wrapper">
         <div class="row table_bordered">
           <div class="col-md-4 table_bord pt-2 pb-2">From <br><span>Lagos</span></div>
           <div class="col-md-4 table_bord pt-2 pb-2">Member<br><span>Since August 2020</span></div>

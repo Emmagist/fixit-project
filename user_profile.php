@@ -4,7 +4,7 @@
   <main class='main'>
     <div class="container text-center" id="first-div">
       <div class="row" >
-        <div class="col-md-8">
+        <div class="col-md-8" id="large-screen">
           <div class="pic-area">
             <img src="scr/img/2.jpg" alt="profile-picute">
             <div class="mt-5">
@@ -32,10 +32,35 @@
           <div class="verified"> <h4 class="text-center">VERIFIED</h4></div>
         </div>
       </div>
+
+      <div class="row">
+        <div class="col-md-8"id="small-screen">
+          <div class="pic-areasmall">
+              <img src="scr/img/2.jpg" alt="profile-picute">
+              <div class="mt-5">
+                <p style="" id="pic-area-name"> Salami John </p>
+                <a href="#">Top Rated Seller</a>
+                <p>
+                <i class="fa fa-star" id="star-icon">
+                  <i class="fa fa-star">
+                  <i class="fa fa-star"><span class="text-dark">(1k+)</span></i>
+                  </i>
+                </i>
+                </p>
+                <p class="verified-onsmall">VERIFIED</p>
+              </div>  
+              <div>
+            <button class="btn btn-outline-secondary btnpic mt-3" id="profilebtnupdt1">Change Profile Picture</button>
+              <button class="btn  btnpic" id="profilebtnupdt2">Upgrade To Pro</button>  
+            </div>
+          </div>
+        </div>
+      </div>
+   
     </div>
   </main>
   
-  <main class="second-main">
+  <main class="second-main p-5">
     <h5>About Seller</h5>
     <div class="container" id="second-div">
       

@@ -383,68 +383,15 @@ body{
   background: none;
   transition: all 0.3s;
 }
+
+#small-screen{
+  display: none;
+}
 /**
 *USER PROFILE CSS STYLE END HERE
  */
-     
-/* footer start */
-#footer-container{
-  margin-top: 10%;
-}
-#footer{
-  border-bottom: 3px solid var(--gray);
-  padding-bottom: 20px;
-}
-#footer-h3{
-  color: var(--blue);
-}
-.footer{
-  list-style-type: none;
-}
-.footer li{
-  padding: 10px;
-  color: grey;
-  font-size: 18px;
-  font-weight: 600;
-}
-.footer li:hover{
-  text-decoration: underline;
-  cursor: pointer;
-}
-.footer li a{
-  text-decoration: none;
-  color: grey;
-}
 
-.footer li a:hover{
-  padding-left: 40px;
-}
-
-.media img{
-  width: 17%;
-}
-#footer-two li{
-  padding: 0px 10px;
-  /* color: var(--gray); */
-  color: grey;
-}
-#footer-two #instagram:hover{
-  color: #f46f30;
-}
-#footer-two #google:hover{
-  color: #4285f4;
-}
-#footer-two #facebook:hover{
-  color: #1877f2;
-}
-#footer-two #linkedin:hover{
-  color: #007bb5;
-}
-#footer-two #twitter:hover{
-  color: #1da1f2;
-}
-/* footer end */
-
+ 
 /* service provider started */
 .main-service-col{
   margin: 100px 0 0;
@@ -795,9 +742,32 @@ body{
     border-radius: 10px;
     transition: all 0.3s;
   }
+
+  #third-main #profileeditaddressbtn{
+    display: block;
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 10px;
+    transition: all 0.3s;
+  }
+
+  #small-screen{
+    display: none;
+  }
+
   /**
   *USER PROFILE CSS STYLE END HERE
  */
+
+ /* first main arae */
+ /* #large-screen{
+   display: none;
+ } */
+  #first-div{
+    border: 1px solid rgb(226, 225, 225);
+    border-top: none;
+  }
+
 
  /* srvice-prov @media start */
  .main-service-row{
@@ -826,14 +796,15 @@ body{
   }
 
   .job_done{
-    width: 50%;
-    margin-top: 50px;
+    width: 80%;
+    margin: 50px 0 0 25px;
     font-weight: 600;
     padding: 5px 2px 5px 5px;
     border: 2px solid var(--gray);
     border-radius: 10px;
     background: transparent;
     box-shadow: 2px 3px var(--gray);
+    text-align: center;
   }
 
   .main-service-card{
@@ -859,14 +830,93 @@ body{
     border-bottom: 1px solid var(--gray);
     border-right: 1px solid var(--gray);
     border-left: 1px solid var(--gray);
-    width: 40%;
+    width: 49vh;
+    text-align: center;
+  }
+
+  .about-wrapper{
+    margin-top: 50px;
   }
 
   .table_bordered{
+    display: grid;
+    grid-template-columns: 30% 35% 35%;
     border: 1px solid var(--gray);
-    width: 60vh;
+    width: 49vh;
   }
+
+  .table_wrapper{
+    margin-left: 20px;
+  }
+
+  .testimonials{
+    width: 70%;
+    font-weight: 600;
+    padding: 2px 2px 2px 5px;
+    border: 2px solid var(--gray);
+    border-radius: 10px;
+    background: transparent;
+    box-shadow: 2px 3px var(--gray);
+    text-align: center;
+  }
+  
   /* service-prov @media end */
 }
 
 /* @media end*/
+@media screen   and  (max-width: 1058px)and  (min-width: 900px){
+  .verified{
+    display: block;
+  }
+
+  .btnpic{
+    display: block;
+  
+    width: 50%;
+   
+  }
+ 
+
+  .verified-onsmall{
+    display: none;
+  }
+
+}
+
+@media screen   and  (max-width: 900px)and  (min-width: 768px){
+  .verified{
+    display: block;
+  }
+  .pic-area img{
+    
+    
+    padding-left: 0px;
+    border-radius: 70%;
+    height: 170px;
+    width: 70%;
+    margin-left: 10%;
+    
+  }
+
+  .verified-onsmall{
+    display: none;
+  }
+
+}
+
+@media screen   and  (max-width: 530px) {
+  
+  #large-screen{
+    display: none;
+  }
+ 
+  #small-screen{
+    display: block;
+  }
+  #small-screen img{
+    width: 100%;
+    height: 150px;
+    border-radius: 10px;
+    
+  }
+}

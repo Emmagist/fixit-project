@@ -253,57 +253,6 @@ left: 0;
   width: 100%;
 }
 
-
-/* footer start */
-#footer-container{
-  margin-top: 10%;
-}
-#footer{
-  border-bottom: 3px solid var(--gray);
-  padding-bottom: 20px;
-}
-#footer-h3{
-  color: var(--blue);
-}
-.footer{
-  list-style-type: none;
-}
-.footer li{
-  padding: 10px;
-  color: grey;
-  font-size: 18px;
-  font-weight: 600;
-}
-.footer li:hover{
-  text-decoration: underline;
-  cursor: pointer;
-}
-.media img{
-  width: 17%;
-}
-#footer-two li{
-  padding: 0px 10px;
-  /* color: var(--gray); */
-  color: grey;
-}
-#footer-two #instagram:hover{
-  color: #f46f30;
-}
-#footer-two #google:hover{
-  color: #4285f4;
-}
-#footer-two #facebook:hover{
-  color: #1877f2;
-}
-#footer-two #linkedin:hover{
-  color: #007bb5;
-}
-#footer-two #twitter:hover{
-  color: #1da1f2;
-}
-/* footer end */
-
-
 /* faq start */
 #faq-container{
   border-top: 2px solid var(--blue);

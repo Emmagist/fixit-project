@@ -1,0 +1,124 @@
+
+/* footer start */
+/* #footer-container{
+  margin-top: 10%;
+}
+#footer{
+  border-bottom: 3px solid var(--gray);
+  padding-bottom: 20px;
+}
+#footer-h3{
+  color: var(--blue);
+}
+.footer{
+  list-style-type: none;
+}
+.footer li{
+  padding: 10px;
+  color: grey;
+  font-size: 18px;
+  font-weight: 600;
+}
+.footer li:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+.media img{
+  width: 17%;
+}
+#footer-two li{
+  padding: 0px 10px;
+  /* color: var(--gray); */
+  /* color: grey;
+}
+#footer-two #instagram:hover{
+  color: #f46f30;
+}
+#footer-two #google:hover{
+  color: #4285f4;
+}
+#footer-two #facebook:hover{
+  color: #1877f2;
+}
+#footer-two #linkedin:hover{
+  color: #007bb5;
+}
+#footer-two #twitter:hover{
+  color: #1da1f2;
+} */ 
+/* footer end */
+
+/* footer start */
+#footer-wrapper-container{
+  margin-top: 10%;
+}
+#footer-row-id{
+  border-bottom: 3px solid var(--gray);
+  padding-bottom: 20px;
+}
+#footer-h3-category{
+  color: var(--blue);
+}
+.footer-ul{
+  list-style-type: none;
+}
+.footer-ul li{
+  padding: 10px 10px 10px 0px;
+  color: grey;
+  font-size: 18px;
+  font-weight: 600;
+}
+.footer-ul li:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+.footer-ul li a{
+  text-decoration: none;
+  color: grey;
+}
+
+.footer-ul li a:hover{
+  padding-left: 40px;
+}
+
+.footer-media-icon img{
+  width: 17%;
+}
+#footer-two-ul li{
+  padding: 0px 10px;
+  /* color: var(--gray); */
+  color: grey;
+}
+#footer-two-ul #instagram:hover{
+  color: #f46f30;
+}
+#footer-two-ul #google:hover{
+  color: #4285f4;
+}
+#footer-two-ul #facebook:hover{
+  color: #1877f2;
+}
+#footer-two-ul #linkedin:hover{
+  color: #007bb5;
+}
+#footer-two-ul #twitter:hover{
+  color: #1da1f2;
+}
+/* footer end */
+
+/* @media start */
+@media screen and (max-width: 900px), screen and (max-width: 700px){
+  footer-cat-div{
+    text-align: center;
+  }
+
+  .footer-ul li{
+    padding: 10px 10px 10px 0px;
+    color: grey;
+    font-size: 18px;
+    font-weight: 600;
+    margin-right: 5px;
+  }
+}
+
+/* @media end */

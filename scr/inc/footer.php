@@ -1,9 +1,9 @@
 
-  <div class="container text-center" id="footer-container">
-    <div class="row" id="footer">
-      <div class="col-md-4">
-        <h3 class="text-center" id="footer-h3">Categories</h3>
-        <ul class="footer text-center">
+  <div class="container text-center" id="footer-wrapper-container">
+    <div class="row" id="footer-row-id">
+      <div class="col-md-4 footer-cat-div">
+        <h3 class="text-center" id="footer-h3-category">Categories</h3>
+        <ul class="footer-ul text-center">
           <li><a href="sub_cat.php">Graphics & Design</a></li>
           <li><a href="#">Degital Marketing</a></li>
           <li><a href="#">Writing & Translation</a></li>
@@ -15,18 +15,18 @@
           <li><a href="#">Sitemap</a></li>
         </ul>
       </div>
-      <div class="col-md-4">
-        <h3 class="text-center" id="footer-h3">About</h3>
-        <ul class="footer text-center">
+      <div class="col-md-4 footer-cat-div">
+        <h3 class="text-center" id="footer-h3-category">About</h3>
+        <ul class="footer-ul text-center">
           <li><a href="#">Partnerships</a></li>
           <li><a href="#">Privacy Policy</a></li>
           <li><a href="#">Terms Services</a></li>
           <li><a href="#">Claims</a></li>
         </ul>
       </div>
-      <div class="col-md-4">
-        <h3 class="text-center" id="footer-h3">Support</h3>
-        <ul class="footer text-center">
+      <div class="col-md-4 footer-cat-div">
+        <h3 class="text-center" id="footer-h3-category">Support</h3>
+        <ul class="footer-ul text-center">
           <li><a href="invite.php#h3-trust">Help & Support</a></li>
           <li><a href="invite.php#invite-page">Trust & Safety--</a></li>
           <li><a href="invite.php#invite">Invite A Friend</a></li>
@@ -36,12 +36,12 @@
     </div>
     <div class="mt-4">
       <div class="row">
-        <div class="col-md-6 media">
+        <div class="col-md-6 footer-media-icon">
           <img src="img/fixitwhite.png" alt="">
           <p class="mt-2" style="color: gray; font-weight:bold">Fixit <span>&copy; 2020</span></p>
         </div>
         <div class="col-md-6">
-          <ul id="footer-two">
+          <ul id="footer-two-ul">
             <li class="fa fa-instagram fa-2x" id="instagram"></li>
             <li class="fa fa-google fa-2x" id="google"></li>
             <li class="fa fa-facebook-official fa-2x" id="facebook"></li>
