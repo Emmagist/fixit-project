@@ -380,6 +380,10 @@ body{
   background: none;
   transition: all 0.3s;
 }
+
+#small-screen{
+  display: none;
+}
 /**
 *USER PROFILE CSS STYLE END HERE
  */
@@ -724,6 +728,9 @@ body{
 *USER PROFILE CSS STYLE
  */
  /* first main arae */
+ /* #large-screen{
+   display: none;
+ } */
 #first-div{
   border: 1px solid rgb(226, 225, 225);
   border-top: none;
@@ -786,6 +793,10 @@ body{
   border-radius: 10px;
   transition: all 0.3s;
 }
+
+#small-screen{
+  display: none;
+}
 /**
 *USER PROFILE CSS STYLE END HERE
  */
@@ -793,3 +804,59 @@ body{
 }
 
 /* @media end*/
+@media screen   and  (max-width: 1058px)and  (min-width: 900px){
+  .verified{
+    display: block;
+  }
+
+  .btnpic{
+    display: block;
+  
+    width: 50%;
+   
+  }
+ 
+
+  .verified-onsmall{
+    display: none;
+  }
+
+}
+
+@media screen   and  (max-width: 900px)and  (min-width: 768px){
+  .verified{
+    display: block;
+  }
+  .pic-area img{
+    
+    
+    padding-left: 0px;
+    border-radius: 70%;
+    height: 170px;
+    width: 70%;
+    margin-left: 10%;
+    
+  }
+
+  .verified-onsmall{
+    display: none;
+  }
+
+}
+
+@media screen   and  (max-width: 530px) {
+  
+  #large-screen{
+    display: none;
+  }
+ 
+  #small-screen{
+    display: block;
+  }
+  #small-screen img{
+    width: 100%;
+    height: 150px;
+    border-radius: 10px;
+    
+  }
+}
