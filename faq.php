@@ -7,7 +7,7 @@
     <p class="text-center mb-5" style="font-size: 18px; font-weight: bold;">We Have Answers To Your Possible Questions</p>
     <div class="row">
       <div class="col-md-9 col-one mt-5"id="faq-container" >
-        <div class="row">
+        <div class="row faq-row">
           <div class="col-md-1">
             <span class="faq-col-span"><img src="scr/img/yellow.jpg" alt=""></span>
           </div>
@@ -21,7 +21,7 @@
     </div>
     <div class="row">
       <div class="col-md-9 col-one mt-5"id="faq-container" >
-        <div class="row">
+        <div class="row  faq-row">
           <div class="col-md-1">
             <span class="faq-col-span"><img src="scr/img/yellow.jpg" alt=""></span>
           </div>
@@ -35,7 +35,7 @@
     </div>
     <div class="row">
       <div class="col-md-9 col-one mt-5"id="faq-container" >
-        <div class="row">
+        <div class="row  faq-row">
           <div class="col-md-1">
             <span class="faq-col-span"><img src="scr/img/yellow.jpg" alt=""></span>
           </div>
@@ -49,7 +49,7 @@
     </div>
     <div class="row">
       <div class="col-md-9 col-one mt-5"id="faq-container" >
-        <div class="row">
+        <div class="row  faq-row">
           <div class="col-md-1">
             <span class="faq-col-span"><img src="scr/img/yellow.jpg" alt=""></span>
           </div>

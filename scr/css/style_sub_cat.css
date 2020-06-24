@@ -568,7 +568,7 @@ body{
 
 
 /* signup */
-#form{
+#main-signup-form{
   align-items: center;
   align-content: center;
   background: var(--white);
@@ -636,6 +636,50 @@ body{
   font-size: 60;
 }
 /* signup end */
+
+/* chat-box start */
+.chat-wrapper{
+  background: url("../img/chat.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 45vh;
+  margin: 10% 0 0 30%;
+  width: 40%;
+  border-radius: 15px;
+}
+
+.chat-left{
+  background: var(--white);
+  border-radius: 15px;
+  width: 10%;
+  height: 50px;
+  padding: 5px;
+  margin: 40px 0 0px 40px;
+}
+
+.chat-right{
+  background: var(--white);
+  border-radius: 15px;
+  width: 10%;
+  height: 50px;
+  padding: 5px;
+  /* float: right; */
+  margin: 40px 0px 0 0px;
+  /* margin-right: 2px; */
+}
+
+.main-chat{
+  /* width: 80%; */
+  margin: 50px 5px 0 50px;
+}
+
+.chat-form{
+  margin-left: 20px;
+}
+/* .chat-empty{
+  display: none;
+} */
+/* chat-box end */
 
 /* @media */
 @media screen and (max-width: 900px), screen and (max-width: 700px){
@@ -861,6 +905,44 @@ body{
   }
   
   /* service-prov @media end */
+
+  
+  /* @media signup start */
+  /* #main-signup-body{
+    width: 40%;
+  } */
+  #main-signup-form{
+    /* align-items: center;
+    align-content: center; */
+    background: var(--white);
+    width: 20rem;
+    margin: -30px -500px -100px 5px;
+    padding: 0;
+    /* right: -60rem; */
+  }
+
+  #main-signup-form input, .main-signup{
+    width: 100%;
+    padding: 25px;
+    margin-left: -50px;
+  }
+
+  .main-signup{
+    padding-top: 5px;
+  }
+
+  .form-two-h4{
+    margin: 0 0 30px -20px;
+    font-size: 28px;
+    color: grey;
+  }
+
+  .form-three{
+    display: grid;
+    grid-template-columns: 10% 20% 10%;
+    margin-left: 10%;
+  }
+  /* @media signup end */
 }
 
 /* @media end*/
@@ -883,7 +965,7 @@ body{
 
 }
 
-@media screen   and  (max-width: 900px)and  (min-width: 768px){
+@media screen   and  (max-width: 900px) and  (min-width: 768px){
   .verified{
     display: block;
   }

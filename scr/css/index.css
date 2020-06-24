@@ -423,8 +423,21 @@ left: 0;
   .intel{
     margin: 70px 0 20px;
   }
+  /* invite page end */
+
+  /* @media faq start */
+  #faq-container{
+    border-top: 2px solid var(--blue);
+    padding-top: 10px;
+    border-radius: 5px;
+  }
+
+  .faq-row{
+    display: grid;
+    grid-template-columns: 20% 30%;
+  }
+  /* @media faq end  */
 }
-/* invite page end */
 /* Media Query Ends */
 
 

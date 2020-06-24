@@ -8,9 +8,9 @@
   <link rel="stylesheet" href="scr/css/bootstrap.min.css">
   <link rel="stylesheet" href="scr/css/style_sub_cat.css">
 </head>
-<body style="background: rgb(39, 2, 2);">
+<body style="background: rgb(39, 2, 2);" id="main-signup-body">
   <section class="container mt-3">
-    <form action="" class="form-group" id="form">
+    <form action="" class="form-group" id="main-signup-form">
       <h4 class="form-h4 text-center mt-5">Join <span><img src="scr/img/fixitwhite.png" alt=""></span></h4>
       <div class="" id="form-one">
         <input type="text" class="form-control" placeholder="Example@gmail.com">
