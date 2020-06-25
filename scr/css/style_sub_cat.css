@@ -681,6 +681,32 @@ body{
 } */
 /* chat-box end */
 
+#form-two input{
+  width: 70%;
+}
+
+#form-two #main-signup{
+  width: 70%;
+}
+
+#form-p{
+  width: 80%;
+  /* margin-right: 40px; */
+}
+#form-p img{
+  width: 50px;
+  height: 30px
+}
+
+.new-member{
+  margin-right: 170px;
+}
+
+.login-hr{
+  width: 70%;
+  border: 1px solid var(--gray);
+  margin-left: 0px;
+}
 /* @media */
 @media screen and (max-width: 900px), screen and (max-width: 700px){
   /* sub-cat @media */
@@ -1001,4 +1027,36 @@ body{
     border-radius: 10px;
     
   }
+
+  /* @media login start*/
+  #form-two input{
+    width: 70%;
+    margin-left: 45px;
+  }
+  
+  #form-two #main-signup{
+    width: 70%;
+    margin-left: 45px;
+    padding: 5px 25px 25px;
+  }
+  
+  #form-p{
+    width: 21rem;
+    margin-right: 0px;
+  }
+  #form-p img{
+    width: 50px;
+    height: 30px
+  }
+  
+  .new-member{
+    margin-right: 10px;
+  }
+  
+  .login-hr{
+    width: 100%;
+    border: 1px solid var(--gray);
+    margin-left: 0px;
+  }
+  /* @media login end */
 }
