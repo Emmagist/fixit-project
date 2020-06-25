@@ -43,8 +43,16 @@
           </div>
     </div>
  </div>
+ <div class="container">
+   <center>
+     <form action="">
+   <input type="search" placeholder="What Are You Waiting For?" class="find-services-onsmall form-control">
+   </form>
+   </center>
+   
+ </div>
  <div class="container" id="index-loginbtn">
-   <a href="" class="btn">SIGN IN</a>
+   <a href="login.php" class="btn">SIGN IN</a>
    <a href="signup.php" class="btn">SIGN UP</a>
  </div>
  <div class="nav">

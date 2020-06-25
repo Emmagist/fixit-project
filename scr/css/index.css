@@ -185,6 +185,9 @@ left: 0;
   font-size: 15px;
  
 }
+.find-services-onsmall{
+  display: none;
+}
 .pupolar-container .list-title{
   color: #fff;
   font-size: 15px;
@@ -580,4 +583,51 @@ left: 0;
   width: 10rem;
 }
 /* terms of use ends */
+
+@media screen   and  (max-width: 530px) and (min-width: 200px){
+  
+  .find-services-onsmall{
+    margin-bottom: 3%;
+    background-color: transparent;
+    width:70%;
+    border-radius: 10px;
+    height: 35px;
+    font-size: 15px;
+    text-align: center;
+    display: block;
+  }
+  .find-services{
+    display: none;
+    margin-bottom: -3%;
+  }
+
+  .logo-searcharea .list-title a{
+    margin-right:3%;
+    margin-left:3%;
+    margin-bottom:4%;
+  }
+
+  .title .logo-searcharea {
+    font-size: 25px;
+    color: #fff;
+    
+  }
+
+  .title .logo-searcharea img{ 
+    margin-right: -40px;
+  }
+
+  
+  .title{
+    margin-top: 9%;
+  }
+
+  #header-container{
+   
+    height: 50vh;
+  }
+  
+}
+
+
 
