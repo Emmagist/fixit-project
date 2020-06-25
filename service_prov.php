@@ -5,27 +5,26 @@
     <div class="row mt-5">
       <div class="col-md-4 main-service-col">
         <div class="row main-service-row">
-        <div class="col-md-6"><h3>Salami John</h3></div>
-        <div class="col-md-6 mt-2"><a href="#" id="chat-btn">Chat With Seller</a></div>
+          <div class="col-md-6"><h3>Salami John</h3></div>
+          <div class="col-md-6 mt-2"><a href="#" id="chat-btn">Chat With Seller</a></div>
         </div>
       </div>
-      <div class="col-md-2"></div>
-      <div class="col-md-2 main-service-card">
+      <div class="col-md-2" id="empty-service-pro-col"></div>
+      <div class="col-md-2 main-service-card ">
         <!-- <div class="job_profile"></div> -->
-        <div class="card" style="width: 18rem;">
-          <div class="card-body main-card" id="job_profile">
-            <div class="row mb-1">
+        <div class="card" style="width: 18rem;" id="job_profile">
+          <div class="card-body main-card">
+            <div class="row mb-1" id="job-rate">
               <div class="col-md-2"><img src="scr/img/2.jpg" alt="" class="icon-img"></div>
               <div class="col-md-9 job-rate">
                 <h4>Salami Toye</h4>
                 <p>Top Rated Seller</p>
               </div>
             </div>
-            
-              <p class="card-text">I Will Design Two Modern Logo's.</p>
-              <i class="fa fa-star star-icon"></i> <span class="">(1k.+)</span>
+            <p class="card-text">I Will Design Two Modern Logo's.</p>
+            <i class="fa fa-star star-icon"></i> <span class="">(1k.+)</span>
             </div><hr class=" service-prov-hr">
-            <div class="row">
+            <div class="row" id="cat-main-li-div">
               <div class="col-md-6 main-li-div">
                 <ul>
                   <li><i class="fa fa-heart mr-1 f-1x" aria-hidden="true"></i></li>
@@ -45,7 +44,7 @@
     <div class="job_done">Order Jobs Done By Salami</div>
     <div class="row   pb-4 pl-2">
       <div class="col-md-4 pt-5">
-        <div class="card" style="width: 18rem;">
+        <div class="card service-prov-card-row" style="width: 18rem;">
           <img src="scr/img/slide1.jpg" class="card-img-top" alt="...">
           <!-- <div class="card-body">
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -53,12 +52,12 @@
         </div>
       </div>
       <div class="col-md-4 pt-5">
-        <div class="card" style="width: 18rem;">
+        <div class="card service-prov-card-row" style="width: 18rem;">
           <img src="scr/img/slide1.jpg" class="card-img-top" alt="...">
         </div>
       </div>
       <div class="col-md-4 pt-5">
-        <div class="card" style="width: 18rem;">
+        <div class="card service-prov-card-row" style="width: 18rem;">
           <img src="scr/img/slide1.jpg" class="card-img-top" alt="..." width="70%">
         </div>
       </div>
@@ -88,9 +87,9 @@
       <img src="scr/img/2.jpg" alt="" class="icon-img-three ml-1"><br><br>
       <a href="#" id="chat-btn">Chat With Seller</a>
     </div>
-    <div class="col-md-6 text-center container">
+    <div class="col-md-6 text-center about-wrapper">
       <h3>About Seller</h3>
-      <div class="">
+      <div class="table_wrapper">
         <div class="row table_bordered">
           <div class="col-md-4 table_bord pt-2 pb-2">From <br><span>Lagos</span></div>
           <div class="col-md-4 table_bord pt-2 pb-2">Member<br><span>Since August 2020</span></div>

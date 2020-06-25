@@ -11,7 +11,7 @@
             <div class="row mb-1">
               <div class="col-md-2"><img src="scr/img/2.jpg" alt="" class="icon-img"></div>
               <div class="col-md-9"><h4>Salami Toye</h4></div>
-          </div>
+            </div>
             <p class="card-text">Some quick example text to build.</p>
             <i class="fa fa-star star-icon"></i> <span>(1k.+)</span>
           </div><hr>

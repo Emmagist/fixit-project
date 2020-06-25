@@ -9,6 +9,9 @@
   --gray:#c4c4c4;
   --white: #fff;
   --dack: rgba(0,0,0,.27);
+  --yellow: #f2b200;
+  --grey: #94989b;
+  --skyBlue: #c28fef;
 }
 body{
   margin: 0;
@@ -387,65 +390,8 @@ body{
 /**
 *USER PROFILE CSS STYLE END HERE
  */
-     
-/* footer start */
-#footer-container{
-  margin-top: 10%;
-}
-#footer{
-  border-bottom: 3px solid var(--gray);
-  padding-bottom: 20px;
-}
-#footer-h3{
-  color: var(--blue);
-}
-.footer{
-  list-style-type: none;
-}
-.footer li{
-  padding: 10px;
-  color: grey;
-  font-size: 18px;
-  font-weight: 600;
-}
-.footer li:hover{
-  text-decoration: underline;
-  cursor: pointer;
-}
-.footer li a{
-  text-decoration: none;
-  color: grey;
-}
 
-.footer li a:hover{
-  padding-left: 40px;
-}
-
-.media img{
-  width: 17%;
-}
-#footer-two li{
-  padding: 0px 10px;
-  /* color: var(--gray); */
-  color: grey;
-}
-#footer-two #instagram:hover{
-  color: #f46f30;
-}
-#footer-two #google:hover{
-  color: #4285f4;
-}
-#footer-two #facebook:hover{
-  color: #1877f2;
-}
-#footer-two #linkedin:hover{
-  color: #007bb5;
-}
-#footer-two #twitter:hover{
-  color: #1da1f2;
-}
-/* footer end */
-
+ 
 /* service provider started */
 .main-service-col{
   margin: 100px 0 0;
@@ -453,7 +399,6 @@ body{
 .main-service-row{
   border-bottom: 6px solid var(--dack);
   padding-bottom: 10px;
-  /* width: 100%; */
 }
 .main-service-prov{
   border-bottom: 1px solid var(--gray);
@@ -557,6 +502,13 @@ body{
   padding:10px;
   padding-top:0px;
   height: 100px;
+  
+}
+
+@media only screen and (max-width:37.5em) {
+  .prof-services2 {
+    margin-top:1em;
+  }
 }
 
 .profession {
@@ -623,7 +575,7 @@ body{
 
 
 /* signup */
-#form{
+#main-signup-form{
   align-items: center;
   align-content: center;
   background: var(--white);
@@ -692,8 +644,79 @@ body{
 }
 /* signup end */
 
+/* chat-box start */
+.chat-wrapper{
+  background: url("../img/chat.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 45vh;
+  margin: 10% 0 0 30%;
+  width: 40%;
+  border-radius: 15px;
+}
+
+.chat-left{
+  background: var(--white);
+  border-radius: 15px;
+  width: 10%;
+  height: 50px;
+  padding: 5px;
+  margin: 40px 0 0px 40px;
+}
+
+.chat-right{
+  background: var(--white);
+  border-radius: 15px;
+  width: 10%;
+  height: 50px;
+  padding: 5px;
+  /* float: right; */
+  margin: 40px 0px 0 0px;
+  /* margin-right: 2px; */
+}
+
+.main-chat{
+  /* width: 80%; */
+  margin: 50px 5px 0 50px;
+}
+
+.chat-form{
+  margin-left: 20px;
+}
+/* .chat-empty{
+  display: none;
+} */
+/* chat-box end */
+
+#form-two input{
+  width: 70%;
+}
+
+#form-two #main-signup{
+  width: 70%;
+}
+
+#form-p{
+  width: 80%;
+  /* margin-right: 40px; */
+}
+#form-p img{
+  width: 50px;
+  height: 30px
+}
+
+.new-member{
+  margin-right: 170px;
+}
+
+.login-hr{
+  width: 70%;
+  border: 1px solid var(--gray);
+  margin-left: 0px;
+}
 /* @media */
 @media screen and (max-width: 900px), screen and (max-width: 700px){
+  /* sub-cat @media */
   #main-two{
     border: none;
     padding: 2px;
@@ -715,7 +738,7 @@ body{
   }
 
   .main-card{
-    height: 175px;
+    height: 195px;
   }
 
   #cat-main-li-div{
@@ -728,85 +751,231 @@ body{
     display: none;
   }
 
+  /* sub-cat @media end */
 
+    /**
+  *USER PROFILE CSS STYLE
+  */
+  /* first main arae */
+  #first-div{
+    border: 1px solid rgb(226, 225, 225);
+    border-top: none;
+
+  }
+  .pic-area{
+    display: flex;
+    flex-direction: column;
+    padding-right: 100px;
+  }
+
+  .pic-area :nth-child(2){
+    display: flex;
+    flex-direction: column;
+  }
+  .pic-area img{
+    border-radius: 50%;
+    height: 180px;
+    padding-left: 10px;
+    width: 100%;
+    align-content: center;
+  }
+
+  #star-icon{
+    color: rgb(204, 172, 129);
+  }
+
+  .pic-area #pic-area-name{
+    margin-bottom: 3px;
+  }
+  .verified-onsmall{
+    display: block;
+    margin-bottom: -4px;
+  }
+  .verified{
+    display: none;
+  }
+
+  .btnpic{
+    display: block;
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 10px;
+    transition: all 0.3s;
+    margin-left: 1%;
+  }
+
+  /* third main */
+  #third-main button{
+    display: block;
+    margin-top: 10px;
+    width: 100%;
+    
+  }
+
+  #third-main #profileeditaddressbtn{
+    display: block;
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 10px;
+    transition: all 0.3s;
+  }
+
+  #third-main #profileeditaddressbtn{
+    display: block;
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 10px;
+    transition: all 0.3s;
+  }
+
+  #small-screen{
+    display: none;
+  }
 
   /**
-*USER PROFILE CSS STYLE
+  *USER PROFILE CSS STYLE END HERE
  */
+
  /* first main arae */
  /* #large-screen{
    display: none;
  } */
-#first-div{
-  border: 1px solid rgb(226, 225, 225);
-  border-top: none;
+  #first-div{
+    border: 1px solid rgb(226, 225, 225);
+    border-top: none;
+  }
 
-}
-.pic-area{
-  display: flex;
-  flex-direction: column;
-  padding-right: 100px;
-}
 
-.pic-area :nth-child(2){
-  display: flex;
-  flex-direction: column;
-}
-.pic-area img{
-  border-radius: 50%;
-  height: 180px;
-  padding-left: 10px;
-  width: 100%;
-  align-content: center;
-}
+ /* srvice-prov @media start */
+ .main-service-row{
+    border-bottom: none;
+    margin: 0 0 15px 4px;
+  }
 
-#star-icon{
-  color: rgb(204, 172, 129);
-}
+  .main-service-col{
+    margin: 10px 0 0;
+  }
 
-.pic-area #pic-area-name{
-  margin-bottom: 3px;
-}
-.verified-onsmall{
-  display: block;
-  margin-bottom: -4px;
-}
-.verified{
-  display: none;
-}
+  #job-rate{
+    height: 155px;
+  }
 
-.btnpic{
-  display: block;
-  margin-top: 10px;
-  width: 100%;
-  border-radius: 10px;
-  transition: all 0.3s;
-  margin-left: 1%;
-}
-
-/* third main */
-#third-main button{
-  display: block;
-  margin-top: 10px;
-  width: 100%;
+  .main-service-card{
+    margin: 10px 0 0 0;
+  }
   
-}
+  #empty-service-pro-col{
+    display: none;
+  }
 
-#third-main #profileeditaddressbtn{
-  display: block;
-  margin-top: 10px;
-  width: 100%;
-  border-radius: 10px;
-  transition: all 0.3s;
-}
+  .main-service-prov{
+    border: none;
+  }
 
-#small-screen{
-  display: none;
-}
-/**
-*USER PROFILE CSS STYLE END HERE
- */
+  .job_done{
+    width: 80%;
+    margin: 50px 0 0 25px;
+    font-weight: 600;
+    padding: 5px 2px 5px 5px;
+    border: 2px solid var(--gray);
+    border-radius: 10px;
+    background: transparent;
+    box-shadow: 2px 3px var(--gray);
+    text-align: center;
+  }
 
+  .main-service-card{
+    margin-left: 20px;
+    text-align: center;
+  }
+
+  #job_profile{
+    box-shadow: 2px 5px 5px 5px var(--gray);
+  }
+
+  .service-prov-card-row{
+    background: var(--grey);
+  }
+  
+  .icon-img{
+    border-radius: 50%;
+    width: 63px;
+    height: 63px;
+  }
+
+  #table_bordered{
+    border-bottom: 1px solid var(--gray);
+    border-right: 1px solid var(--gray);
+    border-left: 1px solid var(--gray);
+    width: 49vh;
+    text-align: center;
+  }
+
+  .about-wrapper{
+    margin-top: 50px;
+  }
+
+  .table_bordered{
+    display: grid;
+    grid-template-columns: 30% 35% 35%;
+    border: 1px solid var(--gray);
+    width: 49vh;
+  }
+
+  .table_wrapper{
+    margin-left: 20px;
+  }
+
+  .testimonials{
+    width: 70%;
+    font-weight: 600;
+    padding: 2px 2px 2px 5px;
+    border: 2px solid var(--gray);
+    border-radius: 10px;
+    background: transparent;
+    box-shadow: 2px 3px var(--gray);
+    text-align: center;
+  }
+  
+  /* service-prov @media end */
+
+  
+  /* @media signup start */
+  /* #main-signup-body{
+    width: 40%;
+  } */
+  #main-signup-form{
+    /* align-items: center;
+    align-content: center; */
+    background: var(--white);
+    width: 20rem;
+    margin: -30px -500px -100px 5px;
+    padding: 0;
+    /* right: -60rem; */
+  }
+
+  #main-signup-form input, .main-signup{
+    width: 100%;
+    padding: 25px;
+    margin-left: -50px;
+  }
+
+  .main-signup{
+    padding-top: 5px;
+  }
+
+  .form-two-h4{
+    margin: 0 0 30px -20px;
+    font-size: 28px;
+    color: grey;
+  }
+
+  .form-three{
+    display: grid;
+    grid-template-columns: 10% 20% 10%;
+    margin-left: 10%;
+  }
+  /* @media signup end */
 }
 
 /* @media end*/
@@ -829,7 +998,7 @@ body{
 
 }
 
-@media screen   and  (max-width: 900px)and  (min-width: 768px){
+@media screen   and  (max-width: 900px) and  (min-width: 768px){
   .verified{
     display: block;
   }
@@ -865,4 +1034,36 @@ body{
     border-radius: 10px;
     
   }
+
+  /* @media login start*/
+  #form-two input{
+    width: 70%;
+    margin-left: 45px;
+  }
+  
+  #form-two #main-signup{
+    width: 70%;
+    margin-left: 45px;
+    padding: 5px 25px 25px;
+  }
+  
+  #form-p{
+    width: 21rem;
+    margin-right: 0px;
+  }
+  #form-p img{
+    width: 50px;
+    height: 30px
+  }
+  
+  .new-member{
+    margin-right: 10px;
+  }
+  
+  .login-hr{
+    width: 100%;
+    border: 1px solid var(--gray);
+    margin-left: 0px;
+  }
+  /* @media login end */
 }
