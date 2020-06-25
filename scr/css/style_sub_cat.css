@@ -502,6 +502,13 @@ body{
   padding:10px;
   padding-top:0px;
   height: 100px;
+  
+}
+
+@media only screen and (max-width:37.5em) {
+  .prof-services2 {
+    margin-top:1em;
+  }
 }
 
 .profession {

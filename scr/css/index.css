@@ -462,25 +462,44 @@ left: 0;
   font-size: 4rem;
 }
 
-@media only screen and (max-width: 56.25em) {
+/* tab-landscape */
+@media only screen and (max-width: 112.5em) {
   .fig-container {
     text-align: center;
   }
   .fig_shape {
     width: 100%;
-    transform: translateX(80%);
+    
   }
 }
 
+/* tab-portrait */
+@media only screen and (max-width: 56.25em) {
+  .fig-container {
+    text-align: center;
+    width:100%;
+    /* background-color: orangered; */
+  }
+  .fig_shape {
+    width: 100%;
+    transform: translateX(-11%);
+  }
+  
+}
+
+
+/* phone */
 @media only screen and (max-width: 37.5em) {
   .fig-container {
     text-align: center;
   }
   .fig_shape {
     width: 100%;
+    /* margin-left:2rem; */
     transform: translateX(30%);
   }
 }
+
 .fig_shape {
   border-radius: 3px;
   width: 20rem;
@@ -502,8 +521,6 @@ left: 0;
   padding-bottom:5rem;
 }
 
-
-
 .title-about {
   padding: 10px;
   font-size:2rem;
@@ -518,7 +535,7 @@ left: 0;
 /* about ends */
 
 /* terms of use starts*/
-.main {
+.mainbg {
   background-color: #444;
 }
 
