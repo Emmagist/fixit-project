@@ -34,8 +34,11 @@
       <div class="form-two">
       <button type="submit" class="form-control mb-3 btn btn-primary text-white" name="service_provider">Service Provider</button>
       </div>
-      <div class="footer text-center mt-3 pb-3">
-        <p>Already a member? <a href="#" class="text-primary">SignIn</a></p>
+
+      <div class="footer text-center mt-5 pb-3">
+        <p class="form-p">By joining I agree to receive mails from <span><img src="scr/img/fixitwhite.png" alt=""></span></p>
+        <p>Already a member? <a href="<?= BASE_URL . '/login.php' ?>" class="text-primary">SignIn</a></p>
+
       </div>
     </form>
   </section>
