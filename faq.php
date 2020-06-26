@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
 <?php require_once "scr/inc/header1.php"; ?>
 
   <div class="container">

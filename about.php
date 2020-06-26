@@ -1,5 +1,4 @@
-<html>
-  <?php require_once "scr/inc/header1.php"; ?>
+ <?php require_once "scr/inc/header1.php"; ?>
   <main class="main">
     <div class="container">
       <div class="row">

@@ -2,11 +2,11 @@
    include "path.php";
     include ROOT_PATH . "/process/user.pr.php";
     include ROOT_PATH . "/scr/inc/header2.php";
-   if (!isset($_SESSION['unique_id'])) {
-      header('location: signup.php');
-    }else {
-      $unique_id = $_SESSION['unique_id'];
-    }
+  //  if (!isset($_SESSION['unique_id'])) {
+  //     header('location: signup.php');
+  //   }else {
+  //     $unique_id = $_SESSION['unique_id'];
+  //   }
    ?>
   
   <main class="main">
