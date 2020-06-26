@@ -17,7 +17,7 @@
         <input type="text" class="form-control mb-4 mt-3" placeholder="Password">
         <button class="btn btn-primary form-control" id="main-signup">SignIn</button>
       </div>
-      <div class="footer text-center mt-5">
+      <div class="login-footer text-center mt-5" >
         <p id="form-p">By joining I agree to receive mails from <span><img src="scr/img/fixitwhite.png" alt=""></span></p><hr class="login-hr">
         <p class="new-member text">New member? <a href="signup.php" class="text-primary">SignUp</a></p>
       </div>

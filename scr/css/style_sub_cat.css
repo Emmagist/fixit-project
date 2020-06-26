@@ -576,8 +576,8 @@ body{
 
 /* signup */
 #main-signup-form{
-  align-items: center;
-  align-content: center;
+  /* align-items: center;
+  align-content: center; */
   background: var(--white);
   width: 60%;
   margin-left: 20%;
@@ -589,6 +589,8 @@ body{
 
 #form-one, .form-two{
   margin-left: 100px;
+  /* margin-right: 90px; */
+  width: 70%;
 }
 
 .form-h4{
@@ -607,10 +609,10 @@ body{
   color: grey;
 }
 
-#form input, .main-signup{
+/* #form input, .main-signup{
   width: 80%;
   padding: 25px;
-}
+} */
 
 .form-p{
   border-bottom: 2px solid var(--gray);
@@ -688,12 +690,17 @@ body{
 } */
 /* chat-box end */
 
-#form-two input{
+/* #form-two input{
   width: 70%;
+} */
+
+#form-two input, #main-signup{
+  width: 70%;
+  margin-left: 70px;
 }
 
-#form-two #main-signup{
-  width: 70%;
+.login-footer{
+  margin-left: 75px;
 }
 
 #form-p{
@@ -710,7 +717,7 @@ body{
 }
 
 .login-hr{
-  width: 70%;
+  width: 78%;
   border: 1px solid var(--gray);
   margin-left: 0px;
 }
