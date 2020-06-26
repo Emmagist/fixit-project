@@ -12,8 +12,8 @@
         <a href="#!" class="dash-nav-item dash-nav-dropdown-toggle">
             <i class="fas fa-align-justify"></i> Users </a>
         <div class="dash-nav-dropdown-menu">
-            <a href="login.php" class="dash-nav-dropdown-item">Log in</a>
-            <a href="signup.php" class="dash-nav-dropdown-item">Sign up</a>
+            <a href="login.php" class="dash-nav-dropdown-item">View</a>
+            <a href="signup.php" class="dash-nav-dropdown-item">Add</a>
         </div>
     </div>
     <div class="dash-nav-dropdown">
@@ -28,7 +28,7 @@
         <i class="fas fa-align-justify"></i>
          Categories 
     </a>
-    <a href="#" class="dash-nav-item">
+    <a href="login.php" class="dash-nav-item">
         <i class="fas fa-sign-in-alt text-white"></i>
          login 
     </a>
