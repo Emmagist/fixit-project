@@ -3,14 +3,14 @@ include "init.php";
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\PHPMailer;
 
-require '../vendor/autoload.php';
+require 'vendor/autoload.php';
 
 $mail = new PHPMailer(true); // Passing `true` enables exceptions
  
 class Mailer
 {
    
-        public function sendMail($name, $email, $subject, $message,$sender_email, $password,$filepath){
+        public function verificationMail($firstname,$lastname,$email,$code){
         try {
           $mail = new PHPMailer(); 
           $namefrom = "Fixit Managemment";
@@ -19,18 +19,18 @@ class Mailer
           $mail->SMTPAuth   = true;   
           $mail->Host       = "fixit.com";
           $mail->Port       = '465';
-          $mail->Username   = $sender_email;
-          $mail->Password   = $password;
-          $mail->addAttachment($filepath);         // Add attachments
+          $mail->Username   = 'fixit@gmail.com';
+          $mail->Password   = 'fixitpassword';
+          //$mail->addAttachment($filepath);         // Add attachments
           $mail->SMTPSecure = "ssl";     
-          $mail->setFrom($sender_email,$namefrom);   
+          $mail->setFrom('fixit@gmail.com','Fixit Admin');   
          // $mail->addCC($from,$namefrom);      
-          $mail->Subject  = $subject;
+          $mail->Subject  = 'title here';
          // $mail->AltBody  = $altmess;
           $mail->isHTML(true);
           //$mail->Timeout = 2000;
-          $mail->Body = $message;
-          $mail->addAddress($email, $name);
+          $mail->Body = 'message here';
+          $mail->addAddress($email, $firstname .''.$lastname);
             
          } catch (Exception $e) {
             $mail->ErrorInfo;

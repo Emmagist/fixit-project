@@ -1,3 +1,5 @@
+<?php include "path.php";?>
+<?php include ROOT_PATH . "/process/user.pr.php";?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
