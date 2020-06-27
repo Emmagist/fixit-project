@@ -982,6 +982,10 @@ body{
     grid-template-columns: 10% 20% 10%;
     margin-left: 10%;
   }
+
+  .login-footer{
+    margin-left: 15px;
+  }
   /* @media signup end */
 }
 

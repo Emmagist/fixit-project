@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="scr/css/bootstrap.min.css">
   <link rel="stylesheet" href="scr/css/style_sub_cat.css">
 </head>
-<body style="background: rgb(39, 2, 2);" id="main-signup-body">
+<body id="main-signup-body">
   <section class="container mt-3">
     <form action="" class="form-group" id="main-signup-form">
       <h4 class="form-h4 text-center mt-5">Join <span><img src="scr/img/fixitwhite.png" alt=""></span></h4>
@@ -33,7 +33,7 @@
       <input type="text" class="form-control mb-4" placeholder="Service Provider">
         <button class="btn btn-primary form-control main-signup">SignIn</button>
       </div>
-      <div class="footer text-center mt-5">
+      <div class="login-footer text-center mt-5">
         <p class="form-p">By joining I agree to receive mails from <span><img src="scr/img/fixitwhite.png" alt=""></span></p>
         <p>Already a member? <a href="login.php" class="text-primary">SignIn</a></p>
       </div>
