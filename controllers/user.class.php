@@ -20,15 +20,15 @@ class User {
      
   }
 
-  public function InsertUser($email,$firstname,$lastname,$password,$address,$role, $verified, $status,$service_role,$code,$unique_id){
+  public function InsertUser($email,$firstname,$lastname,$password,$address,$role, $verified, $status, $service_role, $code,$unique_id,$phone_number,$phone_number_two,$stateR,$lga,$description,$fieldOfProfession){
     global $db, $fun;
-    $db->saveData(TBL_USER , "user_email = '$email',user_firstname = '$firstname', user_password = '$password', user_lastname = '$lastname', user_address = '$address', role = '$role', verified = '$verified', status = '$status', service_role ='$service_role', code = '$code', unique_id ='$unique_id' "); 
+    $db->saveData(TBL_USER , "user_email = '$email',user_firstname = '$firstname', user_password = '$password', user_lastname = '$lastname', user_address = '$address', role = '$role', verified = '$verified', status = '$status', service_role ='$service_role', code = '$code', unique_id ='$unique_id',phone_number ='$phone_number',phone_number_two ='$phone_number_two',state_of_residence='$stateR',lga='$lga',description='$description',field_of_profession='$fieldOfProfession' "); 
     
   }
 
-  public function UpdateUser($id, $email,$firstname,$lastname,$password,$address,$role, $verified, $status){
+  public function UpdateUser($email,$firstname,$lastname,$password,$address,$role, $verified, $status, $service_role, $code,$unique_id,$phone_number,$phone_number_two,$stateR,$lga,$description,$fieldOfProfession){
     global $db, $fun;
-    $db->updateData(TBL_USER,  "email = '$email',firstname = '$firstname', password = '$password', lastname = '$lastname', address = '$address', role = '$role', verified = '$verified', status = '$status'", "user_id = '$id'");
+    $db->updateData(TBL_USER,  "user_email = '$email',user_firstname = '$firstname', user_password = '$password', user_lastname = '$lastname', user_address = '$address', role = '$role', verified = '$verified', status = '$status', service_role ='$service_role', code = '$code', unique_id ='$unique_id',phone_number ='$phone_number',phone_number_two ='$phone_number_two',state_of_residence='$stateR',lga='$lga',description='$description',field_of_profession='$fieldOfProfession' ", "unique_id = '$unique_id'");
   }
 
   public function DeleteUser($id){

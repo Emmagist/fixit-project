@@ -1,4 +1,3 @@
-<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -53,6 +52,9 @@
    </form>
    </center>
    
+ </div>
+ <div class="col-md-12">
+    <?php require_once "scr/inc/messages.php";?>
  </div>
  <div class="container" id="index-loginbtn">
    <a href="login.php" class="btn">SIGN IN</a>
