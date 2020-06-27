@@ -1,5 +1,4 @@
-<?php include "path.php";?>
-<?php include ROOT_PATH . "/process/user.pr.php";?>
+<?php include "process/user.pr.php";?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,7 +36,7 @@
       <div class="login-footer text-center mt-5">
       <div class="footer text-center mt-5 pb-3">
         <p class="form-p">By joining I agree to receive mails from <span><img src="scr/img/fixitwhite.png" alt=""></span></p>
-        <p>Already a member? <a href="<?= BASE_URL . '/login.php' ?>" class="text-primary">SignIn</a></p>
+        <p>Already a member? <a href="login.php" class="text-primary">SignIn</a></p>
 
       </div>
     </form>

@@ -22,7 +22,7 @@
       <div class="col-md-3"></div>
       <div class="col-md-3 log-sign">
         <button class="btn-sign-login">
-          <a href="<?= BASE_URL . '/login.php'?>" class="login">Login</a>|<a href="<?= BASE_URL . '/signup.php'?>" class="sign-up">Signup</a>
+          <a href="login.php" class="login">Login</a>|<a href="signup.php" class="sign-up">Signup</a>
         </button>
       </div>
     </div> 
@@ -31,8 +31,8 @@
   <div class="nav">
     <div class="container">
       <ul>
-        <li><a href="<?= BASE_URL . '/index.php'?>">Home</a></li>
-        <li><a href="<?= BASE_URL . '/sub_cat.php'?>">Graphics & Designs</a></li>
+        <li><a href="index.php">Home</a></li>
+        <li><a href="sub_cat.php">Graphics & Designs</a></li>
         <li><a href="#">Programming & Tech</a></li>
         <li><a href="#">Music & Video</a></li>
         <li><a href="#">Handywork</a></li>

@@ -38,7 +38,7 @@ if (isset($_POST['submit_registration'])){
   $role = 'user';
   $verified = '';
   $address = $_POST['address'];
-  $password = password_hash($password, PASSWORD_BCRYPT);
+  $password = password_hash($password, PASSWORD_DEFAULT);
   $code = md5(rand('12345','12345'));
   $user->InsertUser($email,$firstname,$lastname,$password,$address,$role, $verified, $status, $service_role, $code,$unique_id);
   $mailer->verificationMail($firstname,$lastname,$email,$code);

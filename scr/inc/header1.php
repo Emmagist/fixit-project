@@ -15,7 +15,7 @@
         <div class="logo"><img src="scr/img/Fixitlogo transparent.png" alt="Fixit logo" class="logo-white"></div>
         <nav class="navigation">
             <ul>
-                <li><a href="<?= BASE_URL . '/index.php'?>">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 <li><a href="#">Directory</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Language <i class="fa fa-chevron-down "></i></a></li>
@@ -55,13 +55,13 @@
    
  </div>
  <div class="container" id="index-loginbtn">
-   <a href="<?= BASE_URL . '/login.php'?>" class="btn">SIGN IN</a>
-   <a href="<?= BASE_URL . '/signup.php'?>" class="btn">SIGN UP</a>
+   <a href="login.php" class="btn">SIGN IN</a>
+   <a href="signup.php" class="btn">SIGN UP</a>
  </div>
  <div class="nav">
     <div class="container">
       <ul>
-        <li><a href="<?= BASE_URL . '/sub_cat.php'?>">Graphics & Designs</a></li>
+        <li><a href="sub_cat.php">Graphics & Designs</a></li>
         <li><a href="#">Programming & Tech</a></li>
         <li><a href="#">Music & Video</a></li>
         <li><a href="#">Handywork</a></li>

@@ -1,7 +1,7 @@
   <?php
    include "path.php";
-    include ROOT_PATH . "/process/user.pr.php";
-    include ROOT_PATH . "/scr/inc/header2.php";
+    include "process/user.pr.php";
+    include "scr/inc/header2.php";
   //  if (!isset($_SESSION['unique_id'])) {
   //     header('location: signup.php');
   //   }else {

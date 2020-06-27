@@ -1,5 +1,4 @@
-<?php include "path.php";?>
-<?php  include ROOT_PATH . "/scr/inc/header2.php";?>
+<?php  include "scr/inc/header2.php";?>
   <div class="main">
     <h3>Logo's</h3>
     <div class="row mb-5">

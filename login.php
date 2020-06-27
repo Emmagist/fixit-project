@@ -1,5 +1,4 @@
-<?php include "path.php";?>
-<?php include ROOT_PATH . "/process/user.pr.php";?>
+<?php include "process/user.pr.php";?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +20,7 @@
       </div>
       <div class="login-footer text-center mt-5" >
         <p id="form-p">Welcome back login into your account here <span><img src="scr/img/fixitwhite.png" alt=""></span></p><hr class="login-hr">
-        <p class="new-member text">New member? <a href="<?= BASE_URL . '/signup.php' ?>" class="text-primary">SignUp</a></p>
+        <p class="new-member text">New member? <a href="signup.php" class="text-primary">SignUp</a></p>
       </div>
     </form>
   </section>
