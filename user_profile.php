@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
 <?php require_once "scr/inc/header2.php"; ?>
   <main class='main'>
     <div class="container text-center" id="first-div">

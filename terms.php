@@ -1,5 +1,4 @@
-<html>
-  <?php require_once "scr/inc/header1.php"; ?>
+ <?php require_once "scr/inc/header1.php"; ?>
   <main class="main mainbg">
       <br>
       <!-- <div class="row row-size"> -->

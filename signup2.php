@@ -1,8 +1,18 @@
-<html>
-  <?php require_once "scr/inc/header2.php"; ?>
+  <?php
+   include "path.php";
+    include ROOT_PATH . "/process/user.pr.php";
+    include ROOT_PATH . "/scr/inc/header2.php";
+  //  if (!isset($_SESSION['unique_id'])) {
+  //     header('location: signup.php');
+  //   }else {
+  //     $unique_id = $_SESSION['unique_id'];
+  //   }
+   ?>
+  
   <main class="main">
     <div class="container">
       <div class="row">
+      <?php require_once "scr/inc/messages.php";?>
         <div class="col-lg-12">
           <div class="title">
             Welcome To <img src="scr/img/fixitwhite.png" alt="Fixit logo" class="logo-white">
@@ -16,7 +26,8 @@
           We want to get to know you more, please the following informations
         </div>
       </div>
-
+      
+      <input type='hidden' name='unique_id' value='<?=$unique_id?>'>
       <div class="row">
         <div class="col-md-6">
           <div class="form-group">
@@ -91,4 +102,4 @@
   </div>
 </main>
 
-<?php require_once "scr/inc/footer.php"; ?>
+<?php require_once "scr/inc/footer.php";?>

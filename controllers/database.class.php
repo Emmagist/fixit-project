@@ -1,6 +1,5 @@
 <?php
 require_once "constants.php";
-
 class Database {
   
 	public $connection;
@@ -91,6 +90,13 @@ class Database {
     $result = $this->query("DELETE FROM " . $table . "  WHERE " . $conditions);
     return $result;
   }
+
+  /***
+   * GET LAST INSERTED ID
+   */
+  public function insert_id() {
+		return mysqli_insert_id($this->connection);
+	}
 }
 
 $db = new Database;

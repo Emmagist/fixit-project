@@ -8,6 +8,8 @@ class Functions {
 		var_dump($array);
 		echo "</pre>";
 	}
+
+	
   
 }
 
