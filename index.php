@@ -1,5 +1,5 @@
-<?php include "path.php";?>
-<?php include ROOT_PATH . "/scr/inc/header1.php"; ?>
+<?php include "process/user.pr.php";?>
+<?php include "scr/inc/header1.php"; ?>
 
 <div class="container mt-5" id="first-container">
   <div class="container  text-center mb-5 mt-4" id="mainbody-title">
@@ -78,7 +78,7 @@
   </div>
   
 </div>
-<?php include ROOT_PATH ."/scr/inc/footer.php"; ?>
+<?php include "scr/inc/footer.php"; ?>
 <script>
 document.querySelector('.hamburger').addEventListener('click', (e) => {
     e.preventDefault();

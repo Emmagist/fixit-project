@@ -15,10 +15,19 @@ if (isset($_POST['service_employer']) || isset($_POST['service_provider'])){
   $role = '';
   $verified = '';
   $address = '';
+  $phone_number ='';
+  $phone_number_two='';
+  $description = '';
+  $lga ='';
+  $stateR = '';
+  $fieldOfProfession = '';
   $code = '';
-  $data = $user->InsertUser($email,$firstname,$lastname,$password,$address,$role, $verified, $status,$service_role,$code,$unique_id);
-  $_SESSION['message-info'] = "Please continue your registration here";
   $_SESSION['unique_id'] =  md5(rand('99999','99999'));
+  $unique_id = $_SESSION['unique_id'] ;
+  $_SESSION['email'] = $email;
+  $_SESSION['service_role'] =$service_role;
+  $data =  $user->InsertUser($email,$firstname,$lastname,$password,$address,$role, $verified, $status, $service_role, $code,$unique_id,$phone_number,$phone_number_two,$stateR,$lga,$description,$fieldOfProfession);
+  $_SESSION['message-info'] = "Please continue your registration here";
   header('location: signup2.php');
  
   
@@ -27,23 +36,32 @@ if (isset($_POST['service_employer']) || isset($_POST['service_provider'])){
 /***
  * Registration for users
  */
-if (isset($_POST['submit_registration'])){
+if (isset($_POST['registration'])){
+  //$fun->arrayPrinter($_POST);exit;
   $firstname = $_POST['firstname'];
   $lastname =$_POST['lastname'];
   $password = $_POST['password'];
   $email = $_POST['email'];
   $unique_id = $_POST['unique_id'];
+  $email = $_POST['email'];
+  $service_role = $_POST['service_role'];
   $cpassword = $_POST['confirmpassword'];
   $status = 0;
   $role = 'user';
   $verified = '';
+  $phone_number =$_POST['phone_number'];
+  $phone_number_two=$_POST['phone_number_two'];
+  $description = $_POST['description'];
+  $lga =$_POST['lga'];
+  $stateR = $_POST['stateR'];
+  $fieldOfProfession = $_POST['field_of_profession'];
   $address = $_POST['address'];
-  $password = password_hash($password, PASSWORD_BCRYPT);
+  $password = password_hash($password, PASSWORD_DEFAULT);
   $code = md5(rand('12345','12345'));
-  $user->InsertUser($email,$firstname,$lastname,$password,$address,$role, $verified, $status, $service_role, $code,$unique_id);
+  $user->UpdateUser($email,$firstname,$lastname,$password,$address,$role, $verified, $status, $service_role, $code,$unique_id,$phone_number,$phone_number_two,$stateR,$lga,$description,$fieldOfProfession);
   $mailer->verificationMail($firstname,$lastname,$email,$code);
   $_SESSION['message-success'] = "Registration successfull and a verification link has been sent to your email , Thanks.";
-  header('location: signup2.php');
+  header('location: index.php');
 }
 
 /***
