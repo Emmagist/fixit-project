@@ -20,3 +20,7 @@ if (isset($_SESSION['message-warning'])) {
   echo "<li class='text-center alert alert--warning' role='alert' style='list-style: none;'>".$_SESSION['message-warning']."</li>"; 
   unset($_SESSION['message-warning']);
 }
+
+if (!empty($error)) {
+    echo "<li class='text-center alert alert-danger' role='alert' style='list-style: none;'>".$error."</li>";
+}

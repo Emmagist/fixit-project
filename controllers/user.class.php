@@ -1,7 +1,11 @@
 <?php
 include "init.php";
 class User {
-  public $firstname, $email;
+
+  public static  function  InsertToken($token){
+      global $db;
+      return $db->saveData(TBL_USER ,"unique_id ='$token'");
+  }
 
   public function getAllUser(){
     global $db, $fun;
@@ -13,6 +17,18 @@ class User {
     return $db->selectData("users" , "*" , "id ='$id' ");
      
   }
+
+public static function  findUserByEmail($email){
+    global $db, $fun;
+    return $db->selectData("users" , "*" , "user_email ='$email' ");
+
+}
+
+    public static function  findUserByUniqueId($column){
+        global $db, $fun;
+        return $db->selectData("users" , "*" , "unique_id ='$column' ");
+
+    }
 
   public function getUserByServicerole($id){
     global $db, $fun;
@@ -38,5 +54,5 @@ class User {
 
 }
 
-$user = new User;
+    $user = new User;
 

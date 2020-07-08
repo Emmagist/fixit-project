@@ -6,7 +6,7 @@ session_start();
  */
 if (isset($_POST['service_employer']) || isset($_POST['service_provider'])){
   $data = array_keys($_POST);
-  $service_role = ($data[1] == 'service_employer') ? 'service_employer' : 'service_provider';
+  $service_role = ($data[1] === 'service_employer') ? 'service_employer' : 'service_provider';
   $email = $_POST['email'];
   $firstname = '';
   $lastname = '';
@@ -22,13 +22,28 @@ if (isset($_POST['service_employer']) || isset($_POST['service_provider'])){
   $stateR = '';
   $fieldOfProfession = '';
   $code = '';
-  $_SESSION['unique_id'] =  md5(rand('99999','99999'));
-  $unique_id = $_SESSION['unique_id'] ;
-  $_SESSION['email'] = $email;
-  $_SESSION['service_role'] =$service_role;
-  $data =  $user->InsertUser($email,$firstname,$lastname,$password,$address,$role, $verified, $status, $service_role, $code,$unique_id,$phone_number,$phone_number_two,$stateR,$lga,$description,$fieldOfProfession);
-  $_SESSION['message-info'] = "Please continue your registration here";
-  header('location: signup2.php');
+  if (!User::findUserByEmail($email)){
+      if(empty($email)){
+          $error = 'Provide your email';
+      }elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)){
+          $error = 'Invalid Email Address';
+      } else {
+          $token = md5(mt_rand('99999','99999'));
+          $_SESSION['unique_id'] =  $token;
+          $unique_id = $_SESSION['unique_id'] ;
+          $_SESSION['email'] = $email;
+          $_SESSION['service_role'] =$service_role;
+          $data = User::InsertToken($token);
+          //$data =  $user->InsertUser($email,$firstname,$lastname,$password,$address,$role, $verified, $status, $service_role, $code,$unique_id,$phone_number,$phone_number_two,$stateR,$lga,$description,$fieldOfProfession);
+          $_SESSION['message-info'] = "Please continue your registration here";
+          header('location: signup2.php');
+      }
+  }else {
+      $error = 'Email has already been taken';
+  }
+
+
+
  
   
 }
@@ -58,10 +73,15 @@ if (isset($_POST['registration'])){
   $address = $_POST['address'];
   $password = password_hash($password, PASSWORD_DEFAULT);
   $code = md5(rand('12345','12345'));
-  $user->UpdateUser($email,$firstname,$lastname,$password,$address,$role, $verified, $status, $service_role, $code,$unique_id,$phone_number,$phone_number_two,$stateR,$lga,$description,$fieldOfProfession);
-  $mailer->verificationMail($firstname,$lastname,$email,$code);
-  $_SESSION['message-success'] = "Registration successfull and a verification link has been sent to your email , Thanks.";
-  header('location: index.php');
+  if (User::findUserByUniqueId($unique_id)){
+      $user->UpdateUser($email,$firstname,$lastname,$password,$address,$role, $verified, $status, $service_role, $code,$unique_id,$phone_number,$phone_number_two,$stateR,$lga,$description,$fieldOfProfession);
+      $mailer->verificationMail($firstname,$lastname,$email,$code);
+      $_SESSION['message-success'] = "Registration successful and a verification link has been sent to your email , Thanks.";
+      header('location: index.php');
+  }else {
+      $error = 'Error Registering';
+  }
+
 }
 
 /***
