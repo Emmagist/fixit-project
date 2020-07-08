@@ -1,51 +1,30 @@
 <?php
 require_once "controllers/init.php";
-session_start();
+//session_start();
 /***
  * Post registration for users
  */
 if (isset($_POST['service_employer']) || isset($_POST['service_provider'])){
-  $data = array_keys($_POST);
-  $service_role = ($data[1] === 'service_employer') ? 'service_employer' : 'service_provider';
-  $email = $_POST['email'];
-  $firstname = '';
-  $lastname = '';
-  $password = '';
-  $status = 0;
-  $role = '';
-  $verified = '';
-  $address = '';
-  $phone_number ='';
-  $phone_number_two='';
-  $description = '';
-  $lga ='';
-  $stateR = '';
-  $fieldOfProfession = '';
-  $code = '';
-  if (!User::findUserByEmail($email)){
+      $data = array_keys($_POST);
+      $service_role = ($data[1] === 'service_employer') ? 'service_employer' : 'service_provider';
+      $email = $_POST['email'];
+      //$fun::arrayPrinter(User::findUserByEmail($email));
       if(empty($email)){
-          $error = 'Provide your email';
-      }elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)){
+          $error = 'Provide Your Email ';
+      }else if( !filter_var($email, FILTER_VALIDATE_EMAIL) ){
           $error = 'Invalid Email Address';
+      }elseif (User::findUserByEmail($email)){
+          $error = 'Email Already Exist ';
       } else {
           $token = md5(mt_rand('99999','99999'));
           $_SESSION['unique_id'] =  $token;
           $unique_id = $_SESSION['unique_id'] ;
           $_SESSION['email'] = $email;
-          $_SESSION['service_role'] =$service_role;
+          $_SESSION['service_role'] = $service_role;
           $data = User::InsertToken($token);
-          //$data =  $user->InsertUser($email,$firstname,$lastname,$password,$address,$role, $verified, $status, $service_role, $code,$unique_id,$phone_number,$phone_number_two,$stateR,$lga,$description,$fieldOfProfession);
           $_SESSION['message-info'] = "Please continue your registration here";
           header('location: signup2.php');
       }
-  }else {
-      $error = 'Email has already been taken';
-  }
-
-
-
- 
-  
 }
 
 /***

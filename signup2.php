@@ -1,6 +1,8 @@
   <?php
+  session_start();
     include "process/user.pr.php";
     include "scr/inc/header2.php";
+
    if (!isset($_SESSION['unique_id']) && isset($_SESSION['email']) && isset($_SESSION['service_role'])) {
       header('location: signup.php');
     }else {
