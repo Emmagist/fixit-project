@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 28, 2020 at 12:19 AM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.2
+-- Generation Time: Jul 09, 2020 at 01:56 AM
+-- Server version: 10.4.13-MariaDB
+-- PHP Version: 7.4.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -21,6 +20,26 @@ SET time_zone = "+00:00";
 --
 -- Database: `fixit`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `post_registration_for_user`
+--
+
+CREATE TABLE `post_registration_for_user` (
+  `id` int(11) NOT NULL,
+  `reg_token` varchar(200) NOT NULL,
+  `date` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `post_registration_for_user`
+--
+
+INSERT INTO `post_registration_for_user` (`id`, `reg_token`, `date`) VALUES
+(1, 'd3eb9a9233e52948740d7eb8c3062d', '2020-07-09 01:31:04'),
+(4, 'd3eb9a9233e52948740d7eb8c3062d14', '2020-07-09 01:51:23');
 
 -- --------------------------------------------------------
 
@@ -54,15 +73,14 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id`, `unique_id`, `user_email`, `user_firstname`, `user_lastname`, `user_password`, `user_address`, `lga`, `state_of_residence`, `phone_number`, `phone_number_two`, `field_of_profession`, `description`, `service_role`, `role`, `code`, `verified`, `status`, `last_login`, `updated_at`, `deleted_at`, `regester_at`) VALUES
-(3, 'd3eb9a9233e52948740d7eb8c3062d14', 'kenny4all40@gmail.com', 'Ayeni', 'ken', '$2y$10$.cD120pUoTlkR.UH71oId.Nc/i0BDEFKEQqpGZkLktmgAnp05Ru5S', 'kdfkdfkjfjk', 'kfdfkfjkfjk', 'jfjkfkjfjk', '111', '111', 'kdkdjkfdjk', 'kjfjkfjkfjk', 'service_provider', 'user', '827ccb0eea8a706c4c34a16891f84e7b', '', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '2020-06-27 14:57:35');
-
---
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `post_registration_for_user`
+--
+ALTER TABLE `post_registration_for_user`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `users`
@@ -75,10 +93,16 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `post_registration_for_user`
+--
+ALTER TABLE `post_registration_for_user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

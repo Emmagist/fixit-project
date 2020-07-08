@@ -36,9 +36,9 @@ public static function  findUserByEmail($email){
      
   }
 
-  public function InsertUser($email,$firstname,$lastname,$password,$address,$unique_id,$role, $verified, $status, $service_role, $code,$phone_number,$phone_number_two,$stateR,$lga,$description,$fieldOfProfession){
+  public function InsertUser($email,$firstname,$lastname,$password,$address,$reg_token,$role, $verified, $status, $service_role, $code,$phone_number,$phone_number_two,$stateR,$lga,$description,$fieldOfProfession){
     global $db, $fun;
-    $db->saveData(TBL_USER , "user_email = '$email',user_firstname = '$firstname', user_password = '$password', user_lastname = '$lastname', user_address = '$address',unique_id = '$unique_id', role = '$role', verified = '$verified', status = '$status', service_role ='$service_role', code = '$code',phone_number ='$phone_number',phone_number_two ='$phone_number_two',state_of_residence='$stateR',lga='$lga',description='$description',field_of_profession='$fieldOfProfession' ");
+    $db->saveData(TBL_USER , "user_email = '$email',user_firstname = '$firstname', user_password = '$password', user_lastname = '$lastname', user_address = '$address',unique_id = '$reg_token', role = '$role', verified = '$verified', status = '$status', service_role ='$service_role', code = '$code',phone_number ='$phone_number',phone_number_two ='$phone_number_two',state_of_residence='$stateR',lga='$lga',description='$description',field_of_profession='$fieldOfProfession' ");
     
   }
 
