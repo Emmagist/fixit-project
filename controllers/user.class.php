@@ -2,31 +2,31 @@
 include "init.php";
 class User {
 
-  public static  function  InsertToken($token){
+  public static  function  InsertToken($reg_token){
       global $db;
-      return $db->saveData(TBL_USER ,"unique_id ='$token'");
+      return $db->saveData(TBL_POST_REG_FOR_USER ,"reg_token ='$reg_token'");
   }
 
   public function getAllUser(){
     global $db, $fun;
-    return $db->selectData("users" , "*");
+    return $db->selectData(TBL_USER, "*");
      
   }
   public function getSingleUser($id){
     global $db, $fun;
-    return $db->selectData("users" , "*" , "id ='$id' ");
+    return $db->selectData(TBL_USER , "*" , "id ='$id' ");
      
   }
 
 public static function  findUserByEmail($email){
     global $db, $fun;
-    return $db->selectData("users" , "*" , "user_email ='$email' ");
+    return $db->selectData(TBL_USER , "*" , "user_email ='$email' ");
 
 }
 
-    public static function  findUserByUniqueId($column){
+    public static function  VerifyUserByTokenOnRegistration($column){
         global $db, $fun;
-        return $db->selectData("users" , "*" , "unique_id ='$column' ");
+        return $db->selectData(TBL_POST_REG_FOR_USER  , "*" , "reg_token ='$column' ");
 
     }
 
@@ -36,9 +36,9 @@ public static function  findUserByEmail($email){
      
   }
 
-  public function InsertUser($email,$firstname,$lastname,$password,$address,$role, $verified, $status, $service_role, $code,$unique_id,$phone_number,$phone_number_two,$stateR,$lga,$description,$fieldOfProfession){
+  public function InsertUser($email,$firstname,$lastname,$password,$address,$unique_id,$role, $verified, $status, $service_role, $code,$phone_number,$phone_number_two,$stateR,$lga,$description,$fieldOfProfession){
     global $db, $fun;
-    $db->saveData(TBL_USER , "user_email = '$email',user_firstname = '$firstname', user_password = '$password', user_lastname = '$lastname', user_address = '$address', role = '$role', verified = '$verified', status = '$status', service_role ='$service_role', code = '$code', unique_id ='$unique_id',phone_number ='$phone_number',phone_number_two ='$phone_number_two',state_of_residence='$stateR',lga='$lga',description='$description',field_of_profession='$fieldOfProfession' "); 
+    $db->saveData(TBL_USER , "user_email = '$email',user_firstname = '$firstname', user_password = '$password', user_lastname = '$lastname', user_address = '$address',unique_id = '$unique_id', role = '$role', verified = '$verified', status = '$status', service_role ='$service_role', code = '$code',phone_number ='$phone_number',phone_number_two ='$phone_number_two',state_of_residence='$stateR',lga='$lga',description='$description',field_of_profession='$fieldOfProfession' ");
     
   }
 

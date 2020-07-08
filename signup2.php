@@ -1,12 +1,12 @@
   <?php
-  session_start();
-    include "process/user.pr.php";
-    include "scr/inc/header2.php";
 
-   if (!isset($_SESSION['unique_id']) && isset($_SESSION['email']) && isset($_SESSION['service_role'])) {
+    include "process/user.pr.php";
+  //session_start();
+    include "scr/inc/header2.php";
+   if (!isset($_SESSION['email'], $_SESSION['service_role']) && !isset($_SESSION['reg_token'])) {
       header('location: signup.php');
     }else {
-      $unique_id = $_SESSION['unique_id'];
+      $reg_token = $_SESSION['reg_token'];
       $email =$_SESSION['email'];
       $service_role = $_SESSION['service_role'];
     }
@@ -31,11 +31,12 @@
         </div>
       </div>
     <form action="" method="post" enctype="multipart/form-data">
-      <input type='hidden' name='unique_id' value='<?=$unique_id?>'>
+      <input type='hidden' name='reg_token' value='<?=$reg_token?>'>
       <input type='hidden' name='email' value='<?=$email?>'>
       <input type='hidden' name='service_role' value='<?=$service_role?>'>
       <div class="row">
         <div class="col-md-12">
+        <?php require_once "scr/inc/session-mgs.php";?>
         <?php require_once "scr/inc/messages.php";?>
         </div>
         <div class="col-md-6">

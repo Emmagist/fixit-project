@@ -1,6 +1,4 @@
-<?php include "path.php";?>
 <?php include "process/user.pr.php";?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
