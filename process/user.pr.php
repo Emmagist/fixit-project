@@ -32,6 +32,8 @@ if (isset($_POST['service_employer']) || isset($_POST['service_provider'])){
  */
 if (isset($_POST['registration'])){
   //$fun->arrayPrinter($_POST);exit;
+ $errors = "";
+  $error = Validation::ValidateUserRegistration($errors);
   $firstname = $_POST['firstname'];
   $lastname =$_POST['lastname'];
   $password = $_POST['password'];
@@ -42,7 +44,7 @@ if (isset($_POST['registration'])){
   $cpassword = $_POST['confirmpassword'];
   $status = 0;
   $role = 'user';
-  $verified = '';
+  $verified = 'unverified';
   $phone_number =$_POST['phone_number'];
   $phone_number_two=$_POST['phone_number_two'];
   $description = $_POST['description'];
@@ -52,13 +54,15 @@ if (isset($_POST['registration'])){
   $address = $_POST['address'];
   $password = password_hash($password, PASSWORD_DEFAULT);
   $code = md5(rand('12345','12345'));
-  if (User::VerifyUserByTokenOnRegistration($reg_token)){
-      $user->InsertUser($email,$firstname,$lastname,$password,$address,$role, $verified, $status,$reg_token,$service_role, $code,$phone_number,$phone_number_two,$stateR,$lga,$description,$fieldOfProfession);
-      $mailer->verificationMail($firstname,$lastname,$email,$code);
-      $_SESSION['message-success'] = "Registration successful and a verification link has been sent to your email , Thanks.";
-      header('location: index.php');
-  }else {
-      $error = 'Registration Error try Again';
+  if (empty($error)){
+      if (User::VerifyUserByTokenOnRegistration($reg_token)){
+          $user->InsertUser($email,$firstname,$lastname,$password,$address,$role, $verified, $status,$reg_token,$service_role, $code,$phone_number,$phone_number_two,$stateR,$lga,$description,$fieldOfProfession);
+          $mailer->verificationMail($firstname,$lastname,$email,$code);
+          $_SESSION['message-success'] = "Registration successful and a verification link has been sent to your email , Thanks you.";
+          header('location: index.php');
+      }else {
+          $error = 'Registration Error try Again';
+      }
   }
 
 }
