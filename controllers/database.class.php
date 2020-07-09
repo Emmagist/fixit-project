@@ -9,7 +9,10 @@ class Database {
 		$this->open_db_connection();
 	}
 
-	
+  private $db_host = "localhost"; 
+  private $db_user = "root"; // Change as required
+  private $db_pass = ""; // Change as required
+  private $db_name = "fixit";
 
 
 	public function open_db_connection(){

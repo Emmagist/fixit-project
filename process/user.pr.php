@@ -1,6 +1,6 @@
 <?php
 require_once "controllers/init.php";
-session_start();
+// session_start();
 /***
  * Post registration for users
  */
@@ -26,6 +26,13 @@ if (isset($_POST['service_employer']) || isset($_POST['service_provider'])){
   $unique_id = $_SESSION['unique_id'] ;
   $_SESSION['email'] = $email;
   $_SESSION['service_role'] =$service_role;
+
+  // check if is already in database
+  // if (isset($email)) {
+  //   $checkEmail = $user->getSingleUser(TBL_USER, "*", "user_email = $email");
+  //   $result = mysqli_num_rows($checkEmail);
+  // }
+
   $data =  $user->InsertUser($email,$firstname,$lastname,$password,$address,$role, $verified, $status, $service_role, $code,$unique_id,$phone_number,$phone_number_two,$stateR,$lga,$description,$fieldOfProfession);
   $_SESSION['message-info'] = "Please continue your registration here";
   header('location: signup2.php');
