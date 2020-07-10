@@ -13,7 +13,7 @@ class Validation {
                 $errors = 'Missing  token';
             }elseif (empty($_POST['password'])){
                 $errors = 'Provide a password';
-            }elseif ($_POST['cpassword'] !== $_POST['password']){
+            }elseif ($_POST['confirmpassword'] !== $_POST['password']){
                 $errors = 'Password mismatch';
             }elseif (empty($_POST['phone_number'] || !is_numeric($_POST['phone_number']))){
                 $errors = 'Invalid Phone number format';
@@ -21,7 +21,7 @@ class Validation {
                 $errors = 'Fill field description';
             }elseif (empty($_POST['lga'])){
                 $errors = 'Provide a Local government area';
-            }elseif (empty($_POST['state'])){
+            }elseif (empty($_POST['stateR'])){
                 $errors = 'Provide a State or origin';
             }elseif (empty($_POST['field_of_profession'])){
                 $errors = 'Field of profession can not be empty';
