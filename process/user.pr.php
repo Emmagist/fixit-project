@@ -27,7 +27,7 @@ if (isset($_POST['service_employer']) || isset($_POST['service_provider'])){
                   $userTokenRegTokenCheck = $userTokencheck['reg_token'];
                   $_SESSION['reg_token'] = $userTokenRegTokenCheck;
                   $session = $_SESSION['reg_token'] . $_SESSION['email'] . $_SESSION['service_role'];
-                  $sessionFromDb =  "<a href='signup2.php?token=$session' style='text-decoration: none'> Follow this link to continue your registration.</a>";
+                  $sessionFromDb =  "<a href='signup2.php?token=$session' style='text-decoration: none'> Welcome back please follow this link to continue and complete your registration.</a>";
               }
 
           }else{
