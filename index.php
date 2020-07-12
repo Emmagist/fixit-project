@@ -1,5 +1,9 @@
-<?php include "process/user.pr.php";?>
-<?php include "scr/inc/header1.php"; ?>
+<?php
+include "process/user.pr.php";
+include "scr/inc/header1.php";
+
+?>
+
 
 <div class="container mt-5" id="first-container">
   <div class="container  text-center mb-5 mt-4" id="mainbody-title">

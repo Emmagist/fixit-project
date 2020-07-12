@@ -15,38 +15,6 @@ User::DeleteRecordsOlderThanThreeDays();
  */
 if (isset($_POST['service_employer']) || isset($_POST['service_provider'])){
 
-  $data = array_keys($_POST);
-  $service_role = ($data[1] == 'service_employer') ? 'service_employer' : 'service_provider';
-  $email = $_POST['email'];
-  $firstname = '';
-  $lastname = '';
-  $password = '';
-  $status = 0;
-  $role = '';
-  $verified = '';
-  $address = '';
-  $phone_number ='';
-  $phone_number_two='';
-  $description = '';
-  $lga ='';
-  $stateR = '';
-  $fieldOfProfession = '';
-  $code = '';
-  $_SESSION['unique_id'] =  md5(rand('99999','99999'));
-  $unique_id = $_SESSION['unique_id'] ;
-  $_SESSION['email'] = $email;
-  $_SESSION['service_role'] =$service_role;
-
-  // check if is already in database
-  // if (isset($email)) {
-  //   $checkEmail = $user->getSingleUser(TBL_USER, "*", "user_email = $email");
-  //   $result = mysqli_num_rows($checkEmail);
-  // }
-
-  $data =  $user->InsertUser($email,$firstname,$lastname,$password,$address,$role, $verified, $status, $service_role, $code,$unique_id,$phone_number,$phone_number_two,$stateR,$lga,$description,$fieldOfProfession);
-  $_SESSION['message-info'] = "Please continue your registration here";
-  header('location: signup2.php');
- 
       $data = array_keys($_POST);
       $service_role = ($data[1] === 'service_employer') ? 'service_employer' : 'service_provider';
       $email = $_POST['email'];
@@ -57,12 +25,12 @@ if (isset($_POST['service_employer']) || isset($_POST['service_provider'])){
       }elseif (User::findUserByEmail($email)){
           $error = 'Email Already Exist ';
       } else {
-          if( $userTokenchecks = User::ifRegistrationTokenAlreadyExist($email)){
-              foreach($userTokenchecks as $userTokencheck){
-                  $userTokenRegTokenCheck = $userTokencheck['reg_token'];
-                  $_SESSION['reg_token'] = $userTokenRegTokenCheck;
+          if( $UserTokenchecks = User::ifRegistrationTokenAlreadyExist($email)){
+              foreach($UserTokenchecks as $UserTokencheck){
+                  $UserTokenRegTokenCheck = $UserTokencheck['reg_token'];
+                  $_SESSION['reg_token'] = $UserTokenRegTokenCheck;
                   $session = $_SESSION['reg_token'] . $_SESSION['email'] . $_SESSION['service_role'];
-                  $sessionFromDb =  "<a href='signup2.php?token=$session' style='text-decoration: none'> Welcome back please follow this link to continue and complete your registration.</a>";
+                  $sessionFromDb =  "<a href='signup2.php?token=$session' style='text-decoration: none' class='text-dark'> Welcome back please follow this link to continue and complete your registration.</a>";
               }
 
           }else{
@@ -83,9 +51,9 @@ if (isset($_POST['service_employer']) || isset($_POST['service_provider'])){
 /***
  * Registration for users
  */
-if (isset($_POST['registration'])){
-  //$fun->arrayPrinter($_POST);exit;
+if (isset($_POST['registration'], $_FILES['file'])){
  $errors = "";
+ //Functions::arrayPrinter( $_FILES);
   $error = Validation::ValidateUserRegistration($errors);
   $firstname = $_POST['firstname'];
   $lastname =$_POST['lastname'];
@@ -107,14 +75,21 @@ if (isset($_POST['registration'])){
   $address = $_POST['address'];
   $password = password_hash($password, PASSWORD_DEFAULT);
   $code = md5(rand('12345','12345'));
+    $target_dir = "scr/profile-uploads/";
+    $file = $_FILES['file'];
+    $target_file = $target_dir . $_FILES['file']['name'];
+    $error = Functions::uploadFile($errors, $target_file, $file);
   if (empty($error)){
       if (User::VerifyUserByTokenOnRegistration($reg_token , $email, $service_role)){
           if (!User::findUserByEmail($email)){
-              $user->InsertUser($email,$firstname,$lastname,$password,$address,$role, $verified, $status,$reg_token,$service_role, $code,$phone_number,$phone_number_two,$stateR,$lga,$description,$fieldOfProfession);
-              User::DeleteUserOnTepRegTable($reg_token);
-              $mailer->verificationMail($firstname,$lastname,$email,$code);
-              $_SESSION['message-success'] = "Registration successful and a verification link has been sent to your email , Thanks you.";
-              header('location: index.php');
+              if (move_uploaded_file($file['tmp_name'], $target_file)){
+                  $user->InsertUser($email,$firstname,$lastname,$password,$address,$role, $verified, $status,$reg_token,$service_role, $code,$phone_number,$phone_number_two,$stateR,$lga,$description,$fieldOfProfession,$target_file);
+                  User::DeleteUserOnTepRegTable($reg_token);
+                  $mailer->verificationMail($firstname,$lastname,$email,$code);
+                  $_SESSION['message-success'] = "Registration successful and a verification link has been sent to your email , Thanks you.";
+                  header('location: index.php');
+              }
+
           }else{
               $error = 'There is already a user associated with this Email in our database.';
           }
@@ -130,23 +105,34 @@ if (isset($_POST['registration'])){
  * Login user in 
  * @param rquired email and password
  */
-    global $db, $user;
+
     if (isset($_POST['login'])) {
+        $errors='';
         $email = $db->escape($_POST['email']);
         $password = $db->escape($_POST['password']);
+        $error = Validation::ValidationForLogin($errors);
 
-        if (empty($email)) { //check for empty email
-            $error = "Please provide a valid details";
-        }else if( !filter_var($email, FILTER_VALIDATE_EMAIL) ){//check for email validation
-            $error = 'Invalid Email Address';
-        }elseif (empty($password)){ //check for empty password
-            $error = 'Please provide a valid details';
-        }elseif (!($user->getEmailPassword($email, $password))) { //email and password authentification
-            $error = 'Invalid credentials';
-        }else {
-            header("Location: index.php");
+        if (empty($error)){
+            foreach(User::findUserByEmail($email) as $userInfo){
+
+                if($userInfo && password_verify($password, $userInfo['user_password'])){
+                    $_SESSION['email'] = $userInfo['email'];
+                    $_SESSION['user_token'] = $userInfo['user_token'];
+                    $_SESSION['success'] = 'You have successfully logged in';
+                    $verifiedRow = $userInfo['verified'] === 'verified';
+                    $_SESSION['verified'] = $verifiedRow;
+                    header('Location: index.php');
+                }else{
+                    $error = 'These credentials do not match our records';
+                }
+            }
+
         }
+
     }
+
+
+
 
  
 

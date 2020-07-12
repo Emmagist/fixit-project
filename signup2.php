@@ -1,9 +1,7 @@
   <?php
-
     include "process/user.pr.php";
-  //session_start();
     include "scr/inc/header2.php";
-   if (!isset($_SESSION['email'], $_SESSION['service_role']) && !isset($_SESSION['reg_token'])) {
+   if (!isset($_SESSION['email'], $_SESSION['service_role'], $_SESSION['reg_token'])) {
       header('location: signup.php');
     }else {
       $reg_token = $_SESSION['reg_token'];
@@ -42,75 +40,83 @@
         <div class="col-md-6">
           <div class="form-group">
             <label for="">First Name</label>
-            <input type="text" class="form-control" name="firstname" required>
+            <input type="text" class="form-control" name="firstname"
+                   value="<?= isset($_POST['firstname'])? $_POST['firstname'] : ''?>" required>
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group">
             <label for="">Last Name</label>
-            <input type="text" class="form-control" name="lastname" required>
+            <input type="text" class="form-control" name="lastname"
+                   value="<?= isset($_POST['lastname'])? $_POST['lastname'] : ''?>" required>
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group">
             <label for="">Password</label>
-            <input type="password" class="form-control" name="password" required>
+            <input type="password" class="form-control" name="password"
+                   value="<?= isset($_POST['password'])? $_POST['password'] : ''?>"required>
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group">
             <label for="">Comfirm Password</label>
-            <input type="password" class="form-control" name="confirmpassword" required>
+            <input type="password" class="form-control" name="confirmpassword"
+                   value="<?= isset($_POST['confirmpassword'])? $_POST['confirmpassword'] : ''?>" required>
           </div>
         </div>
         <div class="col-md-6">
         <div class="form-group">
             <label for="">State of Residence</label>
-            <input type="text" class="form-control" name="stateR" required>
+            <input type="text" class="form-control" name="stateR" value="<?= isset($_POST['stateR'])? $_POST['stateR'] : ''?>" required>
           </div>
         </div>
         <div class="col-md-6">
         <div class="form-group">
             <label for="">LGA</label>
-            <input type="text" class="form-control" name="lga" required>
+            <input type="text" class="form-control" name="lga" value="<?= isset($_POST['lga'])? $_POST['lga'] : ''?>" required>
           </div>
         </div>
         <div class="col-md-12">
         <div class="form-group">
             <label for="">Residential Address</label>
-            <input type="text" class="form-control" name="address" required>
+            <input type="text" class="form-control" name="address" value="<?= isset($_POST['address'])? $_POST['address'] : ''?>" required>
           </div>
         </div>
         <div class="col-md-6">
         <div class="form-group">
             <label for="">Phone  Number</label>
-            <input type="text" class="form-control" name="phone_number" required>
+            <input type="text" class="form-control" name="phone_number"
+                   value="<?= isset($_POST['phone_number'])? $_POST['phone_number'] : ''?>" required>
           </div>
         </div>
         <div class="col-md-6">
         <div class="form-group">
             <label for="">Phone Number 2</label>
-            <input type="text" class="form-control" name="phone_number_two" required>
+            <input type="text" class="form-control" name="phone_number_two"
+                   value="<?= isset($_POST['phone_number_two'])? $_POST['phone_number_two'] : ''?>" required>
           </div>
         </div>
         <div class="col-md-12">
           <div class="form-group">
             <label for="">Field of Profession</label>
-            <input type="text" name="field_of_profession" placeholder="You can choose more than word" class="form-control" required>
+            <input type="text" name="field_of_profession" placeholder="You can choose more than word" class="form-control"
+                   value="<?= isset($_POST['field_of_profession'])? $_POST['field_of_profession'] : ''?>" required>
           </div>
         </div>
         <div class="col-md-12">
           <div class="form-group">
             <label for="">Description</label>
-            <textarea name="description" id="" cols="30" rows="5" class="textarea form-control" required></textarea>
+            <textarea name="description" id="" cols="30" rows="5" class="textarea form-control" required>
+                <?= isset($_POST['description'])? $_POST['description'] : ''?>
+            </textarea>
           </div>
         </div>
         <div class="col-md-3">
-          <button class="btn btn-upload">Upload A Picture</button>
+          <button class="btn btn-upload" disabled>Upload A Picture</button>
         </div>
         <div class="col-md-3">
-          <label for="file" id="file-label">Choose a file</label>
-          <input type="file" id="file" class="file" name="image">
+          <input type="file" id="file" class="form-control" name="file" value="<?= isset($_FILES['file'])? $_FILES['file'] : ''?>">
         </div>
       </div>
       <div class="row">

@@ -16,7 +16,7 @@
       <div class="" id="form-two">
         <?php require_once "scr/inc/session-mgs.php";?>
         <?php require_once "scr/inc/messages.php";?>
-        <input type="text" class="form-control mb-4" placeholder="Example@gmail.com" name="email">
+        <input type="text" class="form-control mb-4" placeholder="Example@gmail.com" name="email" value="<?= isset($_POST['email'])? $_POST['email'] : ''?>">
         <input type="text" class="form-control mb-4 mt-3" placeholder="Password" name="password">
         <button class="btn btn-primary form-control" id="main-signup" name="login">SignIn</button>
       </div>

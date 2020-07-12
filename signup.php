@@ -13,7 +13,7 @@
   <section class="container mt-3">
     <form action="" class="form-group" id="main-signup-form" method="post">
 
-        <div class="for">
+        <div class="orm-two">
             <?php require_once "scr/inc/messages.php"; ?>
             <?php
             if (!empty($sessionFromDb)) {
@@ -23,7 +23,7 @@
         </div>
       <h4 class="form-h4 text-center mt-5">Join <span><img src="scr/img/fixitwhite.png" alt=""></span></h4>
       <div class="" id="form-one">
-        <input type="text" class="form-control" placeholder="Example@gmail.com" name="email" id="email">
+        <input type="text" class="form-control" placeholder="Example@gmail.com" name="email" id="email" value="<?= isset($_POST['email'])? $_POST['email'] : ''?>">
       </div>
 
       <div class="form-two mt-5">

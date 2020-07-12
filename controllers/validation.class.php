@@ -15,7 +15,7 @@ class Validation {
                 $errors = 'Provide a password';
             }elseif ($_POST['confirmpassword'] !== $_POST['password']){
                 $errors = 'Password mismatch';
-            }elseif (empty($_POST['phone_number'] || !is_numeric($_POST['phone_number']))){
+            }elseif (empty($_POST['phone_number'] && !is_numeric($_POST['phone_number']))){
                 $errors = 'Invalid Phone number format';
             }elseif (empty($_POST['description'])){
                 $errors = 'Fill field description';
@@ -28,6 +28,18 @@ class Validation {
             }elseif (empty($_POST['address'])){
                 $errors = 'address can not be empty';
             }
+            return $errors;
+        }
+
+        public static function ValidationForLogin($errors){
+            if (empty($_POST['email'])) { //check for empty email
+                $errors = "The email field can not be empty";
+            }else if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) ){
+                $errors = 'Provide a valid email format';
+            }elseif (empty($_POST['password'])){ //check for empty password
+                $errors = 'The password field can not be empty';
+            }
+
             return $errors;
         }
 

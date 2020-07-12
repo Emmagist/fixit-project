@@ -1,4 +1,9 @@
-<?php require_once "scr/inc/header2.php"; ?>
+<?php
+require_once "scr/inc/header2.php";
+if (!isset($_SESSION['user_token'], $_SESSION['verified'])) {
+    header('location: index.php');
+}
+?>
   <main class='main'>
     <div class="container text-center" id="first-div">
       <div class="row" >

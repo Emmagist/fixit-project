@@ -1,5 +1,6 @@
 <?php
 include "init.php";
+include 'path.php';
 class User {
 
   public static  function  InsertToken($reg_token, $email, $service_role, $date){
@@ -29,11 +30,11 @@ class User {
      
   }
 
-public static function  findUserByEmail($email){
-    global $db, $fun;
-    return $db->selectData(TBL_USER , "*" , "user_email ='$email' ");
+    public static function  findUserByEmail($email){
+        global $db, $fun;
+        return $db->selectData(TBL_USER , "*" , "user_email ='$email' ");
 
-}
+    }
 
     public static function  VerifyUserByTokenOnRegistration($reg_token , $email, $service_role){
         global $db, $fun;
@@ -41,13 +42,15 @@ public static function  findUserByEmail($email){
 
     }
 
+
+
   public function getUserByServicerole($id){
     global $db, $fun;
     return $db->selectData("users" , "*" , "service_role ='$id' ");
      
   }
 
-  public function InsertUser($email,$firstname,$lastname,$password,$address,$role, $verified, $status,$reg_token,$service_role, $code,$phone_number,$phone_number_two,$stateR,$lga,$description,$fieldOfProfession) {
+  public function InsertUser($email,$firstname,$lastname,$password,$address,$role, $verified, $status,$reg_token,$service_role, $code,$phone_number,$phone_number_two,$stateR,$lga,$description,$fieldOfProfession,$target_file) {
     global $db, $fun;
     $db->saveData(TBL_USER ,
         "user_email = '$email',
@@ -66,7 +69,8 @@ public static function  findUserByEmail($email){
         state_of_residence='$stateR',
         lga='$lga',
         description='$description',
-        field_of_profession='$fieldOfProfession' ");
+        field_of_profession='$fieldOfProfession',
+        profile_image = '$target_file' ");
     
   }
 
@@ -87,7 +91,7 @@ public static function  findUserByEmail($email){
 
     public  static  function  DeleteRecordsOlderThanThreeDays(){
         global $db;
-        $date = date("m-d-Y", strtotime('-1 day'));
+        $date = date("m-d-Y", strtotime('-5 day'));
         return  $db->deleteData(TBL_POST_REG_FOR_USER, "delete_on < '$date'");
     }
 
