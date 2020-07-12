@@ -54,7 +54,14 @@
    
  </div>
  <div class="col-md-12">
-    <?php require_once "scr/inc/messages.php";?>
+    <?php
+    //require_once "scr/inc/messages.php";
+    if (isset($_SESSION['message-success'])) {
+        echo "<li class='text-center alert alert-success' role='alert' style='list-style: none;'>".$_SESSION['message-success']."</li>";
+        unset($_SESSION['message-success']);
+    }
+    require_once "scr/inc/session-mgs.php";
+    ?>
  </div>
  <div class="container" id="index-loginbtn">
    <a href="login.php" class="btn">SIGN IN</a>

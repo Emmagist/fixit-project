@@ -11,12 +11,14 @@
 </head>
 <body>
   <section class="container mt-3">
-    <form action="" class="form-group" id="main-signup-form">
+    <form action="" class="form-group" id="main-signup-form" method="POST">
       <h4 class="form-h4 text-center mt-5 mb-4 mr-5">Join <span><img src="scr/img/fixitwhite.png" alt=""></span></h4>
       <div class="" id="form-two">
-        <input type="text" class="form-control mb-4" placeholder="Example@gmail.com">
-        <input type="text" class="form-control mb-4 mt-3" placeholder="Password">
-        <button class="btn btn-primary form-control" id="main-signup">SignIn</button>
+        <?php require_once "scr/inc/session-mgs.php";?>
+        <?php require_once "scr/inc/messages.php";?>
+        <input type="text" class="form-control mb-4" placeholder="Example@gmail.com" name="email">
+        <input type="text" class="form-control mb-4 mt-3" placeholder="Password" name="password">
+        <button class="btn btn-primary form-control" id="main-signup" name="login">SignIn</button>
       </div>
       <div class="login-footer text-center mt-5" >
         <p id="form-p">Welcome back login into your account here <span><img src="scr/img/fixitwhite.png" alt=""></span></p><hr class="login-hr">

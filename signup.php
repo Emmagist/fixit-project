@@ -1,7 +1,4 @@
-<?php include "path.php";?>
-<?php include ROOT_PATH . "/process/user.pr.php";?>
 <?php include "process/user.pr.php";?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,9 +12,13 @@
 <body id="main-signup-body">
   <section class="container mt-3">
     <form action="" class="form-group" id="main-signup-form" method="post">
+
+        <div class="for">
+            <?php require_once "scr/inc/messages.php"; ?>
+        </div>
       <h4 class="form-h4 text-center mt-5">Join <span><img src="scr/img/fixitwhite.png" alt=""></span></h4>
       <div class="" id="form-one">
-        <input type="text" class="form-control" placeholder="Example@gmail.com" name="email" id="email" required>
+        <input type="text" class="form-control" placeholder="Example@gmail.com" name="email" id="email">
       </div>
 
       <div class="form-two mt-5">

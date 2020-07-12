@@ -1,10 +1,14 @@
 <?php
 require_once "controllers/init.php";
+
 // session_start();
+
+
 /***
  * Post registration for users
  */
 if (isset($_POST['service_employer']) || isset($_POST['service_provider'])){
+
   $data = array_keys($_POST);
   $service_role = ($data[1] == 'service_employer') ? 'service_employer' : 'service_provider';
   $email = $_POST['email'];
@@ -37,7 +41,26 @@ if (isset($_POST['service_employer']) || isset($_POST['service_provider'])){
   $_SESSION['message-info'] = "Please continue your registration here";
   header('location: signup2.php');
  
-  
+      $data = array_keys($_POST);
+      $service_role = ($data[1] === 'service_employer') ? 'service_employer' : 'service_provider';
+      $email = $_POST['email'];
+      //$fun::arrayPrinter(User::findUserByEmail($email));
+      if(empty($email)){
+          $error = 'Provide Your Email ';
+      }else if( !filter_var($email, FILTER_VALIDATE_EMAIL) ){
+          $error = 'Invalid Email Address';
+      }elseif (User::findUserByEmail($email)){
+          $error = 'Email Already Exist ';
+      } else {
+          $reg_token= md5(mt_rand('99999','99999'));
+          $_SESSION['reg_token'] =  $reg_token;
+          $reg_token = $_SESSION['reg_token'] ;
+          $_SESSION['email'] = $email;
+          $_SESSION['service_role'] = $service_role;
+          $data = User::InsertToken($reg_token);
+          $_SESSION['message-info'] = "Please continue your registration here";
+          header('location: signup2.php');
+      }
 }
 
 /***
@@ -49,7 +72,7 @@ if (isset($_POST['registration'])){
   $lastname =$_POST['lastname'];
   $password = $_POST['password'];
   $email = $_POST['email'];
-  $unique_id = $_POST['unique_id'];
+  $reg_token = $_POST['reg_token'];
   $email = $_POST['email'];
   $service_role = $_POST['service_role'];
   $cpassword = $_POST['confirmpassword'];
@@ -65,16 +88,38 @@ if (isset($_POST['registration'])){
   $address = $_POST['address'];
   $password = password_hash($password, PASSWORD_DEFAULT);
   $code = md5(rand('12345','12345'));
-  $user->UpdateUser($email,$firstname,$lastname,$password,$address,$role, $verified, $status, $service_role, $code,$unique_id,$phone_number,$phone_number_two,$stateR,$lga,$description,$fieldOfProfession);
-  $mailer->verificationMail($firstname,$lastname,$email,$code);
-  $_SESSION['message-success'] = "Registration successfull and a verification link has been sent to your email , Thanks.";
-  header('location: index.php');
+  if (User::VerifyUserByTokenOnRegistration($reg_token)){
+      $user->InsertUser($email,$firstname,$lastname,$password,$address,$role, $verified, $status,$reg_token,$service_role, $code,$phone_number,$phone_number_two,$stateR,$lga,$description,$fieldOfProfession);
+      $mailer->verificationMail($firstname,$lastname,$email,$code);
+      $_SESSION['message-success'] = "Registration successful and a verification link has been sent to your email , Thanks.";
+      header('location: index.php');
+  }else {
+      $error = 'Registration Error try Again';
+  }
+
 }
 
 /***
  * Login user in 
  * @param rquired email and password
  */
+    global $db, $user;
+    if (isset($_POST['login'])) {
+        $email = $db->escape($_POST['email']);
+        $password = $db->escape($_POST['password']);
+
+        if (empty($email)) { //check for empty email
+            $error = "Please provide a valid details";
+        }else if( !filter_var($email, FILTER_VALIDATE_EMAIL) ){//check for email validation
+            $error = 'Invalid Email Address';
+        }elseif (empty($password)){ //check for empty password
+            $error = 'Please provide a valid details';
+        }elseif (!($user->getEmailPassword($email, $password))) { //email and password authentification
+            $error = 'Invalid credentials';
+        }else {
+            header("Location: index.php");
+        }
+    }
 
  
 

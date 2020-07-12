@@ -1,5 +1,6 @@
 <?php
 require_once "constants.php";
+session_start();
 class Database {
   
 	public $connection;
@@ -99,6 +100,14 @@ class Database {
    */
   public function insert_id() {
 		return mysqli_insert_id($this->connection);
+  }
+  
+  /**
+   * Undocumented function
+   * function for mysqli_real_escape_string
+   */
+  public function escape($data) {
+		return strtolower(trim(addslashes($this->connection->real_escape_string($data))));
 	}
 }
 
