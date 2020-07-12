@@ -15,6 +15,11 @@
 
         <div class="for">
             <?php require_once "scr/inc/messages.php"; ?>
+            <?php
+            if (!empty($sessionFromDb)) {
+                echo "<li class='text-center alert alert-info' role='alert' style='list-style: none;'>".$sessionFromDb."</li>";
+            }
+            ?>
         </div>
       <h4 class="form-h4 text-center mt-5">Join <span><img src="scr/img/fixitwhite.png" alt=""></span></h4>
       <div class="" id="form-one">

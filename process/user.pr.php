@@ -5,6 +5,12 @@ require_once "controllers/init.php";
 
 
 /***
+ * Delete all user information(data) automatically where reg_token == $reg_token on table TBL_POST_REG_FOR_USER in db when it reach day five
+ */
+User::DeleteRecordsOlderThanThreeDays();
+
+
+/***
  * Post registration for users
  */
 if (isset($_POST['service_employer']) || isset($_POST['service_provider'])){
@@ -44,7 +50,6 @@ if (isset($_POST['service_employer']) || isset($_POST['service_provider'])){
       $data = array_keys($_POST);
       $service_role = ($data[1] === 'service_employer') ? 'service_employer' : 'service_provider';
       $email = $_POST['email'];
-      //$fun::arrayPrinter(User::findUserByEmail($email));
       if(empty($email)){
           $error = 'Provide Your Email ';
       }else if( !filter_var($email, FILTER_VALIDATE_EMAIL) ){
@@ -52,14 +57,26 @@ if (isset($_POST['service_employer']) || isset($_POST['service_provider'])){
       }elseif (User::findUserByEmail($email)){
           $error = 'Email Already Exist ';
       } else {
-          $reg_token= md5(mt_rand('99999','99999'));
-          $_SESSION['reg_token'] =  $reg_token;
-          $reg_token = $_SESSION['reg_token'] ;
-          $_SESSION['email'] = $email;
-          $_SESSION['service_role'] = $service_role;
-          $data = User::InsertToken($reg_token);
-          $_SESSION['message-info'] = "Please continue your registration here";
-          header('location: signup2.php');
+          if( $userTokenchecks = User::ifRegistrationTokenAlreadyExist($email)){
+              foreach($userTokenchecks as $userTokencheck){
+                  $userTokenRegTokenCheck = $userTokencheck['reg_token'];
+                  $_SESSION['reg_token'] = $userTokenRegTokenCheck;
+                  $session = $_SESSION['reg_token'] . $_SESSION['email'] . $_SESSION['service_role'];
+                  $sessionFromDb =  "<a href='signup2.php?token=$session' style='text-decoration: none'> Welcome back please follow this link to continue and complete your registration.</a>";
+              }
+
+          }else{
+              $reg_token= 'USER' . '-' . md5(mt_rand('1','6'));
+              $_SESSION['reg_token'] =  $reg_token;
+              $reg_token = $_SESSION['reg_token'] ;
+              $_SESSION['email'] = $email;
+              $_SESSION['service_role'] = $service_role;
+              $date = date("m-d-Y");
+              $data = User::InsertToken($reg_token, $email, $service_role, $date);
+              $_SESSION['message-info'] = "Please continue your registration here";
+              header('location: signup2.php');
+          }
+
       }
 }
 
@@ -68,6 +85,8 @@ if (isset($_POST['service_employer']) || isset($_POST['service_provider'])){
  */
 if (isset($_POST['registration'])){
   //$fun->arrayPrinter($_POST);exit;
+ $errors = "";
+  $error = Validation::ValidateUserRegistration($errors);
   $firstname = $_POST['firstname'];
   $lastname =$_POST['lastname'];
   $password = $_POST['password'];
@@ -78,7 +97,7 @@ if (isset($_POST['registration'])){
   $cpassword = $_POST['confirmpassword'];
   $status = 0;
   $role = 'user';
-  $verified = '';
+  $verified = 'unverified';
   $phone_number =$_POST['phone_number'];
   $phone_number_two=$_POST['phone_number_two'];
   $description = $_POST['description'];
@@ -88,13 +107,21 @@ if (isset($_POST['registration'])){
   $address = $_POST['address'];
   $password = password_hash($password, PASSWORD_DEFAULT);
   $code = md5(rand('12345','12345'));
-  if (User::VerifyUserByTokenOnRegistration($reg_token)){
-      $user->InsertUser($email,$firstname,$lastname,$password,$address,$role, $verified, $status,$reg_token,$service_role, $code,$phone_number,$phone_number_two,$stateR,$lga,$description,$fieldOfProfession);
-      $mailer->verificationMail($firstname,$lastname,$email,$code);
-      $_SESSION['message-success'] = "Registration successful and a verification link has been sent to your email , Thanks.";
-      header('location: index.php');
-  }else {
-      $error = 'Registration Error try Again';
+  if (empty($error)){
+      if (User::VerifyUserByTokenOnRegistration($reg_token , $email, $service_role)){
+          if (!User::findUserByEmail($email)){
+              $user->InsertUser($email,$firstname,$lastname,$password,$address,$role, $verified, $status,$reg_token,$service_role, $code,$phone_number,$phone_number_two,$stateR,$lga,$description,$fieldOfProfession);
+              User::DeleteUserOnTepRegTable($reg_token);
+              $mailer->verificationMail($firstname,$lastname,$email,$code);
+              $_SESSION['message-success'] = "Registration successful and a verification link has been sent to your email , Thanks you.";
+              header('location: index.php');
+          }else{
+              $error = 'There is already a user associated with this Email in our database.';
+          }
+
+      }else {
+          $error = 'Registration Error try Again';
+      }
   }
 
 }
@@ -143,7 +170,8 @@ if (isset($_POST['registration'])){
  */
   $service_employer= 'service_employer';
   $employers = $user->getUserByServicerole($service_employer);
- 
+
+
 
 
 

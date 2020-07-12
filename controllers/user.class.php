@@ -2,9 +2,14 @@
 include "init.php";
 class User {
 
-  public static  function  InsertToken($reg_token){
+  public static  function  InsertToken($reg_token, $email, $service_role, $date){
       global $db;
-      return $db->saveData(TBL_POST_REG_FOR_USER ,"reg_token ='$reg_token'");
+      return $db->saveData(TBL_POST_REG_FOR_USER ,"reg_token ='$reg_token', email ='$email', service_role='$service_role', delete_on = '$date' ");
+  }
+
+  public static function  ifRegistrationTokenAlreadyExist($email){
+      global $db;
+      return $db->selectData(TBL_POST_REG_FOR_USER , "*", "email = '$email' ");
   }
 
   public function getAllUser(){
@@ -30,9 +35,9 @@ public static function  findUserByEmail($email){
 
 }
 
-    public static function  VerifyUserByTokenOnRegistration($column){
+    public static function  VerifyUserByTokenOnRegistration($reg_token , $email, $service_role){
         global $db, $fun;
-        return $db->selectData(TBL_POST_REG_FOR_USER  , "*" , "reg_token ='$column' ");
+        return $db->selectData(TBL_POST_REG_FOR_USER  , "*" , "reg_token ='$reg_token' AND email='$email' AND service_role='$service_role' ");
 
     }
 
@@ -42,9 +47,26 @@ public static function  findUserByEmail($email){
      
   }
 
-  public function InsertUser($email,$firstname,$lastname,$password,$address,$reg_token,$role, $verified, $status, $service_role, $code,$phone_number,$phone_number_two,$stateR,$lga,$description,$fieldOfProfession){
+  public function InsertUser($email,$firstname,$lastname,$password,$address,$role, $verified, $status,$reg_token,$service_role, $code,$phone_number,$phone_number_two,$stateR,$lga,$description,$fieldOfProfession) {
     global $db, $fun;
-    $db->saveData(TBL_USER , "user_email = '$email',user_firstname = '$firstname', user_password = '$password', user_lastname = '$lastname', user_address = '$address',unique_id = '$reg_token', role = '$role', verified = '$verified', status = '$status', service_role ='$service_role', code = '$code',phone_number ='$phone_number',phone_number_two ='$phone_number_two',state_of_residence='$stateR',lga='$lga',description='$description',field_of_profession='$fieldOfProfession' ");
+    $db->saveData(TBL_USER ,
+        "user_email = '$email',
+        user_firstname = '$firstname', 
+        user_password = '$password', 
+        user_lastname = '$lastname', 
+        user_address = '$address',
+        user_token = '$reg_token', 
+        role = '$role', 
+        verified = '$verified', 
+        status = '$status', 
+        service_role ='$service_role', 
+        code = '$code',
+        phone_number ='$phone_number',
+        phone_number_two ='$phone_number_two',
+        state_of_residence='$stateR',
+        lga='$lga',
+        description='$description',
+        field_of_profession='$fieldOfProfession' ");
     
   }
 
@@ -57,6 +79,17 @@ public static function  findUserByEmail($email){
     global $db, $fun;
     $db->deleteData(TBL_USER, "user_id = '$id'");
   }
+
+  public  static  function  DeleteUserOnTepRegTable($reg_token){
+      global $db;
+     return  $db->deleteData(TBL_POST_REG_FOR_USER, "reg_token = '$reg_token'");
+  }
+
+    public  static  function  DeleteRecordsOlderThanThreeDays(){
+        global $db;
+        $date = date("m-d-Y", strtotime('-1 day'));
+        return  $db->deleteData(TBL_POST_REG_FOR_USER, "delete_on < '$date'");
+    }
 
 }
 

@@ -9,10 +9,10 @@ $mail = new PHPMailer(true); // Passing `true` enables exceptions
  
 class Mailer
 {
-   
+
         public function verificationMail($firstname,$lastname,$email,$code){
         try {
-          $mail = new PHPMailer(); 
+         global  $mail;
           $namefrom = "Fixit Managemment";
           $mail->CharSet = 'UTF-8';
           $mail->isSMTP();   
@@ -38,7 +38,7 @@ class Mailer
           return $mail->send();
  }
      
-};
+}
 
 $mailer = new Mailer;
 
