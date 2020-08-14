@@ -28,3 +28,4 @@
   </section>
 </body>
 </html>
+<script src="process/user.ajax.js"></script>

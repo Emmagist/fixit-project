@@ -3,6 +3,10 @@ include "init.php";
 include 'path.php';
 class User {
 
+    public  function  construct(){
+        $this->DeleteRecordsOlderThanThreeDays();
+    }
+
   public static  function  InsertToken($reg_token, $email, $service_role, $date){
       global $db;
       return $db->saveData(TBL_POST_REG_FOR_USER ,"reg_token ='$reg_token', email ='$email', service_role='$service_role', delete_on = '$date' ");
@@ -17,11 +21,6 @@ class User {
     global $db, $fun;
     return $db->selectData(TBL_USER, "*");
      
-  }
-
-  public function getEmailPassword($email,$password){
-    global $db, $fun;
-    return $db->selectData(TBL_USER, "*", "user_email = '$email' AND user_password = '$password'");
   }
 
   public function getSingleUser($id){
@@ -89,7 +88,7 @@ class User {
      return  $db->deleteData(TBL_POST_REG_FOR_USER, "reg_token = '$reg_token'");
   }
 
-    public  static  function  DeleteRecordsOlderThanThreeDays(){
+    public  function  DeleteRecordsOlderThanThreeDays(){
         global $db;
         $date = date("m-d-Y", strtotime('-5 day'));
         return  $db->deleteData(TBL_POST_REG_FOR_USER, "delete_on < '$date'");

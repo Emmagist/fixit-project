@@ -80,7 +80,7 @@ include "scr/inc/header1.php";
       </div>
     </div>
   </div>
-  
+
 </div>
 <?php include "scr/inc/footer.php"; ?>
 <script>
