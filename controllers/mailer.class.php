@@ -24,14 +24,17 @@ class Mailer
           //$mail->addAttachment($filepath);         // Add attachments
           $mail->SMTPSecure = "ssl";     
           $mail->setFrom('fixit@gmail.com','Fixit Admin');   
-         // $mail->addCC($from,$namefrom);      
+          //$mail->addCC($from,$namefrom);
           $mail->Subject  = 'title here';
          // $mail->AltBody  = $altmess;
           $mail->isHTML(true);
           //$mail->Timeout = 2000;
-          $mail->Body = 'message here';
+          $mail->Body = "<p>Thank you for signing up on Fixit platform, kindly use this link to verify your account 
+                    <a href='localhost/fixit/login.php?code=$code'>Click here to verify your account</a>
+                    </p>";
+
           $mail->addAddress($email, $firstname .''.$lastname);
-            
+
          } catch (Exception $e) {
             $mail->ErrorInfo;
          } //var_dump($mail);
