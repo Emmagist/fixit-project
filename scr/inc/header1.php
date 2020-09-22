@@ -18,10 +18,16 @@
                 <li><a href="#">Directory</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Language <i class="fa fa-chevron-down "></i></a></li>
-                <li><a href="#">Login</a></li>
-                <li class="mt-3">
-                <img src="https://img.icons8.com/color/48/000000/circled-user-male-skin-type-6.png"/>
-                </li>
+                <?php
+                if (isset($_SESSION['user_token'])):?>
+                    <li><a href="logout.php" class="dash-nav-item text-danger">Logout</a></li>
+                    <li class="mt-3">
+                        <img src="https://img.icons8.com/color/48/000000/circled-user-male-skin-type-6.png" alt=""/>
+                    </li>
+                <?php else:?>
+                    <li><a href="login.php">Login</a></li>
+
+                <?php endif;?>
             </ul>
         </nav>
         <div class="hamburger">
@@ -64,8 +70,14 @@
     ?>
  </div>
  <div class="container" id="index-loginbtn">
-   <a href="login.php" class="btn">SIGN IN</a>
-   <a href="signup.php" class="btn">SIGN UP</a>
+     <?php
+     if (isset($_SESSION['user_token'])):?>
+         <a href="signup.php" class="btn">SIGN UP</a>
+     <?php else:?>
+         <a href="login.php" class="btn">SIGN IN</a>
+         <a href="signup.php" class="btn">SIGN UP</a>
+     <?php endif;?>
+
  </div>
  <div class="nav">
     <div class="container">

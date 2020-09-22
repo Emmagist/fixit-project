@@ -34,7 +34,7 @@ if (isset($_POST['service_employer']) || isset($_POST['service_provider'])){
               }
 
           }else{
-              $reg_token= 'USER' . '-' . md5(mt_rand('1','6'));
+              $reg_token=  md5(mt_rand('1','6'));
               $_SESSION['reg_token'] =  $reg_token;
               $reg_token = $_SESSION['reg_token'] ;
               $_SESSION['email'] = $email;
@@ -52,9 +52,9 @@ if (isset($_POST['service_employer']) || isset($_POST['service_provider'])){
  * Registration for users
  */
 if (isset($_POST['registration'], $_FILES['file'])){
- $errors = "";
+ $error = "";
  //Functions::arrayPrinter( $_FILES);
-  $error = Validation::ValidateUserRegistration($errors);
+  $error = Validation::ValidateUserRegistration($error);
   $firstname = $_POST['firstname'];
   $lastname =$_POST['lastname'];
   $password = $_POST['password'];
@@ -64,7 +64,7 @@ if (isset($_POST['registration'], $_FILES['file'])){
   $service_role = $_POST['service_role'];
   $cpassword = $_POST['confirmpassword'];
   $status = 0;
-  $role = 'user';
+  $role_id = 2;
   $verified = 'unverified';
   $phone_number =$_POST['phone_number'];
   $phone_number_two=$_POST['phone_number_two'];
@@ -75,17 +75,18 @@ if (isset($_POST['registration'], $_FILES['file'])){
   $address = $_POST['address'];
   $password = password_hash($password, PASSWORD_DEFAULT);
   $code = md5(rand('12345','12345'));
-    $target_dir = "scr/profile-uploads/";
-    $file = $_FILES['file'];
-    $target_file = $target_dir . $_FILES['file']['name'];
-    $error = Functions::uploadFile($errors, $target_file, $file);
+    $file_name = $_FILES['file']['name'];
+    $file_size =$_FILES['file']['size'];
+    $file_tmp =$_FILES['file']['tmp_name'];
+    $file_type=$_FILES['file']['type'];
+    $destination = "scr/profile-uploads/".$file_name;
+    $error = Functions::uploadFile($error, $file_name, $file_size, $file_tmp,$file_type);
   if (empty($error)){
       if (User::VerifyUserByTokenOnRegistration($reg_token , $email, $service_role)){
           if (!User::findUserByEmail($email)){
-              if (move_uploaded_file($file['tmp_name'], $target_file)){
-                  $user->InsertUser($email,$firstname,$lastname,$password,$address,$role, $verified, $status,$reg_token,$service_role, $code,$phone_number,$phone_number_two,$stateR,$lga,$description,$fieldOfProfession,$target_file);
+              if (move_uploaded_file($file_tmp,$destination)){
+                  $user->InsertUser($email,$firstname,$lastname,$password,$address,$role_id, $verified, $status,$reg_token,$service_role, $code,$phone_number,$phone_number_two,$stateR,$lga,$description,$fieldOfProfession,$destination);
                   User::DeleteUserOnTepRegTable($reg_token);
-                  $mailer->verificationMail($firstname,$lastname,$email,$code);
                   $_SESSION['message-success'] = "Registration successful and a verification link has been sent to your email , Thanks you.";
                   header('location: index.php');
               }
@@ -107,17 +108,18 @@ if (isset($_POST['registration'], $_FILES['file'])){
  */
 
     if (isset($_POST['login'])) {
-        $errors='';
+        $error='';
         $email = $db->escape($_POST['email']);
         $password = $db->escape($_POST['password']);
-        $error = Validation::ValidationForLogin($errors);
-
+        $error = Validation::ValidationForLogin($error);
+       // var_dump(User::findUserByEmail($email));exit();
         if (empty($error)){
             foreach(User::findUserByEmail($email) as $userInfo){
-
-                if($userInfo && password_verify($password, $userInfo['user_password'])){
-                    $_SESSION['email'] = $userInfo['email'];
+                if($userInfo && password_verify($password, $userInfo['user_password']) && $userInfo['role_id'] == 2){
+                    $_SESSION['email'] = $userInfo['user_email'];
                     $_SESSION['user_token'] = $userInfo['user_token'];
+                    $_SESSION['user_image'] = $userInfo['profile_image'];
+                    $_SESSION['role_id']    = $userInfo['role_id'];
                     $_SESSION['success'] = 'You have successfully logged in';
                     $verifiedRow = $userInfo['verified'] === 'verified';
                     $_SESSION['verified'] = $verifiedRow;

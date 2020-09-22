@@ -1,6 +1,6 @@
 <?php
 include "init.php";
-include 'path.php';
+
 class User {
 
     public  function  construct(){
@@ -49,7 +49,7 @@ class User {
      
   }
 
-  public function InsertUser($email,$firstname,$lastname,$password,$address,$role, $verified, $status,$reg_token,$service_role, $code,$phone_number,$phone_number_two,$stateR,$lga,$description,$fieldOfProfession,$target_file) {
+  public function InsertUser($email,$firstname,$lastname,$password,$address,$role_id, $verified, $status,$reg_token,$service_role, $code,$phone_number,$phone_number_two,$stateR,$lga,$description,$fieldOfProfession,$destination) {
     global $db, $fun;
     $db->saveData(TBL_USER ,
         "user_email = '$email',
@@ -58,7 +58,7 @@ class User {
         user_lastname = '$lastname', 
         user_address = '$address',
         user_token = '$reg_token', 
-        role = '$role', 
+        role_id = '$role_id', 
         verified = '$verified', 
         status = '$status', 
         service_role ='$service_role', 
@@ -69,7 +69,7 @@ class User {
         lga='$lga',
         description='$description',
         field_of_profession='$fieldOfProfession',
-        profile_image = '$target_file' ");
+        profile_image = '$destination' ");
     
   }
 

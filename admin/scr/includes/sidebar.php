@@ -28,11 +28,7 @@
         <i class="fas fa-align-justify"></i>
          Categories 
     </a>
-    <a href="login.php" class="dash-nav-item">
-        <i class="fas fa-sign-in-alt text-white"></i>
-         login 
-    </a>
-    <a href="#" class="dash-nav-item text-danger">
+    <a href="logout.php" class="dash-nav-item text-danger">
         <i class="fas fa-sign-out-alt text-white"></i>
          Logout 
     </a>

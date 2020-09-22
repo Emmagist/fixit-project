@@ -1,6 +1,16 @@
+<?php include "../process/admin.pr.php"; ?>
 <!-- Header -->
-<?php include "scr/includes/header.php";?>
+<?php
+include "scr/includes/header.php";
+if (!isset($_SESSION['user_email'],$_SESSION['user_token'])) {
+    header('location: login.php');
+}else {
+    $user_token = $_SESSION['user_token'];
+    $email =$_SESSION['user_email'];
+}
+?>
 <!-- Header End -->
+
 
 <div class="dash">
     <!-- Sidebar -->

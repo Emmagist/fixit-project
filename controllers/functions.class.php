@@ -9,20 +9,16 @@ class Functions {
 		echo "</pre>";exit;
   }
 
-    public static function  uploadFile($errors, $target_file,$file){
-      $fileSize = $file['size'];
-      $fileTemp = $file['tmp_name'];
-        $fileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-        if (file_exists($target_file)){
-            $errors = 'File already exist';
-        }elseif ($fileSize > 500000000){
-            $errors = 'Sorry, your file is too large';
+    public static function  uploadFile($error, $file_name, $file_size, $file_tmp,$file_type){
+        $fileType = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+       if ($file_size > 500000000){
+            $error = 'Sorry, your file is too large';
         }elseif ($fileType !== 'jpg' && $fileType && 'jpeg' ){
-            $errors = 'Sorry, only jpg and jpeg format are allowed.';
-        }elseif (empty($target_file)){
-            $errors = 'File can not be empty';
+            $error = 'Sorry, only jpg and jpeg format are allowed.';
+        }elseif ($file_size == 0){
+            $error = 'File can not be empty';
         }
-        return $errors;
+        return $error;
     }
 
 	

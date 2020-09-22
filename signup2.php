@@ -116,7 +116,7 @@
           <button class="btn btn-upload" disabled>Upload A Picture</button>
         </div>
         <div class="col-md-3">
-          <input type="file" id="file" class="form-control" name="file" value="<?= isset($_FILES['file'])? $_FILES['file'] : ''?>">
+          <input type="file" id="file" class="form-control" name="file" value="<?= isset($_FILES['file'])? $_FILES['file'] : ''?>" required>
         </div>
       </div>
       <div class="row">

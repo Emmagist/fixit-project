@@ -2,46 +2,68 @@
 include "init.php";
 class Validation {
 
-        public static function ValidateUserRegistration($errors){
+        public static function ValidateUserRegistration($error){
             if(empty($_POST['firstname'])){
-                $errors = 'Provide First name';
+                $error = 'Provide First name';
             }elseif (empty($_POST['email'])){
-                $errors = 'Provide an Email';
+                $error = 'Provide an Email';
             }elseif (empty($_POST['lastname'])){
-                $errors = 'Provide Last name';
+                $error = 'Provide Last name';
             }elseif (empty($_POST['reg_token'])){
-                $errors = 'Missing  token';
+                $error = 'Missing  token';
             }elseif (empty($_POST['password'])){
-                $errors = 'Provide a password';
+                $error = 'Provide a password';
             }elseif ($_POST['confirmpassword'] !== $_POST['password']){
-                $errors = 'Password mismatch';
-            }elseif (empty($_POST['phone_number'] && !is_numeric($_POST['phone_number']))){
-                $errors = 'Invalid Phone number format';
-            }elseif (empty($_POST['description'])){
-                $errors = 'Fill field description';
+                $error = 'Password mismatch';
+            }elseif (empty($_POST['phone_number']) || ! is_numeric($_POST['phone_number'])){
+                $error = 'Invalid Phone number format';
+            }elseif (empty($_POST['phone_number_two']) || ! is_numeric($_POST['phone_number_two'])){
+                $error = 'Invalid Phone number two format';
+            }elseif (strlen($_POST['phone_number_two']) < 10 || strlen($_POST['phone_number']) < 10){
+                $error = 'Phone number length should be 10 character and above';
+            } elseif (empty($_POST['description'])){
+                $error = 'Fill field description';
             }elseif (empty($_POST['lga'])){
-                $errors = 'Provide a Local government area';
+                $error = 'Provide a Local government area';
             }elseif (empty($_POST['stateR'])){
-                $errors = 'Provide a State or origin';
+                $error = 'Provide a State or origin';
             }elseif (empty($_POST['field_of_profession'])){
-                $errors = 'Field of profession can not be empty';
+                $error = 'Field of profession can not be empty';
             }elseif (empty($_POST['address'])){
-                $errors = 'address can not be empty';
+                $error = 'address can not be empty';
             }
-            return $errors;
+            return $error;
         }
 
-        public static function ValidationForLogin($errors){
+        public static function ValidationForLogin($error){
             if (empty($_POST['email'])) { //check for empty email
-                $errors = "The email field can not be empty";
+                $error = "The email field can not be empty";
             }else if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) ){
-                $errors = 'Provide a valid email format';
+                $error = 'Provide a valid email format';
             }elseif (empty($_POST['password'])){ //check for empty password
-                $errors = 'The password field can not be empty';
+                $error = 'The password field can not be empty';
             }
 
-            return $errors;
+            return $error;
         }
+
+    public static function ValidationForAdminRegistration($error){
+        if (empty($_POST['firstname'])) {
+            $error = "The firstname field can not be empty";
+        }elseif (empty($_POST['lastname'])) {
+            $error = "The lastname field can not be empty";
+        }elseif (empty($_POST['email'])) {
+            $error = "The email field can not be empty";
+        }elseif(empty($_POST['address'])){
+            $error ="The address field can not be empty";
+        }elseif (empty($_POST['password'])) {
+            $error = "The password field can not be empty";
+        }elseif (User::findUserByEmail($_POST['email'])){
+            $error = 'Email Already Exist ';
+        }
+
+        return $error;
+    }
 
 
 }

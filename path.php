@@ -1,5 +1,5 @@
 <?php
-$path = realpath(dirname(__FILE__));
+$path = realpath(__DIR__);
 
 define('ROOT_PATH', $path);
 
