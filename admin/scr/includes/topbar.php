@@ -12,10 +12,8 @@
     </form>
     
     <div class="tools">
-        
-            <!-- <i class="fab fa-github"></i> -->
-            
-            <a class="mr-5 mt-2"> Last Access: 30th May 2020</a>
+        <a href="../" class="mr-5 mt-2 text-primary" target="_blank"> Visit Website</a>
+        <a class="mr-5 mt-2"> Last Access: 30th May 2020</a>
         <a href="#!" class="tools-item">
             <i class="fas fa-bell"></i>
             <i class="tools-item-count">4</i>

@@ -15,18 +15,19 @@
         <nav class="navigation">
             <ul>
                 <li><a href="index.php">Home</a></li>
-                <li><a href="#">Directory</a></li>
+                <li><a href="#">Directory<i class="fa fa-chevron-down "></i></a></li>
                 <li><a href="#">About</a></li>
-                <li><a href="#">Language <i class="fa fa-chevron-down "></i></a></li>
                 <?php
-                if (isset($_SESSION['user_token'])):?>
+                if ($fun->ifLoggedIn()):
+                    if ($fun->IsAdmin()):?>
+                        <li><a href="admin/index.php">Admin</a></li>
+                    <?php endif;?>
                     <li><a href="logout.php" class="dash-nav-item text-danger">Logout</a></li>
                     <li class="mt-3">
                         <img src="https://img.icons8.com/color/48/000000/circled-user-male-skin-type-6.png" alt=""/>
                     </li>
                 <?php else:?>
                     <li><a href="login.php">Login</a></li>
-
                 <?php endif;?>
             </ul>
         </nav>
@@ -71,9 +72,7 @@
  </div>
  <div class="container" id="index-loginbtn">
      <?php
-     if (isset($_SESSION['user_token'])):?>
-         <a href="signup.php" class="btn">SIGN UP</a>
-     <?php else:?>
+     if (!$fun->ifLoggedIn()):?>
          <a href="login.php" class="btn">SIGN IN</a>
          <a href="signup.php" class="btn">SIGN UP</a>
      <?php endif;?>

@@ -34,33 +34,4 @@ require_once ROOT_PATH . "/controllers/init.php";
 
     }
 
-
-/***
- * Login Admin-user in
- * @param rquired email and password
- */
-
-    if (isset($_POST['admin-login'])) {
-        $error='';
-        $email = $db->escape($_POST['email']);
-        $password = $db->escape($_POST['password']);
-        $error = Validation::ValidationForLogin($error);
-        if (empty($error)){
-            //var_dump(User::findUserByEmail($email));exit();
-            foreach(User::findUserByEmail($email) as $userInfo){
-                if($userInfo && password_verify($password, $userInfo['user_password']) && $userInfo['role_id'] == 1){
-                    $_SESSION['user_email'] = $userInfo['user_email'];
-                    $_SESSION['user_token'] = $userInfo['user_token'];
-                    $_SESSION['success'] = 'You have successfully logged in';
-                    $verifiedRow = $userInfo['verified'] === 'verified';
-                    $_SESSION['verified'] = $verifiedRow;
-                    header('Location: index.php');
-                }else{
-                    $error = 'These credentials do not match our records';
-                }
-            }
-
-        }
-
-    }
 ?>

@@ -115,7 +115,7 @@ if (isset($_POST['registration'], $_FILES['file'])){
        // var_dump(User::findUserByEmail($email));exit();
         if (empty($error)){
             foreach(User::findUserByEmail($email) as $userInfo){
-                if($userInfo && password_verify($password, $userInfo['user_password']) && $userInfo['role_id'] == 2){
+                if($userInfo && password_verify($password, $userInfo['user_password'])){
                     $_SESSION['email'] = $userInfo['user_email'];
                     $_SESSION['user_token'] = $userInfo['user_token'];
                     $_SESSION['user_image'] = $userInfo['profile_image'];
@@ -123,7 +123,13 @@ if (isset($_POST['registration'], $_FILES['file'])){
                     $_SESSION['success'] = 'You have successfully logged in';
                     $verifiedRow = $userInfo['verified'] === 'verified';
                     $_SESSION['verified'] = $verifiedRow;
-                    header('Location: index.php');
+                    $_SESSION['role_id'] = $userInfo['role_id'];
+                    if ($userInfo['role_id'] == 2){
+                        header('Location: index.php');
+                    } else{
+                        header('Location: admin/index.php');
+                    }
+
                 }else{
                     $error = 'These credentials do not match our records';
                 }

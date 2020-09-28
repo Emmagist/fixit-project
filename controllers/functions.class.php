@@ -21,7 +21,20 @@ class Functions {
         return $error;
     }
 
-	
+	public function ifLoggedIn(){
+      if(isset($_SESSION['user_token'])){return  true;}return  false;
+    }
+
+    public function  checkIfAdminLogin(){
+        if (!isset($_SESSION['user_email'],$_SESSION['user_token']) && $_SESSION['role_id'] != 1) {
+            header('location: ../index.php');
+        }
+    }
+
+    public function  IsAdmin(){
+      if ($_SESSION['role_id'] == 1){return true;}return false;
+
+    }
   
 }
 

@@ -28,7 +28,7 @@
         <i class="fas fa-align-justify"></i>
          Categories 
     </a>
-    <a href="logout.php" class="dash-nav-item text-danger">
+    <a href="../logout.php" class="dash-nav-item text-danger">
         <i class="fas fa-sign-out-alt text-white"></i>
          Logout 
     </a>
