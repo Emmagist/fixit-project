@@ -71,11 +71,11 @@
                         Directories
                     </a>
                     <div class="dropdown-content bg-dark text-white" >
-                        <a class="dropdown-item" href="service_prov.php">Provider</a>
+                        <a class="dropdown-item" href="provider.php">Provider</a>
                         <a class="dropdown-item" href="#">Another action</a>
                     </div>
                 </li>
-                <li><a href="#">About</a></li>
+                <li><a href="about.php">About</a></li>
                 <?php
                 if ($fun->ifLoggedIn()):
                     if ($fun->IsAdmin()):?>
