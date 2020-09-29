@@ -51,6 +51,9 @@ class User {
 
   public function InsertUser($email,$firstname,$lastname,$password,$address,$role_id, $verified, $status,$reg_token,$service_role, $code,$phone_number,$phone_number_two,$stateR,$lga,$description,$fieldOfProfession,$destination) {
     global $db, $fun;
+    $last_login = '0000-00-00 00:00:00';
+    $updated_at = '0000-00-00 00:00:00';
+    $deleted_at = '0000-00-00 00:00:00';
     $db->saveData(TBL_USER ,
         "user_email = '$email',
         user_firstname = '$firstname', 
@@ -69,7 +72,11 @@ class User {
         lga='$lga',
         description='$description',
         field_of_profession='$fieldOfProfession',
-        profile_image = '$destination' ");
+        profile_image = '$destination',
+        last_login = '$last_login',
+        updated_at='$updated_at',
+        deleted_at='$deleted_at'
+         ");
     
   }
 
