@@ -16,41 +16,35 @@ include "scr/inc/header1.php";
     </div>
     <div class="card-body">
     <ul class="list-group">
+        <?php foreach (Categories::getAllCategories() as $cat):?>
         <li class="list-group-item">
-          <a href="">Designer & Creatativity</a>
+          <a href="<?=$cat['slug']?>"><?=$cat['name']?></a>
         </li>
-        <li class="list-group-item">
-          <a href="">Web Development</a>
-        </li>
+       <?php endforeach;?>
       </ul>
     </div>
     </div>
     <div class="col-lg-8" id="product-area">
       <div class="row">
-        <div class="col-md-6 mb-4 img-container">
-          <img src="scr/img/pic1.png" alt=""  class="img-thumbnail">
-        </div>
-        <div class="col-md-6  mb-4 img-container">
-        <img src="scr/img/wood-shaving.jpg" alt="" class="img-thumbnail">
-        </div>
-        <div class="col-md-6 mb-4 img-container">
-        <img src="scr/img/hands-typing-code-on-laptop.jpg" alt="" class="img-thumbnail">
-        </div>
-        <div class="col-md-6 mb-4 img-container">
-        <img src="scr/img/green-t-shirt.jpg" alt="" class="img-thumbnail">
-        </div>
-        <div class="col-md-6  mb-4 img-container">
-        <img src="scr/img/wood-shaving.jpg" alt="" class="img-thumbnail">
-        </div>
-        <div class="col-md-6 mb-4 img-container">
-        <img src="scr/img/hands-typing-code-on-laptop.jpg" alt="" class="img-thumbnail">
-        </div>
-        <div class="col-md-6 mb-4 img-container">
-          <img src="scr/img/pic1.png" alt=""  class="img-thumbnail">
-        </div>
-        <div class="col-md-6  mb-4 img-container">
-        <img src="scr/img/wood-shaving.jpg" alt="" class="img-thumbnail">
-        </div>
+        <?php foreach ($user->getAllServiceProvider() as $user):?>
+            <div class="col-md-6 mb-4 img-container card-body">
+                <a href="">
+                    <img src="scr/img/pic1.png" alt=""  class="img-thumbnail">
+                </a>
+                <div class="card-footer">
+                    <div class="text-muted d-flex justify-content-between">
+                        <div>
+                            <span>Profile Picture</span>
+                        </div>
+                        <div><?=$user['user_firstname'] .' '. $user['user_lastname']?></div>
+                    </div>
+                    <div class="text-muted d-flex justify-content-between">
+                        <div><span class="text-danger">Price: $100</span></div>
+                        <div><?=$user['field_of_profession']?></div>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach;?>
       </div>
     </div>
   </div>

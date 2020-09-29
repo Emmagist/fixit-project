@@ -31,7 +31,7 @@
 //          $mail->isHTML(true);
 //          //$mail->Timeout = 2000;
 //          $mail->Body = "<p>Thank you for signing up on Fixit platform, kindly use this link to verify your account
-//                    <a href='localhost/fixit/login.php?code=$code'>Click here to verify your account</a>
+//                    <a href='localhost/fixit/add.php?code=$code'>Click here to verify your account</a>
 //                    </p>";
 //
 //          $mail->addAddress($email, $firstname .''.$lastname);

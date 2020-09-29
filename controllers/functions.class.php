@@ -9,6 +9,14 @@ class Functions {
 		echo "</pre>";exit;
   }
 
+  public function makeSlug($param){
+
+      $slug = trim($param);
+      $slug = str_replace(array(" ", "/"), array("-", "-slash-"), $slug);
+      return rawurlencode($slug);
+
+  }
+
     public static function  uploadFile($error, $file_name, $file_size, $file_tmp,$file_type){
         $fileType = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
        if ($file_size > 500000000){

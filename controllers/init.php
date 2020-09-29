@@ -6,5 +6,6 @@ require_once  "functions.class.php";
 require_once  "mailer.class.php";
 require_once "validation.class.php";
 require_once  "user.class.php";
+require_once    "category.class.php";
 
 

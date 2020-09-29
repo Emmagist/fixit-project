@@ -65,6 +65,13 @@ class Validation {
         return $error;
     }
 
+    public function ValidateCatRegistration($error){
+            if (empty($_POST['name'])){
+                $error = "Name can not be empty";
+            }
+            return $error;
+    }
+
 
 }
 

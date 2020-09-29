@@ -1,8 +1,8 @@
 <header class="bg-success">
-      <a href="#!" class="menu-toggle">
-          <i class="fas fa-bars"></i>
-      </a>
-      <a href="../" class="easion-logo"><img src="scr/img/Fixitlogo transparent.png" alt="" height="80" width="80"> <span>Admin</span></a>
+    <a href="#!" class="menu-toggle">
+        <i class="fas fa-bars"></i>
+    </a>
+    <a href="../" class="easion-logo"><img src="../scr/img/Fixitlogo transparent.png" alt="" height="80" width="80"> <span>Admin</span></a>
 </header>
 
 <nav class="dash-nav-list">
@@ -13,7 +13,7 @@
             <i class="fas fa-align-justify"></i> Users </a>
         <div class="dash-nav-dropdown-menu">
             <a href="" class="dash-nav-dropdown-item">View</a>
-            <a href="signup.php" class="dash-nav-dropdown-item">Add Admin User</a>
+            <a href="signup.php" class="dash-nav-dropdown-item">Add</a>
         </div>
     </div>
     <div class="dash-nav-dropdown">
@@ -24,13 +24,13 @@
             <a href="" class="dash-nav-dropdown-item">View</a>
         </div>
     </div>
-    <a href="category/index.php" class="dash-nav-item">
+    <a href="index.php" class="dash-nav-item">
         <i class="fas fa-align-justify"></i>
-         Categories 
+        Categories
     </a>
     <a href="../logout.php" class="dash-nav-item text-danger">
         <i class="fas fa-sign-out-alt text-white"></i>
-         Logout 
+        Logout
     </a>
-  
+
 </nav>

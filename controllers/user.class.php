@@ -48,6 +48,10 @@ class User {
     return $db->selectData("users" , "*" , "service_role ='$id' ");
      
   }
+  public function getAllServiceProvider(){
+      global $db, $fun;
+      return $db->selectData("users" , "*" , "service_role ='service_provider' ", "order by RAND()");
+  }
 
   public function InsertUser($email,$firstname,$lastname,$password,$address,$role_id, $verified, $status,$reg_token,$service_role, $code,$phone_number,$phone_number_two,$stateR,$lga,$description,$fieldOfProfession,$destination) {
     global $db, $fun;

@@ -38,7 +38,7 @@ include "../process/admin.pr.php";
                     </div>
                     <div class="account-dialog-actions">
                         <button type="submit" class="btn btn-primary" name="admin-reg">Sign up</button>
-                        <a class="account-dialog-link" href="login.php">Already have an account?</a>
+                        <a class="account-dialog-link" href="category/add.php">Already have an account?</a>
                     </div>
                 </form>
             </div>
