@@ -9,8 +9,8 @@ require_once "controllers/init.php";
 if (isset($_POST['service_employer']) || isset($_POST['service_provider'])){
 
       $data = array_keys($_POST);
-      $service_role = ($data[1] === 'service_employer') ? 'service_employer' : 'service_provider';
-      $email = $_POST['email'];
+      $service_role =$db->escape_string($role = ($data[1] === 'service_employer') ? 'service_employer' : 'service_provider');
+      $email = $db->escape_string($_POST['email']);
       if(empty($email)){
           $error = 'Provide Your Email ';
       }else if( !filter_var($email, FILTER_VALIDATE_EMAIL) ){

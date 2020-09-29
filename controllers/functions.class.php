@@ -13,7 +13,7 @@ class Functions {
         $fileType = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
        if ($file_size > 500000000){
             $error = 'Sorry, your file is too large';
-        }elseif ($fileType !== 'jpg' && $fileType && 'jpeg' ){
+        }elseif ($fileType !== 'jpg' && $fileType !== 'jpeg' && $fileType !== 'png' ){
             $error = 'Sorry, only jpg and jpeg format are allowed.';
         }elseif ($file_size == 0){
             $error = 'File can not be empty';
