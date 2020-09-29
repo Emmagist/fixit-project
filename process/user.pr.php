@@ -3,13 +3,6 @@ require_once "controllers/init.php";
 
 // session_start();
 
-
-/***
- * Delete all user information(data) automatically where reg_token == $reg_token on table TBL_POST_REG_FOR_USER in db when it reach day five
- */
-User::DeleteRecordsOlderThanThreeDays();
-
-
 /***
  * Post registration for users
  */

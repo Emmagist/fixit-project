@@ -3,8 +3,8 @@ include "init.php";
 
 class User {
 
-    public  function  construct(){
-        $this->DeleteRecordsOlderThanThreeDays();
+    public  function  __construct(){
+        $this->DeleteRecordsOlderThanAWeek();
     }
 
   public static  function  InsertToken($reg_token, $email, $service_role, $date){
@@ -88,7 +88,7 @@ class User {
      return  $db->deleteData(TBL_POST_REG_FOR_USER, "reg_token = '$reg_token'");
   }
 
-    public  function  DeleteRecordsOlderThanThreeDays(){
+    public  function  DeleteRecordsOlderThanAWeek(){
         global $db;
         $date = date("m-d-Y", strtotime('-5 day'));
         return  $db->deleteData(TBL_POST_REG_FOR_USER, "delete_on < '$date'");
