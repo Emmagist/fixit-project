@@ -66,11 +66,32 @@ class Validation {
     }
 
     public function ValidateCatRegistration($error){
-            if (empty($_POST['name'])){
-                $error = "Name can not be empty";
-            }
-            return $error;
+        if (empty($_POST['name'])){
+            $error = "Name can not be empty";
+        }
+        return $error;
     }
+
+    public static function ValidateHelp($error){
+        if (empty($_POST['name'])){
+            $error = "Name can not be empty";
+        }elseif (empty($_POST['email'])) {
+            $error = "Email can not be empty";
+        }
+        return $error;
+    }
+
+    public static function ValidateForPartnership($error){
+        if (empty($_POST['name'])) {
+            $error = "Name can not be empty";
+        }elseif (empty($_POST['phone_num'])) {
+            $error = "Phone Number can not be empty";
+        }elseif (empty($_POST['email'])) {
+            $error = "Name can not be empty";
+        }
+        return $error;
+    }
+
 
 
 }

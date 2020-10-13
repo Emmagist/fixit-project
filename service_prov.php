@@ -1,12 +1,23 @@
-<?php require_once "scr/inc/header2.php"; ?>
+<?php 
+  require_once "scr/inc/header2.php"; 
+  include "process/user.pr.php";
+  //require "controllers/init.php";
+
+  if (!isset($_GET['user_token'])) {
+    header("Location: provider.php");
+  }else{
+      $Sprovider=User::getSingleServiceProvider($_GET['user_token']);
+      foreach ($Sprovider as $key) :
+          ?>
 
 <div class="service_prov container">
   <div class="">
     <div class="row mt-5">
       <div class="col-md-4 main-service-col">
         <div class="row main-service-row">
-          <div class="col-md-6"><h3>Salami John</h3></div>
-          <div class="col-md-6 mt-2"><a href="#" id="chat-btn">Chat With Seller</a></div>
+          
+          <div class="col-md-6"><h3><?=strtoupper($key['user_firstname']) . ' ' .  strtoupper($key['user_lastname']);?></php></h3></div>
+          <div class="col-md-6 mt-2"><a href="chatbox.php?chat<?=$key['id'];?>" id="chat-btn">Chat With Seller</a></div>
         </div>
       </div>
       <div class="col-md-2" id="empty-service-pro-col"></div>
@@ -15,13 +26,13 @@
         <div class="card" style="width: 18rem;" id="job_profile">
           <div class="card-body main-card">
             <div class="row mb-1" id="job-rate">
-              <div class="col-md-2"><img src="scr/img/2.jpg" alt="" class="icon-img"></div>
+              <div class="col-md-2"><img src="<?php echo $key['profile_image']; ?>" alt="" class="icon-img"></div>
               <div class="col-md-9 job-rate">
-                <h4>Salami Toye</h4>
+                <h6><?php echo $key['user_firstname']  . ' '. $key['user_lastname']; ?></h6>
                 <p>Top Rated Seller</p>
               </div>
             </div>
-            <p class="card-text">I Will Design Two Modern Logo's.</p>
+            <p class="card-text"><?php //echo $key['description'];?>ddffffff</p>
             <i class="fa fa-star star-icon"></i> <span class="">(1k.+)</span>
             </div><hr class=" service-prov-hr">
             <div class="row" id="cat-main-li-div">
@@ -41,7 +52,7 @@
     </div>
   </div>
   <div class=" main-service-prov pl-3">
-    <div class="job_done">Order Jobs Done By Salami</div>
+    <div class="job_done">Order Jobs Done By <?php echo $key['user_firstname']; ?></div>
     <div class="row   pb-4 pl-2">
       <div class="col-md-4 pt-5">
         <div class="card service-prov-card-row" style="width: 18rem;">
@@ -66,41 +77,69 @@
   <div class="mt-5">
     <h3 class="ml-5 mb-4 testimonials">Testimonials</h3>
     <div class="row" id="main-two-service-prov">
-      <div class="col-md-1"><img src="scr/img/2.jpg" alt="" class="icon-img-two"></div>
+    <?php
+          $email = $key['user_email'];
+          // echo $email;exit;
+          $email = User::getUserTestimony($email);
+          // $fun->arrayPrinter($email);exit;
+          if ($email) :
+            foreach ($email as $mail) :
+        ?>
+      <div class="col-md-1">
+        <?php
+          $email = $mail['email_from'];
+          // echo $email;exit;
+          $picture = User::getUserTestimonyPics($email);
+          // $fun->arrayPrinter($email);exit;
+          if ($picture) :
+            foreach ($picture as $pic) :
+        ?>
+        <img src="<?php echo $pic['profile_image']; ?>" alt="" class="icon-img-two">
+            <?php endforeach;
+          endif; ?>
+      </div>
       <div class="col-md-11 pl-3">
-      <div class=""><i class="fa fa-star service-star"> <span><i class="fa fa-star"></i></span> <span><i class="fa fa-star"></i></span></i></div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus maxime iusto facere, omnis repudiandae eligendi perferendis. Quia asperiores hic nam nostrum cupiditate possimus enim ea quaerat sequi, accusantium veniam itaque.</p>
+      <div class=""><i class="fa fa-star service-star"> <span><i class="fa fa-star"></i></span> <span><i class="fa fa-star"></i></span> <span><i class="fa fa-star"></i></span> <span><i class="fa fa-star"></i></span></i></div>
+      <p>
+        <?php echo $mail['user_testimony']; ?>
+      </p>
+            <?php endforeach;
+          endif; ?>
       <div class=""><i class="fa fa-thumbs-o-up mr-3 helpfull-icon"> Helpful</i> <span><i class="fa fa-thumbs-o-down helpfull-icon"> Not Helpful</i></span></div>
       </div>
     </div>
-    <div class="row  pt-4" id="main-two-service-prov">
+    <!-- <div class="row  pt-4" id="main-two-service-prov">
       <div class="col-md-1"><img src="scr/img/2.jpg" alt="" class="icon-img-two"></div>
       <div class="col-md-11 pl-3">
-      <div class=""><i class="fa fa-star service-star"> <span><i class="fa fa-star"></i></span></i></div>
+      <div class=""><i class="fa fa-star service-star"> <span><i class="fa fa-star"></i></span> <span><i class="fa fa-star" style="color: gray;"></i></span> <span><i class="fa fa-star" style="color: gray;"></i></span> <span><i class="fa fa-star" style="color: gray;"></i></span></i></div>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus maxime iusto facere, omnis repudiandae eligendi perferendis. Quia asperiores hic nam nostrum cupiditate possimus enim ea quaerat sequi, accusantium veniam itaque.</p>
       <div class=""><i class="fa fa-thumbs-o-up mr-3 helpfull-icon"> Helpful</i> <span><i class="fa fa-thumbs-o-down helpfull-icon"> Not Helpful</i></span></div>
       </div>
-    </div>
+    </div> -->
   </div>
   <div class="row mt-5">
     <div class="col-md-3">
-      <img src="scr/img/2.jpg" alt="" class="icon-img-three ml-1"><br><br>
-      <a href="#" id="chat-btn">Chat With Seller</a>
+      <img src="<?php echo $key['profile_image']; ?>" alt="" class="icon-img-three ml-1"><br><br>
+      <a href="chatbox.php?chat<?=$key['id'];?>" id="chat-btn">Chat With Seller</a>
     </div>
     <div class="col-md-6 text-center about-wrapper">
       <h3>About Seller</h3>
       <div class="table_wrapper">
         <div class="row table_bordered">
-          <div class="col-md-4 table_bord pt-2 pb-2">From <br><span>Lagos</span></div>
-          <div class="col-md-4 table_bord pt-2 pb-2">Member<br><span>Since August 2020</span></div>
-          <div class="col-md-4 table_bordere pt-2 pb-2">Avg. Response Time<br><span>15 Mins</span></div>
+          <div class="col-md-4 table_bord pt-2 pb-2">From <br><span class="text-primary"><?php echo $key['regester_at']; ?></span></div>
+          <div class="col-md-4 table_bord pt-2 pb-2">Member<br><span>Since <span class="text-primary"><?php echo $key['regester_at']; ?></span></span></div>
+          <div class="col-md-4 table_bordere pt-2 pb-2">Avg. Response Time<br><span class="text-primary">15 Mins</span></div>
         </div>
         <div class="row text-center" id="table_bordered">
-          <p class="p-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus tempore similique delectus quae, ipsa qui ratione iure enim et voluptates. Doloremque voluptatibus hic praesentium. Et at aliquid reprehenderit eaque iste.</p>
+          <p class="p-2"><?php echo $key['description']; ?></p>
         </div>
       </div>
     </div>
     <div class="col-md-3"></div>
+  <?php
+      endforeach;
+    }
+  ?>
   </div>
 </div>
 

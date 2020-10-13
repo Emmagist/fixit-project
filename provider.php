@@ -3,9 +3,9 @@ include "process/user.pr.php";
 include "scr/inc/header2.php";
 ?>
   <div class="main">
+    <?php foreach ($user->getAllServiceProvider() as $user):?>
     <h3>Logo's</h3>
     <div class="row mb-5">
-    <?php foreach ($user->getAllServiceProvider() as $user):?>
       <div class="col-md-3">
         <div class="card" id="sub-cat-card">
           <img src="scr/img/slide1.jpg" class="card-img-top" alt="...">

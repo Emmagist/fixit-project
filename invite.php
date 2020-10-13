@@ -1,4 +1,7 @@
-<?php require_once "scr/inc/header1.php"; ?>
+<?php 
+  require_once "scr/inc/header1.php"; 
+  require "process/support.pr.php";
+?>
 
 <div class="container-fluid mt-5 invite-container">
   <div class="row mb-5 " id="invite-row">
@@ -55,12 +58,16 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci et facere quia! Quidem nesciunt similique ea eos pariatur natus sed, doloribus nulla dolorem ipsa sunt laboriosam impedit aspernatur, repellendus dicta!</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga maiores quas suscipit officia quaerat quibusdam nulla aspernatur eligendi. Ea beatae voluptates molestias nostrum numquam tempore molestiae animi, explicabo dolorum itaque.</p>
       </div>
-      <form action="" id="invit-form" class="mt-5">
-        <div class="form-group mb-4">
-          <input type="text" class="form-control mb-5" placeholder="Name">
-          <input type="text" class="form-control mt-4" placeholder="Email Address">
+      <form action="" id="invit-form" class="mt-5" method="POST">
+        <div style="width: 70%;">
+        <?php require_once "scr/inc/session-mgs.php";?>
+        <?php require_once "scr/inc/messages.php";?>
         </div>
-        <button type="submit">Submit</button>
+        <div class="form-group mb-4">
+          <input type="text" class="form-control mb-5" placeholder="Name" name="name">
+          <input type="text" class="form-control mt-4" placeholder="Email Address" name="email">
+        </div>
+        <button type="submit" name="support_button">Submit</button>
       </form>
     </div>
   </div>

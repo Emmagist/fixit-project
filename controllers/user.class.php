@@ -84,6 +84,11 @@ class User {
     
   }
 
+  public static function insertHelp($name,$phone_num,$email,$status){
+    global $db;
+    $db->saveData(TBL_HELP, "name='$name', phone_num='$phone_num', email='$email', status='$status'");
+  }
+
   public function UpdateUser($email,$firstname,$lastname,$password,$address,$role, $verified, $status, $service_role, $code,$unique_id,$phone_number,$phone_number_two,$stateR,$lga,$description,$fieldOfProfession){
     global $db, $fun;
     $db->updateData(TBL_USER,  "user_email = '$email',user_firstname = '$firstname', user_password = '$password', user_lastname = '$lastname', user_address = '$address', role = '$role', verified = '$verified', status = '$status', service_role ='$service_role', code = '$code', unique_id ='$unique_id',phone_number ='$phone_number',phone_number_two ='$phone_number_two',state_of_residence='$stateR',lga='$lga',description='$description',field_of_profession='$fieldOfProfession' ", "unique_id = '$unique_id'");
@@ -99,13 +104,33 @@ class User {
      return  $db->deleteData(TBL_POST_REG_FOR_USER, "reg_token = '$reg_token'");
   }
 
-    public  function  DeleteRecordsOlderThanAWeek(){
-        global $db;
-        $date = date("m-d-Y", strtotime('-5 day'));
-        return  $db->deleteData(TBL_POST_REG_FOR_USER, "delete_on < '$date'");
-    }
+  public  function  DeleteRecordsOlderThanAWeek(){
+      global $db;
+      $date = date("m-d-Y", strtotime('-5 day'));
+      return  $db->deleteData(TBL_POST_REG_FOR_USER, "delete_on < '$date'");
+  }
+
+  public static function getUserByToken($token){
+    global $db;
+    return $db->selectData(TBL_USER , "*", "user_token ='$token' ");
+  }
+
+  public static function getUserTestimony($email){
+    global $db;
+    return $db->selectData(TBL_TESTIMONY , "*" , "email_to = '$email'");
+  }
+
+  public static function getUserTestimonyPics($email){
+    global $db;
+    return $db->selectData(TBL_USER , "*" , "user_email = '$email'");
+  }
+
+  public static function getFaq(){
+    global $db;
+    return $db->selectData(TBL_FAQ , "*");
+  }
 
 }
 
-    $user = new User;
+$user = new User;
 
