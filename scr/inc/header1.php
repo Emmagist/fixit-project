@@ -1,3 +1,6 @@
+<?php
+    require "controllers/init.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -66,18 +69,21 @@
         <nav class="navigation">
             <ul>
                 <li><a href="index.php">Home</a></li>
+                <li><a href="about.php">About</a></li>
                 <li class="nav-item dropdown">
                     <a >
                         Directories
                     </a>
                     <div class="dropdown-content bg-dark text-white" >
                         <a class="dropdown-item" href="provider.php">Provider</a>
-                        <a class="dropdown-item" href="#">Another action</a>
+                        <?php
+                            if ($fun->ifLoggedIn()):
+                        ?>
+                        <a class="dropdown-item" href="user_profile.php">Profile</a>
                     </div>
                 </li>
-                <li><a href="about.php">About</a></li>
+                
                 <?php
-                if ($fun->ifLoggedIn()):
                     if ($fun->IsAdmin()):?>
                         <li><a href="admin/index.php">Admin</a></li>
                     <?php endif;?>
