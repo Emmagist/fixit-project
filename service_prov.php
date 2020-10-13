@@ -74,17 +74,17 @@
       </div>
     </div>
   </div>
+  <?php
+    $email = $key['user_email'];
+    // echo $email;exit;
+    $email = User::getUserTestimony($email);
+    // $fun->arrayPrinter($email);exit;
+    if ($email) :
+      foreach ($email as $mail) :
+  ?>
   <div class="mt-5">
     <h3 class="ml-5 mb-4 testimonials">Testimonials</h3>
     <div class="row" id="main-two-service-prov">
-    <?php
-          $email = $key['user_email'];
-          // echo $email;exit;
-          $email = User::getUserTestimony($email);
-          // $fun->arrayPrinter($email);exit;
-          if ($email) :
-            foreach ($email as $mail) :
-        ?>
       <div class="col-md-1">
         <?php
           $email = $mail['email_from'];
@@ -103,11 +103,10 @@
       <p>
         <?php echo $mail['user_testimony']; ?>
       </p>
-            <?php endforeach;
-          endif; ?>
       <div class=""><i class="fa fa-thumbs-o-up mr-3 helpfull-icon"> Helpful</i> <span><i class="fa fa-thumbs-o-down helpfull-icon"> Not Helpful</i></span></div>
       </div>
     </div>
+    <?php endforeach; endif; ?>
     <!-- <div class="row  pt-4" id="main-two-service-prov">
       <div class="col-md-1"><img src="scr/img/2.jpg" alt="" class="icon-img-two"></div>
       <div class="col-md-11 pl-3">
@@ -120,7 +119,7 @@
   <div class="row mt-5">
     <div class="col-md-3">
       <img src="<?php echo $key['profile_image']; ?>" alt="" class="icon-img-three ml-1"><br><br>
-      <a href="chatbox.php?chat<?=$key['id'];?>" id="chat-btn">Chat With Seller</a>
+      <a href="chatbox.php?chat_id=<?=$key['id'];?>" id="chat-btn">Chat With Seller</a>
     </div>
     <div class="col-md-6 text-center about-wrapper">
       <h3>About Seller</h3>

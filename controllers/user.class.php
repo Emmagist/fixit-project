@@ -48,6 +48,13 @@ class User {
     return $db->selectData("users" , "*" , "service_role ='$id' ");
      
   }
+
+  public static function getSingleServiceProvider($id){
+    global $db, $fun;
+    return $db->selectData("users" , "*" , "user_token ='$id' ");
+     
+  }
+  
   public function getAllServiceProvider(){
       global $db, $fun;
       return $db->selectData("users" , "*" , "service_role ='service_provider' ", "order by RAND()");
