@@ -1,3 +1,11 @@
+<?php
+  if (isset($_GET['id']) || ($_GET['user_token']) {
+    $id = $_GET['id'];
+    // echo $id;exit;
+    // $token = $_GET['user_token'];
+    // echo $token;exit;
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,16 +43,19 @@
       </div>
     </div>
     </div>
-    <div class="main-chat row">
-      <div class="col-md-10">
-      <form action="" class="chat-form">
-        <input type="text" class="form-control">
-      </form>
+    <form action="" class="chat-form" method="POST">
+      <div class="main-chat row">
+          <div class="col-md-10">
+            <input type="hidden" class="form-control" name="user-id" value="">
+            <input type="hidden" class="form-control" name="user-token" value="">
+            <input type="hidden" class="form-control" name="user-token" value="">
+            <input type="text" class="form-control" name="message">
+          </div>
+          <div class="col-md-2">
+            <button type="submit" class="btn btn-success" name="chatbox_button">Send</button>
+          </div>
       </div>
-      <div class="col-md-2">
-        <button type="submit" class="btn btn-success">Send</button>
-      </div>
-    </div>
+    </form>
   </div>
 </body>
 </html>

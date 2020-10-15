@@ -23,6 +23,10 @@ class User {
      
   }
 
+  public static function getAllUserByRole(){
+    global $db, $fun;
+    return $db->selectData(TBL_USER, "*", "role_id = '2'");
+  }
   public function getSingleUser($id){
     global $db, $fun;
     return $db->selectData(TBL_USER , "*" , "id ='$id' ");

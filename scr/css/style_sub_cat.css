@@ -133,6 +133,7 @@ body{
 }
 .star-icon{
   color: gold;
+  /* margin-bottom: -10px; */
 }
 /* .card{
   padding: 10px;
@@ -428,7 +429,7 @@ body{
   margin-left: 15.8rem;
 }
 .job_done{
-  width: 20%;
+  width: 21.1%;
   font-weight: 600;
   padding: 5px 2px 5px 5px;
   border: 2px solid var(--gray);
@@ -477,7 +478,8 @@ body{
   border-bottom: 1px solid var(--gray);
   border-right: 1px solid var(--gray);
   border-left: 1px solid var(--gray);
-  width: 115.8%;
+  width: 98%; 
+  /* width:115.8%; */
 }
 /* service provider ends */
 
@@ -683,11 +685,14 @@ body{
 }
 
 .chat-form{
+  width: 90%;
   margin-left: 20px;
+  /* background: red; */
 }
 /* .chat-empty{
   display: none;
 } */
+
 /* chat-box end */
 
 /* #form-two input{

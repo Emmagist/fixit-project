@@ -12,7 +12,7 @@
           <?php
             if (isset($_SESSION['user_token'])) {
               $token = $_SESSION['user_token'];
-              // echo $user_token;exit;
+              // echo $token;exit;
               $user_token = $user->getUserByToken($token);
               // $fun->arrayPrinter($user_token);exit;
               foreach ($user_token as $key) {

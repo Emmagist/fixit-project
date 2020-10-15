@@ -12,16 +12,16 @@
         <a href="#!" class="dash-nav-item dash-nav-dropdown-toggle">
             <i class="fas fa-align-justify"></i> Users </a>
         <div class="dash-nav-dropdown-menu">
-            <a href="" class="dash-nav-dropdown-item">View</a>
-            <a href="signup.php" class="dash-nav-dropdown-item">Add Admin User</a>
+            <a href="user/view.php" class="dash-nav-dropdown-item">View</a>
+            <a href="user/signup.php" class="dash-nav-dropdown-item">Add Admin</a>
         </div>
     </div>
     <div class="dash-nav-dropdown">
         <a href="#!" class="dash-nav-item dash-nav-dropdown-toggle">
             <i class="fas fa-align-justify"></i> Products </a>
         <div class="dash-nav-dropdown-menu">
-            <a href="" class="dash-nav-dropdown-item">Add</a>
-            <a href="" class="dash-nav-dropdown-item">View</a>
+            <a href="#" class="dash-nav-dropdown-item">Add</a>
+            <a href="#" class="dash-nav-dropdown-item">View</a>
         </div>
     </div>
     <a href="category/index.php" class="dash-nav-item">

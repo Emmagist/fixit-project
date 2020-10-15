@@ -13,14 +13,14 @@
 <div class="service_prov container">
   <div class="">
     <div class="row mt-5">
-      <div class="col-md-4 main-service-col">
+      <div class="col-md-5 main-service-col">
         <div class="row main-service-row">
           
-          <div class="col-md-6"><h3><?=strtoupper($key['user_firstname']) . ' ' .  strtoupper($key['user_lastname']);?></php></h3></div>
-          <div class="col-md-6 mt-2"><a href="chatbox.php?chat<?=$key['id'];?>" id="chat-btn">Chat With Seller</a></div>
+          <div class="col-md-7"><h5><?=strtoupper($key['user_firstname']) . ' ' .  strtoupper($key['user_lastname']);?></php></h5></div>
+          <div class="col-md-5 mt-1 mb-2"><a href="chatbox.php?chat<?=$key['id'].' user_token='.$key['user_token'];?>" id="chat-btn">Chat With Seller</a></div>
         </div>
       </div>
-      <div class="col-md-2" id="empty-service-pro-col"></div>
+      <div class="col-md-1" id="empty-service-pro-col"></div>
       <div class="col-md-2 main-service-card ">
         <!-- <div class="job_profile"></div> -->
         <div class="card" style="width: 18rem;" id="job_profile">
@@ -32,7 +32,7 @@
                 <p>Top Rated Seller</p>
               </div>
             </div>
-            <p class="card-text"><?php //echo $key['description'];?>ddffffff</p>
+            <p class="card-text text-truncate"><?=$key['description'];?></p>
             <i class="fa fa-star star-icon"></i> <span class="">(1k.+)</span>
             </div><hr class=" service-prov-hr">
             <div class="row" id="cat-main-li-div">
@@ -52,7 +52,7 @@
     </div>
   </div>
   <div class=" main-service-prov pl-3">
-    <div class="job_done">Order Jobs Done By <?php echo $key['user_firstname']; ?></div>
+    <div class="job_done">Order Jobs Done By <?php echo $key['user_lastname']; ?></div>
     <div class="row   pb-4 pl-2">
       <div class="col-md-4 pt-5">
         <div class="card service-prov-card-row" style="width: 18rem;">
@@ -116,12 +116,12 @@
       </div>
     </div> -->
   </div>
-  <div class="row mt-5">
-    <div class="col-md-3">
+  <div class="row mt-5 ml-5">
+    <div class="col-md-3 ml-5 mt-5">
       <img src="<?php echo $key['profile_image']; ?>" alt="" class="icon-img-three ml-1"><br><br>
-      <a href="chatbox.php?chat_id=<?=$key['id'];?>" id="chat-btn">Chat With Seller</a>
+      <a href="chatbox.php?chat_id=<?=$key['id'].' user_token='.$key['user_token'];?>" id="chat-btn">Chat With Seller</a>
     </div>
-    <div class="col-md-6 text-center about-wrapper">
+    <div class="col-md-6 text-center about-wrapper mt-5">
       <h3>About Seller</h3>
       <div class="table_wrapper">
         <div class="row table_bordered">
@@ -129,7 +129,7 @@
           <div class="col-md-4 table_bord pt-2 pb-2">Member<br><span>Since <span class="text-primary"><?php echo $key['regester_at']; ?></span></span></div>
           <div class="col-md-4 table_bordere pt-2 pb-2">Avg. Response Time<br><span class="text-primary">15 Mins</span></div>
         </div>
-        <div class="row text-center" id="table_bordered">
+        <div class="row text-center pr-5" id="table_bordered">
           <p class="p-2"><?php echo $key['description']; ?></p>
         </div>
       </div>

@@ -36,6 +36,13 @@ include "scr/includes/header.php";
                                     <i class="fas fa-user"></i>
                                 </div>
                                 <div class="stats-data">
+                                <?php
+
+                                    // $users = $user->getAllUserByRole();
+                                    // $fun->arrayPrinter($users);exit;
+                                    // $result = mysqli_num_rows($users);
+                                    // echo $result;
+                                ?>
                                     <div class="stats-number">114</div>
                                     <div class="stats-change">
                                         <span class="stats-percentage">+25%</span>
@@ -64,7 +71,7 @@ include "scr/includes/header.php";
                     </div>
                     <div class="col-xl-3">
                         <div class="stats stats-danger">
-                            <h3 class="stats-title"> Open tickets </h3>
+                            <h3 class="stats-title"> Closed tickets </h3>
                             <div class="stats-content">
                                 <div class="stats-icon">
                                     <i class="fas fa-phone"></i>

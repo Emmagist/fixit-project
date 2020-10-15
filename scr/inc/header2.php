@@ -1,3 +1,4 @@
+<?php require_once "controllers/functions.class.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +23,12 @@
       <div class="col-md-3"></div>
       <div class="col-md-3 log-sign">
         <button class="btn-sign-login">
+        <?php
+        if ($fun->ifLoggedIn()){ ?>
+          <a href="logout.php" class="dash-nav-item text-danger" style="font-size: 18px; font-weight: 600;">Logout</a>
+        <?php }else{ ?> 
           <a href="login.php" class="login">Login</a>|<a href="signup.php" class="sign-up">Signup</a>
+          <?php }; ?>
         </button>
       </div>
     </div> 
