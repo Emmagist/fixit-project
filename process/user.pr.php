@@ -63,7 +63,6 @@ if (isset($_POST['registration'], $_FILES['file'])){
   $description = $db->escape_string($_POST['description']);
   $lga = $db->escape_string($_POST['lga']);
   $stateR =  $db->escape_string($_POST['stateR']);
-  $fieldOfProfession =  $db->escape_string($_POST['field_of_profession']);
   $address =  $db->escape_string($_POST['address']);
   $password = password_hash($password, PASSWORD_DEFAULT);
   $code = md5(rand('12345','12345'));
@@ -77,7 +76,7 @@ if (isset($_POST['registration'], $_FILES['file'])){
       if (User::VerifyUserByTokenOnRegistration($reg_token , $email, $service_role)){
           if (!User::findUserByEmail($email)){
               if (move_uploaded_file($file_tmp,$destination)){
-                  $user->InsertUser($email,$firstname,$lastname,$password,$address,$role_id, $verified, $status,$reg_token,$service_role, $code,$phone_number,$phone_number_two,$stateR,$lga,$description,$fieldOfProfession,$destination);
+                  $user->InsertUser($email,$firstname,$lastname,$password,$address,$role_id, $verified, $status,$reg_token,$service_role, $code,$phone_number,$phone_number_two,$stateR,$lga,$description,$destination);
                   User::DeleteUserOnTepRegTable($reg_token);
                   $_SESSION['message-success'] = "Registration successful and a verification link has been sent to your email , Thanks you.";
                   header('location: index.php');
@@ -157,6 +156,25 @@ if (isset($_POST['registration'], $_FILES['file'])){
   $service_employer= 'service_employer';
   $employers = $user->getUserByServicerole($service_employer);
 
+
+if (isset($_POST['work_registration'])){
+    $error = '';
+    $user_token = $db->escape_string($_POST['user_token']);
+    $category_slug = $db->escape_string($_POST['category_slug']);
+    if (empty($_POST['category_slug'])){
+        $error = 'Please select a category';
+    }else{
+        if (empty($user->checkTableworkcategory($user_token,$category_slug))){
+            $user->work_register($user_token,$category_slug);
+            $_SESSION['message-info'] = "Work Category registration submitted successfully";
+        }else{
+            $error = 'You can not register for same work category twice';
+        }
+    }
+
+
+    //header('Location: work_registration.php');
+}
 
 
 

@@ -41,7 +41,7 @@
           
         </div>
         <div class="col-md-04">
-          <div class="verified"> <h4 class="text-center"><?=strtoupper($key['verified']);?></h4></div>
+          <div class="verified"> <h4 class="text-center"><?=strtoupper($key['verified'])?></h4></div>
         </div>
       </div>
 

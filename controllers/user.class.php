@@ -64,7 +64,7 @@ class User {
       return $db->selectData("users" , "*" , "service_role ='service_provider' ", "order by RAND()");
   }
 
-  public function InsertUser($email,$firstname,$lastname,$password,$address,$role_id, $verified, $status,$reg_token,$service_role, $code,$phone_number,$phone_number_two,$stateR,$lga,$description,$fieldOfProfession,$destination) {
+  public function InsertUser($email,$firstname,$lastname,$password,$address,$role_id, $verified, $status,$reg_token,$service_role, $code,$phone_number,$phone_number_two,$stateR,$lga,$description,$destination) {
     global $db, $fun;
     $last_login = '0000-00-00 00:00:00';
     $updated_at = '0000-00-00 00:00:00';
@@ -86,7 +86,6 @@ class User {
         state_of_residence='$stateR',
         lga='$lga',
         description='$description',
-        field_of_profession='$fieldOfProfession',
         profile_image = '$destination',
         last_login = '$last_login',
         updated_at='$updated_at',
@@ -140,6 +139,16 @@ class User {
     global $db;
     return $db->selectData(TBL_FAQ , "*");
   }
+
+    public function work_register($user_token,$category_slug){
+        global $db;
+        return $db->saveData(TBL_WORK_CATEGORY , "user_token ='$user_token',category_slug = '$category_slug' ");
+    }
+
+    public function checkTableworkcategory($user_token,$category_slug){
+        global $db;
+        return $db->selectData(TBL_WORK_CATEGORY, "*", "user_token = '$user_token' AND category_slug ='$category_slug'");
+    }
 
 }
 

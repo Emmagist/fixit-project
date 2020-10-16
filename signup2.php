@@ -99,13 +99,6 @@
         </div>
         <div class="col-md-12">
           <div class="form-group">
-            <label for="">Field of Profession</label>
-            <input type="text" name="field_of_profession" placeholder="You can choose more than word" class="form-control"
-                   value="<?= isset($_POST['field_of_profession'])? $_POST['field_of_profession'] : ''?>" required>
-          </div>
-        </div>
-        <div class="col-md-12">
-          <div class="form-group">
             <label for="">Description</label>
             <textarea name="description" id="" cols="30" rows="5" class="textarea form-control" required>
                 <?= isset($_POST['description'])? $_POST['description'] : ''?>
