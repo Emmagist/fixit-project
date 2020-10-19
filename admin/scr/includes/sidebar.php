@@ -12,7 +12,7 @@
         <a href="#!" class="dash-nav-item dash-nav-dropdown-toggle">
             <i class="fas fa-align-justify"></i> Users </a>
         <div class="dash-nav-dropdown-menu">
-            <a href="user/view.php" class="dash-nav-dropdown-item">View</a>
+            <a href="user/view.php" class="dash-nav-dropdown-item">View User</a>
             <a href="user/signup.php" class="dash-nav-dropdown-item">Add Admin</a>
         </div>
     </div>

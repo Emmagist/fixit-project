@@ -28,7 +28,7 @@ include "scr/inc/header1.php";
       <div class="row">
         <?php foreach ($user->getAllServiceProvider() as $user):?>
             <div class="col-md-6 mb-4 img-container card-body">
-                <a href="">
+                <a href="provider.php?id=<?=$user['id']?>">
                     <img src="scr/img/pic1.png" alt=""  class="img-thumbnail">
                 </a>
                 <div class="card-footer">

@@ -1,6 +1,11 @@
 <?php
-include "process/user.pr.php";
-include "scr/inc/header2.php";
+  include "process/user.pr.php";
+  include "scr/inc/header2.php";
+
+  if (!isset($_SESSION['user_token'], $_SESSION['verified'])) {
+    header('location: login.php');
+  }
+  
 ?>
   <div class="main">
   <?php foreach ($user->getAllServiceProvider() as $user):?>

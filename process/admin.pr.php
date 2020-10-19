@@ -30,8 +30,6 @@ require_once ROOT_PATH . "/controllers/init.php";
                 header('location: index.php');
             }
         }
-
-
     }
 
 ?>

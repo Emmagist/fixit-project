@@ -10,17 +10,26 @@
         <button type="submit" class="searchbox-submit"> <i class="fas fa-search"></i> </button>
         <input type="text" class="searchbox-input" placeholder="type to search">
     </form>
-    
+    <?php $date = '';?>
     <div class="tools">
         <a href="../" class="mr-5 mt-2 text-primary" target="_blank"> Visit Website</a>
-        <a class="mr-5 mt-2"> Last Access: 30th May 2020</a>
+        <p class="mr-5 mt-2"> Last Access: 
+        <?php 
+         if (!($fun->IsAdmin())) {
+            echo "can't Access Date";
+         }else {
+            echo date("r"); 
+         }
+        ?>
+        </p>
         <a href="#!" class="tools-item">
             <i class="fas fa-bell"></i>
             <i class="tools-item-count">4</i>
         </a>
         <div class="dropdown tools-item">
             <a href="#" class="" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-user"></i>
+                <!-- <i class="fas fa-user"></i> -->
+                <img src="scr/img/avatar.jpg" alt="" style="width:10vh; height:10vh; border-radius:50%;" class="ml-3">
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
                 <a class="dropdown-item" href="profile.php">Profile</a>

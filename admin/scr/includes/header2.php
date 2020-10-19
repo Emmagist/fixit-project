@@ -12,4 +12,4 @@
     <title>Fixit Admin Panel</title>
 </head>
 <body>
-<?php $fun->checkIfAdminLogin();?>
+<?php //$fun->checkIfAdminLogin();?>

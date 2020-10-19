@@ -1,4 +1,4 @@
-<?php include  "../../process/category.pr.php"; ?>
+<?php include  "../../process/add.admin.pr.php"; ?>
 
 <?php
 include "../scr/includes/header2.php";
@@ -32,23 +32,13 @@ include "../scr/includes/header2.php";
                     <div class="col-md-8">
                         <div class="card">
                             <div class="card-header">
-                                Add Add Form
+                                Add Admin Form
                             </div>
                             <div class="card-body">
-                                <form action="" method="post">
-                                    <?php require_once "../../scr/inc/session-mgs.php";?>
-                                    <?php require_once "../../scr/inc/messages.php";?>
-                                    <div class="form-group">
-                                        <input type="hidden" name="user_id" id="user_id" value="<?=$_SESSION['user_token']?>"
-                                        class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="">Role Id</label>
-                                        <input type="text" name="role_id" id="name" class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="">Email</label>
-                                        <input type="email" name="email" id="name" class="form-control">
+                                <form action="" method="POST">
+                                    <div>
+                                        <?php require_once "../../scr/inc/session-mgs.php";?>
+                                        <?php require_once "../../scr/inc/messages.php";?>
                                     </div>
                                     <div class="form-group">
                                         <label for="">First Name</label>
@@ -58,7 +48,22 @@ include "../scr/includes/header2.php";
                                         <label for="">Last Name</label>
                                         <input type="text" name="lastname" id="name" class="form-control">
                                     </div>
-                                    <button type="submit" class="btn btn-sm btn-primary" name="add_cat">Add Admin</button>
+                                    <div class="form-group">
+                                        <label for="">Email</label>
+                                        <input type="email" name="email" id="email" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Password</label>
+                                        <input type="password" name="password" id="password" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Address</label>
+                                        <input type="address" name="address" id="address" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="hidden" name="profile" id="email" class="form-control" value="scr/img/avatar.jpg">
+                                    </div>
+                                    <button type="submit" class="btn btn-sm btn-primary" name="add_admin_button">Add Admin</button>
                                 </form>
                             </div>
                         </div>

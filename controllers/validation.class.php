@@ -64,6 +64,22 @@ class Validation {
 
         return $error;
     }
+    public static function ValidationForAddAdminRegistration($error){
+        if (empty($_POST['firstname'])) {
+            $error = "The firstname field can not be empty";
+        }elseif (empty($_POST['lastname'])) {
+            $error = "The lastname field can not be empty";
+        }elseif (empty($_POST['email'])) {
+            $error = "The email field can not be empty";
+        }elseif (empty($_POST['password'])) {
+            $error = "The password field can not be empty";
+        }elseif (User::findUserByEmail($_POST['email'])){
+            $error = 'Email Already Exist ';
+        }
+
+        return $error;
+    }
+
 
     public function ValidateCatRegistration($error){
         if (empty($_POST['name'])){
