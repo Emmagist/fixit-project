@@ -111,6 +111,7 @@ if (isset($_POST['registration'], $_FILES['file'])){
                     $_SESSION['user_token'] = $userInfo['user_token'];
                     $_SESSION['user_image'] = $userInfo['profile_image'];
                     $_SESSION['role_id']    = $userInfo['role_id'];
+                    $_SESSION['service_role']    = $userInfo['service_role'];
                     $_SESSION['success'] = 'You have successfully logged in';
                     $verifiedRow = $userInfo['verified'] === 'verified';
                     $_SESSION['verified'] = $verifiedRow;
@@ -182,10 +183,7 @@ if (isset($_POST['work_registration'])){
     //header('Location: work_registration.php');
 }
 
-if (isset($_GET['cat'])){
 
-    Functions::arrayPrinter($_GET['cat']);
-}
 
 if (isset($_POST['post_craft'], $_FILES['file'])) {
     $error = "";

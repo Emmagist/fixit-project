@@ -1,11 +1,9 @@
 <?php
 include "process/user.pr.php";
 include "scr/inc/header2.php";
-
-//if ( $_SESSION['role_id'] !== 'service_provider'){
-//    header('Location: index.php');
-//}
-
+if ($_SESSION['service_role'] !== 'service_provider'){
+ header('Location: index.php');
+}
 ?>
   <div class="main">
 
