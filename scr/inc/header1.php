@@ -76,12 +76,11 @@
                     </a>
                     <div class="dropdown-content bg-dark text-white" >
                         <a class="dropdown-item" href="provider.php">Provider</a>
-                        <a class="dropdown-item" href="work_registration.php">Work Registration</a>
+                        <a class="dropdown-item" href="work_registration.php">Post Work</a>
                         <?php
                             if ($fun->ifLoggedIn()):
                         ?>
                         <a class="dropdown-item" href="user_profile.php?profile=<?=$_SESSION['user_token']?>">Profile</a>
-                        <a class="dropdown-item" href="post_work.php?post=<?=$_SESSION['user_token']?>">Post Work</a>
                     </div>
                 </li>
                 
