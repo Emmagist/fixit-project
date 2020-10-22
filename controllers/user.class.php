@@ -189,6 +189,26 @@ class User {
 
     }
 
+    public  static function searchByCategory($cat){
+
+        global  $db;
+        $rows = [];
+        $result = $db->query("SELECT * FROM users 
+                                INNER JOIN work_category 
+                                ON users.user_token = work_category.user_token  
+                                INNER JOIN category  
+                                ON  work_category.category_slug = category.slug
+                                WHERE category_slug = '$cat' AND role_id = 2");
+        $row_cnt = $result->num_rows;
+        if (!empty($result)) {
+            while ($row = $result->fetch_assoc()) {
+                $rows[] = $row;
+            }
+//           Functions::arrayPrinter($rows);
+        }
+        return $rows;
+    }
+
 }
 
 $user = new User;
