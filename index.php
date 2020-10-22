@@ -6,8 +6,15 @@ include "scr/inc/header1.php";
 
 <div class="container mt-5" id="first-container">
   <div class="container  text-center mb-5 mt-4" id="mainbody-title">
-    <h1>GRAPHICS & DESING</h1>
-    <p>A SINGLE PLACE, MILLIONS OF CREATIVE TALENTS</p>
+      <?php if(isset($_GET['cat'])):?>
+      <?php foreach (User::selectCategoryName($_GET['cat']) as $data):?>
+        <h1 class="text-uppercase"><?=$data['name']?></h1>
+        <p>A SINGLE PLACE, MILLIONS OF CREATIVE TALENTS</p>
+        <?php endforeach;?>
+      <?php else:?>
+          <h1>ALL CATEGORIES</h1>
+          <p>A SINGLE PLACE, MILLIONS OF CREATIVE TALENTS</p>
+      <?php endif;?>
   </div>
   <div class="row">
     <div class="col-md-4">
@@ -32,7 +39,11 @@ include "scr/inc/header1.php";
             <?php foreach ( User::searchByCategory($_GET['cat']) as $user):?>
                       <div class="col-md-6 mb-4 img-container card-body">
                           <a href="service_prov.php?user=<?=$user['user_token']?>">
-                              <img src="scr/img/pic1.png" alt=""  class="img-thumbnail">
+                              <?php if(!empty($user['work_image'])) :?>
+                              <img src="<?=$user['work_image']?>" alt=""  class="img-thumbnail">
+                              <?php else:?>
+                                  <img src="https://via.placeholder.com/150" alt=""  class="img-thumbnail">
+                              <?php endif;?>
                           </a>
                           <div class="card-footer">
                               <div class="text-muted d-flex justify-content-between">
@@ -57,7 +68,11 @@ include "scr/inc/header1.php";
               <?php foreach ($user->multSelectQueryForServiceProvider() as $user):?>
                   <div class="col-md-6 mb-4 img-container card-body">
                       <a href="service_prov.php?user=<?=$user['user_token']?>">
-                          <img src="scr/img/pic1.png" alt=""  class="img-thumbnail">
+                          <?php if(!empty($user['work_image'])) :?>
+                              <img src="<?=$user['work_image']?>" alt=""  class="img-thumbnail">
+                          <?php else:?>
+                              <img src="https://via.placeholder.com/150" alt=""  class="img-thumbnail">
+                          <?php endif;?>
                       </a>
                       <div class="card-footer">
                           <div class="text-muted d-flex justify-content-between">

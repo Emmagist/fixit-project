@@ -140,12 +140,13 @@ class User {
     return $db->selectData(TBL_FAQ , "*");
   }
 
-    public function work_register($user_token,$category_slug,$price){
+    public function work_register($user_token,$category_slug,$price,$destination){
         global $db;
         return $db->saveData(TBL_WORK_CATEGORY ,
             "user_token ='$user_token',
             category_slug = '$category_slug',
-             price = '$price' ");
+             price = '$price',
+              work_image = '$destination' ");
     }
 
     public function checkTableworkcategory($user_token,$category_slug){
@@ -207,6 +208,11 @@ class User {
 //           Functions::arrayPrinter($rows);
         }
         return $rows;
+    }
+
+    public  static function selectCategoryName($cat){
+        global  $db;
+       return $db->selectData(TBL_CATEGORIES, "DISTINCT name", "slug='$cat' ");
     }
 
 }

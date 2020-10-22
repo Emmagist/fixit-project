@@ -163,17 +163,32 @@ if (isset($_POST['work_registration'])){
     $user_token = $db->escape_string($_POST['user_token']);
     $category_slug = $db->escape_string($_POST['category_slug']);
     $price = $db->escape_string($_POST['price']);
+    $file_name = $_FILES['file']['name'];
+    $file_size =$_FILES['file']['size'];
+    $file_tmp =$_FILES['file']['tmp_name'];
+    $file_type=$_FILES['file']['type'];
+    $fileType = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+    $destination = "scr/work-registration-pictures/".$file_name;
     if (empty($_POST['category_slug'])){
         $error = 'Please select a category';
     }elseif (empty($_POST['price'])){
         $error = 'Price field can\'t be empty';
     }elseif (!is_numeric($_POST['price']) ){
         $error = 'Price field must of type numeric';
+    }elseif ($file_size >  500000000){
+        $error = 'Sorry, your file must be less than 3mb';
+    }elseif ($fileType !== 'jpg' && $fileType !== 'jpeg' && $fileType !== 'png' ){
+        $error = 'Sorry, only jpg, png and jpeg format are allowed.';
+    }elseif ($file_size === 0){
+        $error = 'File can not be empty';
     }
     else{
         if (empty($user->checkTableworkcategory($user_token,$category_slug))){
-            $user->work_register($user_token,$category_slug,$price);
-            $_SESSION['message-info'] = "Work Category registration submitted successfully";
+           if ( move_uploaded_file($file_tmp,$destination)){
+               $user->work_register($user_token,$category_slug,$price,$destination);
+               $_SESSION['message-info'] = "Work Category registration submitted successfully";
+           }
+
         }else{
             $error = 'You can not register for same work category twice';
         }
