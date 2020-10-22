@@ -106,29 +106,19 @@
     </header>
 
     <div class="container title">
-          <div class="logo-searcharea">
-          <h1>Welcome to <img src="scr/img/Fixitlogo transparent.png" alt="Fixit logo" class="logo-white"><h1>
-          </div>
-            <h4 class="text-white">THE BEST PLACE TO GET YOUR JOB DONE</h4>
-            <div class="card-body">
-                <!-- <form method="POST" action="" class=""> -->
-                    <!-- <div class="row"> -->
-                        <!-- <div class="col-md-8"> -->
-                            <input type="search" id="search_text" placeholder="What Are You Waiting For?" class="find-services form-control">
-                            <!-- <button type="submit" class="btn btn-primary btn-lg" hidden name="search_button">Search</button> -->
-
-                        <!-- </div> -->
-                        <!-- <div class="col-md-4">
-                        </div> -->
-                    <!-- </div> -->
-                <!-- </form> -->
-            </div>
-            <div class="pupolar-container">
-            <p class="text-white mt-4"></p>
-            <ul class="">
-              <li class="list-title">Pupolar: <a href="">Web developemt</a> <a href="">Electrician</a> <a href="">Graphic designer</a></li>
-            </ul>
-          </div>
+        <div class="logo-searcharea">
+        <h1>Welcome to <img src="scr/img/Fixitlogo transparent.png" alt="Fixit logo" class="logo-white"><h1>
+        </div>
+        <h4 class="text-white">THE BEST PLACE TO GET YOUR JOB DONE</h4>
+        <div class="card-body">
+            <input type="search" id="search_text" placeholder="What Are You Waiting For?" class="find-services form-control">
+        </div>
+        <div class="pupolar-container">
+        <p class="text-white mt-4"></p>
+        <ul class="">
+            <li class="list-title">Pupolar: <a href="">Web developemt</a> <a href="">Electrician</a> <a href="">Graphic designer</a></li>
+        </ul>
+        </div>
     </div>
  </div>
  <div class="container">

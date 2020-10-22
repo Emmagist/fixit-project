@@ -171,22 +171,8 @@
 </div>
 
     </div>
-    
-    <!-- <div class="modal-bg">
-    <div class="modal">
-      <h2>Subscribe to our thang</h2><br>
-      <label for="name">Name: </label>
-      <input type="text" address="address"><br><br>
-      <button>Subscribe</button>
-      <span class="modal-close">X</span>
-    </div> -->
   </div>
   </main>
-
-  <script>
-    
-  </script>
-  
 
    
   <?php require_once "scr/inc/footer.php"; ?>

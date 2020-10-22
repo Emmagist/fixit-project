@@ -73,7 +73,7 @@ class Database {
     }
 	}
 
-   /* 
+   /*
   UPDATE QUERY
   */
   public function updateData($table, $sql, $conditions){

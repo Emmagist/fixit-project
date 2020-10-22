@@ -1,9 +1,11 @@
 <?php
 include "process/user.pr.php";
 include "scr/inc/header2.php";
-// if ( $_SESSION['role_id'] !== 'service_provider'){
-//     header('Location: index.php');
-// }
+
+//if ( $_SESSION['role_id'] !== 'service_provider'){
+//    header('Location: index.php');
+//}
+
 ?>
   <div class="main">
 
@@ -26,6 +28,10 @@ include "scr/inc/header2.php";
                                 <option value="<?=$cat['slug']?>"><?=$cat['name']?></option>
                             <?php endforeach;?>
                             </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Price In Naira</label>
+                            <input type="text" name="price" class="form-control" placeholder="Enter Price" id="price">
                         </div>
                         <button type="submit" class="btn btn-primary btn-sm" name="work_registration">Submit</button>
                     </form>

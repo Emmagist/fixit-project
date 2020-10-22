@@ -20,7 +20,7 @@ include "scr/inc/header2.php";
                         </div>
                         <div class="form-group">
                             <label for="">Category Name</label>
-                            <select name="category_slug" id="" class="form-control" required>
+                            <select name="nav_category" id="" class="form-control" required>
                                 <option value="">--Select--</option>
                             <?php foreach (User::navCategory() as $nav):?>
                                 <option value="<?=$nav['parent']?>"><?=$nav['categories']?></option>

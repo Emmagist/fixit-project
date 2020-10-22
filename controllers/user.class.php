@@ -140,9 +140,12 @@ class User {
     return $db->selectData(TBL_FAQ , "*");
   }
 
-    public function work_register($user_token,$category_slug){
+    public function work_register($user_token,$category_slug,$price){
         global $db;
-        return $db->saveData(TBL_WORK_CATEGORY , "user_token ='$user_token',category_slug = '$category_slug' ");
+        return $db->saveData(TBL_WORK_CATEGORY ,
+            "user_token ='$user_token',
+            category_slug = '$category_slug',
+             price = '$price' ");
     }
 
     public function checkTableworkcategory($user_token,$category_slug){
@@ -163,6 +166,27 @@ class User {
     public static function subNavCategory($id){
       global $db;
       return $db->selectData(TBL_NAV_CATEGORY, "*", "parent == $id");
+    }
+
+    public  function  multSelectQueryForServiceProvider(){
+        global  $db;
+        $rows = [];
+        $result = $db->query("SELECT * FROM users 
+                                INNER JOIN work_category 
+                                ON users.user_token = work_category.user_token  
+                                INNER JOIN category  
+                                ON  work_category.category_slug = category.slug
+                                WHERE service_role = 'service_provider'");
+        $row_cnt = $result->num_rows;
+        if (!empty($result)) {
+            while ($row = $result->fetch_assoc()) {
+                $rows[] = $row;
+            }
+          //           Functions::arrayPrinter($rows);
+            return $rows;
+        }
+
+
     }
 
 }
