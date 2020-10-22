@@ -5,6 +5,10 @@
   if (!isset($_SESSION['user_token'], $_SESSION['verified'])) {
     header('location: login.php');
   }
+
+  if (isset($_GET['id'])) {
+    echo $_GET['id'];exit;
+  }
   
 ?>
   <div class="main">
@@ -41,19 +45,4 @@
 
       </div>
     </div>
-
-  <div class="main-two  ml-5 mr-5 text-center pl-2 pr-3" id="main-two">
-    <h3 class="mb-3 mt-2">Why you need A Logo For Your Business?</h3>
-    <div class="row text-center">
-      <div class="col-md-6 text-center">
-        <p><span class="span-main-two"><i class="fa fa-check-circle-o mr-3"></i></span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non odit, ipsa assumenda eligendi, perferendis voluptatem blanditiis perspiciatis rem dolores fugiat dolor, dolore fugit. Perspiciatis veritatis pariatur repellat aliquid nulla vitae.</p>
-        <p><span class="span-main-two"><i class="fa fa-check-circle-o mr-3"></i></span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non odit, ipsa assumenda eligendi, perferendis voluptatem blanditiis perspiciatis rem dolores fugiat dolor, dolore fugit. Perspiciatis veritatis pariatur repellat aliquid nulla vitae.</p>
-      </div>
-      <div class="col-md-6 text-center">
-      <p><span class="span-main-two"><i class="fa fa-check-circle-o mr-3"></i></span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non odit, ipsa assumenda eligendi, perferendis voluptatem blanditiis perspiciatis rem dolores fugiat dolor, dolore fugit. Perspiciatis veritatis pariatur repellat aliquid nulla vitae.</p>
-      <p><span class="span-main-two"><i class="fa fa-check-circle-o mr-3"></i></span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non odit, ipsa assumenda eligendi, perferendis voluptatem blanditiis perspiciatis rem dolores fugiat dolor, dolore fugit. Perspiciatis veritatis pariatur repellat aliquid nulla vitae.</p>
-      </div>
-    </div>
-  </div>
-
   <?php require_once "scr/inc/footer.php"; ?>

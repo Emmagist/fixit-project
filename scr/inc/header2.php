@@ -40,12 +40,9 @@
     <div class="container">
       <ul>
         <li><a href="index.php">Home</a></li>
-        <li><a href="sub_cat.php">Graphics & Designs</a></li>
-        <li><a href="#">Programming & Tech</a></li>
-        <li><a href="#">Music & Video</a></li>
-        <li><a href="#">Handywork</a></li>
-        <li><a href="#">Beauty & Fashion</a></li>
-        <li><a href="#">Writing & Translation</a></li>
+        <?php foreach(User::navCategory() as $nav) : ?>
+        <li><a href="sub_cat.php?sub=<?=$nav['id']?>"><?=$nav['categories']?></a></li>
+        <?php endforeach; ?>
       </ul>
     </div>      
   </div>

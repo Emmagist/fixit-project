@@ -71,15 +71,17 @@
                 <li><a href="index.php">Home</a></li>
                 <li><a href="about.php">About</a></li>
                 <li class="nav-item dropdown">
-                    <a >
+                    <a class="text-white">
                         Directories
                     </a>
                     <div class="dropdown-content bg-dark text-white" >
                         <a class="dropdown-item" href="provider.php">Provider</a>
+                        <a class="dropdown-item" href="work_registration.php">Work Registration</a>
                         <?php
                             if ($fun->ifLoggedIn()):
                         ?>
-                        <a class="dropdown-item" href="user_profile.php">Profile</a>
+                        <a class="dropdown-item" href="user_profile.php?profile=<?=$_SESSION['user_token']?>">Profile</a>
+                        <a class="dropdown-item" href="post_work.php?post=<?=$_SESSION['user_token']?>">Post Work</a>
                     </div>
                 </li>
                 
@@ -108,7 +110,19 @@
           <h1>Welcome to <img src="scr/img/Fixitlogo transparent.png" alt="Fixit logo" class="logo-white"><h1>
           </div>
             <h4 class="text-white">THE BEST PLACE TO GET YOUR JOB DONE</h4>
-            <input type="search" placeholder="What Are You Waiting For?" class="find-services form-control">
+            <div class="card-body">
+                <!-- <form method="POST" action="" class=""> -->
+                    <!-- <div class="row"> -->
+                        <!-- <div class="col-md-8"> -->
+                            <input type="search" id="search_text" placeholder="What Are You Waiting For?" class="find-services form-control">
+                            <!-- <button type="submit" class="btn btn-primary btn-lg" hidden name="search_button">Search</button> -->
+
+                        <!-- </div> -->
+                        <!-- <div class="col-md-4">
+                        </div> -->
+                    <!-- </div> -->
+                <!-- </form> -->
+            </div>
             <div class="pupolar-container">
             <p class="text-white mt-4"></p>
             <ul class="">
@@ -120,7 +134,7 @@
  <div class="container">
    <center>
      <form action="">
-   <input type="search" placeholder="What Are You Waiting For?" class="find-services-onsmall form-control">
+   <input type="search" id="search_text" placeholder="What Are You Waiting For?" class="find-services-onsmall form-control">
    </form>
    </center>
    
@@ -146,12 +160,17 @@
  <div class="nav">
     <div class="container">
       <ul>
-        <li><a href="sub_cat.php">Graphics & Designs</a></li>
-        <li><a href="#">Programming & Tech</a></li>
-        <li><a href="#">Music & Video</a></li>
-        <li><a href="#">Handywork</a></li>
-        <li><a href="#">Beauty & Fashion</a></li>
-        <li><a href="#">Writing & Translation</a></li>
+        <?php foreach(User::navCategory() as $nav) : ?>
+        <?php 
+            // $id = $nav['id'];
+            // $subnav = User::subNavCategory($id);
+
+            // foreach($subnav as sub) :
+        ?>
+        <li>
+            <a href="sub_cat.php?sub=<?=$nav['id']?>"><?=$nav['categories']?></a>
+        </li>
+        <?php endforeach; ?>
       </ul>
     </div>      
   </div>

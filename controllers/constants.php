@@ -21,3 +21,5 @@ define('TBL_TESTIMONY', 'testimony');
 define('TBL_HELP', 'help');
 define('TBL_FAQ', 'faq');
 define('TBL_CHAT_BOX', 'chatbox');
+define('TBL_WORK_CATEGORY', 'work_category');
+define('TBL_NAV_CATEGORY', 'nav_categoriesgit ');

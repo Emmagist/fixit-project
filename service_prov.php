@@ -3,10 +3,10 @@
   include "process/user.pr.php";
   //require "controllers/init.php";
 
-  if (!isset($_GET['user_token'])) {
+  if (!isset($_GET['user'])) {
     header("Location: provider.php");
   }else{
-      $Sprovider=User::getSingleServiceProvider($_GET['user_token']);
+      $Sprovider=User::getSingleServiceProvider($_GET['user']);
       foreach ($Sprovider as $key) :
           ?>
 

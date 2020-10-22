@@ -15,7 +15,7 @@ include "scr/inc/header1.php";
       Categories
     </div>
     <div class="card-body">
-    <ul class="list-group">
+    <ul class="list-group list-group-item-action" id="content">
         <?php foreach (Categories::getAllCategories() as $cat):?>
         <li class="list-group-item">
           <a href="<?=$cat['slug']?>"><?=$cat['name']?></a>
@@ -28,7 +28,7 @@ include "scr/inc/header1.php";
       <div class="row">
         <?php foreach ($user->getAllServiceProvider() as $user):?>
             <div class="col-md-6 mb-4 img-container card-body">
-                <a href="provider.php?id=<?=$user['id']?>">
+                <a href="service_prov.php?user=<?=$user['user_token'] . ' id=' .$user['id']?>">
                     <img src="scr/img/pic1.png" alt=""  class="img-thumbnail">
                 </a>
                 <div class="card-footer">
