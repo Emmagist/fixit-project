@@ -66,12 +66,28 @@ class Database {
     $result = $this->query("SELECT " . $fields . " FROM " . $table . "  $where " . $conditions);
     $row_cnt = $result->num_rows;
 		if (!empty($result)) {
-      while ($row = $result->fetch_assoc()) {
-        $rows[] = $row;
-      }
-      return $rows;
-    }
+          while ($row = $result->fetch_assoc()) {
+            $rows[] = $row;
+          }
+          return $rows;
+        }
 	}
+
+    /*
+SELECT JOIN QUERY
+*/
+    public function selectJoinData(){
+        $rows = [];
+        $result = $this->query("SELECT * FROM users INNER JOIN work_category ON users.user_token = work_category.user_token WHERE service_role = 'service_provider'");
+        $row_cnt = $result->num_rows;
+        if (!empty($result)) {
+            while ($row = $result->fetch_assoc()) {
+                $rows[] = $row;
+            }
+            Functions::arrayPrinter($rows);
+            return $rows;
+        }
+    }
 
    /* 
   UPDATE QUERY

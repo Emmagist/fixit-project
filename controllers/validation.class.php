@@ -27,8 +27,6 @@ class Validation {
                 $error = 'Provide a Local government area';
             }elseif (empty($_POST['stateR'])){
                 $error = 'Provide a State or origin';
-            }elseif (empty($_POST['field_of_profession'])){
-                $error = 'Field of profession can not be empty';
             }elseif (empty($_POST['address'])){
                 $error = 'address can not be empty';
             }

@@ -161,11 +161,17 @@ if (isset($_POST['work_registration'])){
     $error = '';
     $user_token = $db->escape_string($_POST['user_token']);
     $category_slug = $db->escape_string($_POST['category_slug']);
+    $price = $db->escape_string($_POST['price']);
     if (empty($_POST['category_slug'])){
         $error = 'Please select a category';
-    }else{
+    }elseif (empty($_POST['price'])){
+        $error = 'Price field can\'t be empty';
+    }elseif (!is_numeric($_POST['price']) ){
+        $error = 'Price field must of type numeric';
+    }
+    else{
         if (empty($user->checkTableworkcategory($user_token,$category_slug))){
-            $user->work_register($user_token,$category_slug);
+            $user->work_register($user_token,$category_slug,$price);
             $_SESSION['message-info'] = "Work Category registration submitted successfully";
         }else{
             $error = 'You can not register for same work category twice';
@@ -175,6 +181,13 @@ if (isset($_POST['work_registration'])){
 
     //header('Location: work_registration.php');
 }
+
+if (isset($_GET['cat'])){
+
+    Functions::arrayPrinter($_GET['cat']);
+}
+
+
 
 
 
