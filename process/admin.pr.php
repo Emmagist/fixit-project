@@ -24,7 +24,7 @@ require_once ROOT_PATH . "/controllers/init.php";
         $error = Functions::uploadFile($error, $file_name, $file_size, $file_tmp,$file_type);
         if (empty($error)){
             if (move_uploaded_file($file_tmp,$destination)){
-                $user->InsertUser($email,$firstname,$lastname,$password,$address,$role_id, $verified, $status,$reg_token,$service_role ='', $code,$phone_number='',$phone_number_two='',$stateR='',$lga='',$description='',$fieldOfProfession='',$destination);
+                $user->InsertUser($email,$firstname,$lastname,$password,$address,$role_id, $verified, $status,$reg_token,$service_role ='', $code,$phone_number='',$phone_number_two='',$stateR='',$lga='',$description='',$destination);
                 User::DeleteUserOnTepRegTable($reg_token);
                 $_SESSION['message-success'] = "Registration successful and a verification link has been sent to your email , Thanks you.";
                 header('location: index.php');

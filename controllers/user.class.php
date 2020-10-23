@@ -140,27 +140,18 @@ class User {
     return $db->selectData(TBL_FAQ , "*");
   }
 
-    public function work_register($user_token,$category_slug,$price){
+    public function work_register($user_token,$category_slug,$price,$destination){
         global $db;
         return $db->saveData(TBL_WORK_CATEGORY ,
             "user_token ='$user_token',
             category_slug = '$category_slug',
-             price = '$price' ");
+             price = '$price',
+              work_image = '$destination' ");
     }
 
     public function checkTableworkcategory($user_token,$category_slug){
         global $db;
         return $db->selectData(TBL_WORK_CATEGORY, "*", "user_token = '$user_token' AND category_slug ='$category_slug'");
-    }
-
-    public static function navCategory(){
-      global $db;
-      return $db->selectData(TBL_NAV_CATEGORY, "*", "parent = 0");
-    }
-
-    public static function subNavCategory($id){
-      global $db;
-      return $db->selectData(TBL_NAV_CATEGORY, "*", "parent == $id");
     }
 
     public  function  multSelectQueryForServiceProvider(){
@@ -214,6 +205,34 @@ class User {
       return $db->selectData(TBL_ABOUT, "*");
     }
 
+    public  static function selectCategoryName($cat){
+        global  $db;
+       return $db->selectData(TBL_CATEGORIES, "DISTINCT name", "slug='$cat' ");
+    }
+
+    public  function  multSelectQueryForSingleServiceProvider($token){
+      global  $db;
+      // echo "<pre>";
+      // var_dump($token);
+      // echo "</pre>";exit;
+      $rows = [];
+      $result = $db->query("SELECT * FROM users 
+                              INNER JOIN work_category 
+                              ON users.user_token = work_category.user_token  
+                              INNER JOIN category  
+                              ON  work_category.category_slug = category.slug
+                              WHERE  user_token = '$token'");
+      $row_cnt = $result->num_rows;
+      if (!empty($result)) {
+          while ($row = $result->fetch_assoc()) {
+              $rows[] = $row;
+          }
+        //           Functions::arrayPrinter($rows);
+          return $rows;
+      }
+
+
+  }
 }
 
 $user = new User;

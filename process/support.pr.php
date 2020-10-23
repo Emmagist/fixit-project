@@ -1,5 +1,5 @@
 <?php
-  require_once "../../controllers/init.php";
+  require_once "controllers/init.php";
 
   if (isset($_POST['support_button'])) {
     $error = '';

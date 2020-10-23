@@ -38,12 +38,12 @@ include "scr/includes/header.php";
                                 <div class="stats-data">
                                 <?php
 
-                                    // $users = $user->getAllUserByRole();
+                                    $users = $user->getAllUserByRole();
                                     // $fun->arrayPrinter($users);exit;
-                                    // $result = mysqli_num_rows($users);
-                                    // echo $result;
+                                    $result = count($users);
+                                    // echo $result;exit
                                 ?>
-                                    <div class="stats-number">114</div>
+                                    <div class="stats-number"><?php echo $result;?></div>
                                     <div class="stats-change">
                                         <span class="stats-percentage">+25%</span>
                                         <span class="stats-timeframe">from last month</span>

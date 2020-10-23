@@ -14,12 +14,12 @@ if ($_SESSION['service_role'] !== 'service_provider'){
                 <div class="card-body">
                     <?php require_once "scr/inc/messages.php"; ?>
                     <?php require_once "scr/inc/session-mgs.php"; ?>
-                    <form method="post">
+                    <form method="post" enctype="multipart/form-data">
                         <div class="form-group">
                             <input type="hidden" name="user_token" id="" value="<?=$_SESSION['user_token']?>">
                         </div>
                         <div class="form-group">
-                            <label for="">Category Name</label>
+                            <label for="">Choose a category for your work</label>
                             <select name="category_slug" id="" class="form-control" required>
                                 <option value="">--Select--</option>
                             <?php foreach (Categories::getAllCategories() as $cat):?>
@@ -29,7 +29,11 @@ if ($_SESSION['service_role'] !== 'service_provider'){
                         </div>
                         <div class="form-group">
                             <label for="">Price In Naira</label>
-                            <input type="text" name="price" class="form-control" placeholder="Enter Price" id="price">
+                            <input type="text" name="price" class="form-control" placeholder="Enter Price" id="price" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Upload an image of your work</label>
+                            <input type="file" name="file" class="form-control" placeholder="Enter Image" id="file" required>
                         </div>
                         <button type="submit" class="btn btn-primary btn-sm" name="work_registration">Submit</button>
                     </form>
