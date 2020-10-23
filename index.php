@@ -40,15 +40,21 @@ include "scr/inc/header1.php";
                       <div class="col-md-6 mb-4 img-container card-body">
                           <a href="service_prov.php?user=<?=$user['user_token']?>">
                               <?php if(!empty($user['work_image'])) :?>
-                              <img src="<?=$user['work_image']?>" alt=""  class="img-thumbnail">
+                                  <img src="<?=$user['work_image']?>" alt=""
+                                       class="card-img-top img-thumbnail" style="">
                               <?php else:?>
-                                  <img src="https://via.placeholder.com/150" alt=""  class="img-thumbnail">
+                                  <img src="https://via.placeholder.com/150" alt=""
+                                       class="card-img-top img-thumbnail" style="">
                               <?php endif;?>
                           </a>
-                          <div class="card-footer">
+                          <div class="card-body">
                               <div class="text-muted d-flex justify-content-between">
                                   <div>
-                                      <span>Profile Picture</span>
+                                       <span>
+                                       <img src="<?=$user['profile_image']?>" alt=""
+                                            class=""
+                                            style="width: 13%; height: 30px; border-radius: 50%">
+                                        </span>
                                   </div>
                                   <div><?=$user['user_firstname'] .' '. $user['user_lastname']?></div>
                               </div>
@@ -69,15 +75,21 @@ include "scr/inc/header1.php";
                   <div class="col-md-6 mb-4 img-container card-body">
                       <a href="service_prov.php?user=<?=$user['user_token']?>">
                           <?php if(!empty($user['work_image'])) :?>
-                              <img src="<?=$user['work_image']?>" alt=""  class="img-thumbnail">
+                              <img src="<?=$user['work_image']?>" alt=""
+                                   class="card-img-top img-thumbnail" style="">
                           <?php else:?>
-                              <img src="https://via.placeholder.com/150" alt=""  class="img-thumbnail">
+                              <img src="https://via.placeholder.com/150" alt=""
+                                   class="card-img-top img-thumbnail" style="">
                           <?php endif;?>
                       </a>
-                      <div class="card-footer">
+                      <div class="card-body">
                           <div class="text-muted d-flex justify-content-between">
                               <div>
-                                  <span>Profile Picture</span>
+                                  <span>
+                                       <img src="<?=$user['profile_image']?>" alt=""
+                                            class=""
+                                            style="width: 13%; height: 30px; border-radius: 50%">
+                                  </span>
                               </div>
                               <div><?=$user['user_firstname'] .' '. $user['user_lastname']?></div>
                           </div>

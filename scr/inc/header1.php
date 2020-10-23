@@ -76,11 +76,13 @@
                     </a>
                     <div class="dropdown-content bg-dark text-white" >
                         <a class="dropdown-item" href="provider.php">Provider</a>
-                        <a class="dropdown-item" href="work_registration.php">Post Work</a>
                         <?php
                             if ($fun->ifLoggedIn()):
                         ?>
                         <a class="dropdown-item" href="user_profile.php?profile=<?=$_SESSION['user_token']?>">Profile</a>
+                        <?php if(isset($_SESSION['user_token'], $_SESSION['verified'])):?>
+                        <a class="dropdown-item" href="work_registration.php">Post Work</a>
+                        <?php endif;?>
                     </div>
                 </li>
                 
@@ -149,15 +151,9 @@
  <div class="nav">
     <div class="container">
       <ul>
-        <?php foreach(User::navCategory() as $nav) : ?>
-        <?php 
-            // $id = $nav['id'];
-            // $subnav = User::subNavCategory($id);
-
-            // foreach($subnav as sub) :
-        ?>
+          <?php foreach (Categories::getAllCategories() as $cat):?>
         <li>
-            <a href="sub_cat.php?sub=<?=$nav['id']?>"><?=$nav['categories']?></a>
+            <a href="provider.php?cat=<?=$cat['slug']?>"><?=$cat['name']?></a>
         </li>
         <?php endforeach; ?>
       </ul>

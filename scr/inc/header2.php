@@ -40,9 +40,11 @@
     <div class="container">
       <ul>
         <li><a href="index.php">Home</a></li>
-        <?php foreach(User::navCategory() as $nav) : ?>
-        <li><a href="sub_cat.php?sub=<?=$nav['id']?>"><?=$nav['categories']?></a></li>
-        <?php endforeach; ?>
+          <?php foreach (Categories::getAllCategories() as $cat):?>
+              <li>
+                  <a href="provider.php?cat=<?=$cat['slug']?>"><?=$cat['name']?></a>
+              </li>
+          <?php endforeach; ?>
       </ul>
     </div>      
   </div>
