@@ -153,11 +153,6 @@ class User {
         return $db->selectData(TBL_WORK_CATEGORY, "*", "user_token = '$user_token' AND category_slug ='$category_slug'");
     }
 
-    public static function search(){
-      global $db;
-      return $db->selectData(TBL_CATEGORIES, "*", "slug LIKE '%".$_POST['search']."%'" );
-    }
-
     public static function navCategory(){
       global $db;
       return $db->selectData(TBL_NAV_CATEGORY, "*", "parent = 0");
@@ -204,9 +199,19 @@ class User {
             while ($row = $result->fetch_assoc()) {
                 $rows[] = $row;
             }
-//           Functions::arrayPrinter($rows);
+          // Functions::arrayPrinter($rows);
         }
         return $rows;
+    }
+
+    public static function insertAbout($title,$text,$date){
+      global $db;
+      $db->saveData(TBL_ABOUT, "title='$title', content='$text', date='$date' status='$status'");
+    }
+
+    public static function about(){
+      global $db;
+      return $db->selectData(TBL_ABOUT, "*");
     }
 
 }

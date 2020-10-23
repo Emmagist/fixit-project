@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="scr/css/footer.css">
   </head>
 <body>
- <div class="container" id="index-loginbtn">
+ <div class="container mt-3" id="index-loginbtn">
      <?php
      if (!$fun->ifLoggedIn()):?>
          <a href="login.php" class="btn">SIGN IN</a>
@@ -23,13 +23,8 @@
  <div class="nav">
     <div class="container">
       <ul>
+        <li><a href="index.php" class="">Home</a></li>
         <?php foreach(User::navCategory() as $nav) : ?>
-        <?php 
-            // $id = $nav['id'];
-            // $subnav = User::subNavCategory($id);
-
-            // foreach($subnav as sub) :
-        ?>
         <li>
             <a href="sub_cat.php?sub=<?=$nav['id']?>"><?=$nav['categories']?></a>
         </li>
@@ -97,22 +92,16 @@
       </div>
 
       <div class="row">
-      <div class="col-md-12">
-          <div class="paragraph">
-            <span><i class="fa fa-check-circle-o about_span-color"></i></span> <b>WHAT IS LOREM IPSUM</b>
-          </div>
-        </div>
-        <div class="col-md-10 about-col">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, voluptas suscipit fugiat facere quos alias vero quam! Exercitationem iste similique sapiente adipisci suscipit dicta dolorem vero laboriosam, aliquid neque saepe!
-        </div>
+        <?php foreach(User::about() as $about) : ?>
         <div class="col-md-12">
           <div class="paragraph">
-            <span><i class="fa fa-check-circle-o about_span-color"></i></span> <b>WHAT IS LOREM IPSUM</b>
+            <span><i class="fa fa-check-circle-o about_span-color"></i></span> <b><?=ucwords($about['title'])?></b>
           </div>
         </div>
         <div class="col-md-10 about-col">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, voluptas suscipit fugiat facere quos alias vero quam! Exercitationem iste similique sapiente adipisci suscipit dicta dolorem vero laboriosam, aliquid neque saepe!
+          <p><?=$about['content']?></p>
         </div>
+          <?php endforeach;?>
       </div>
   
     </div>
