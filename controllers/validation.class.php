@@ -107,7 +107,7 @@ class Validation {
     }
 
     public static function ValidationForChatBox($error){
-        if (empty($_POST['chatbox_button'])) {
+        if (empty($_POST['message'])) {
             $error = "Can't send empty message..";
         }
         return $error;

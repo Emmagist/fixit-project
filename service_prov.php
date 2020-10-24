@@ -2,14 +2,11 @@
   require_once "scr/inc/header2.php"; 
   include "process/user.pr.php";
   //require "controllers/init.php";
-
-  if (!isset($_GET['user'])) {
-    header("Location: provider.php");
-  }else{
-      $Sprovider=User::getSingleServiceProvider($_GET['user']);
-      foreach ($Sprovider as $key) :
-          ?>
-
+?>
+  <?php if (!isset($_GET['user'])):
+    header("Location: provider.php");?>
+  <?php else :?>
+     <?php foreach(User::getSingleServiceProvider($_GET['user']) as $key):?>
 <div class="service_prov container">
   <div class="">
     <div class="row mt-5">
@@ -17,7 +14,13 @@
         <div class="row main-service-row">
           
           <div class="col-md-7"><h5><?=strtoupper($key['user_firstname']) . ' ' .  strtoupper($key['user_lastname']);?></php></h5></div>
-          <div class="col-md-5 mt-1 mb-2"><a href="chatbox.php?id=<?=$key['id'].'&'.'user_token='.$key['user_token'];?>" id="chat-btn">Chat With Seller</a></div>
+          <div class="col-md-5 mt-1 mb-2">
+          <?php if($key['service_role'] == 'service_provider'):?>
+            <a href="chatbox.php?provider_token=<?=$key['user_token'];?>" id="chat-btn">View chats</a>
+          <?php else:?>
+            <a href="chatbox.php?provider_token=<?=$key['user_token'];?>" id="chat-btn">Chat With Seller</a>
+          <?php endif;?>
+          </div>
         </div>
       </div>
       <div class="col-md-1" id="empty-service-pro-col"></div>
@@ -119,7 +122,7 @@
   <div class="row mt-5 ml-5">
     <div class="col-md-3 ml-5 mt-5">
       <img src="<?php echo $key['profile_image']; ?>" alt="" class="icon-img-three ml-1"><br><br>
-      <a href="chatbox.php?id=<?=$key['id'].'&'.'user_token='.$key['user_token'];?>" id="chat-btn">Chat With Seller</a>
+      <a href="chatbox.php?provider_token=<?=$key['user_token'];?>" id="chat-btn">Chat With Seller</a>
     </div>
     <div class="col-md-6 text-center about-wrapper mt-5">
       <h3>About Seller</h3>
@@ -130,15 +133,14 @@
           <div class="col-md-4 table_bordere pt-2 pb-2">Avg. Response Time<br><span class="text-primary">15 Mins</span></div>
         </div>
         <div class="row text-center pr-5" id="table_bordered">
-          <p class="p-2"><?php echo $key['description']; ?></p>
+          <p class="p-2"><?=$key['description']?></p>
         </div>
       </div>
     </div>
     <div class="col-md-3"></div>
-  <?php
-      endforeach;
-    }
-  ?>
+  <?php endforeach;?>
+  <?php endif;?>
+  
   </div>
 </div>
 

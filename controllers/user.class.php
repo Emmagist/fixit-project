@@ -49,7 +49,13 @@ class User {
   public function getUserByServicerole($id){
     global $db, $fun;
     return $db->selectData("users" , "*" , "service_role ='$id' ");
-     
+
+  }
+
+  public function getUserByServiceEmployer($token){
+    global $db, $fun;
+    return $db->selectData(TBL_CHAT_BOX , "*" , "provider_token ='$token' ");
+  
   }
 
   public static function getSingleServiceProvider($id){
@@ -231,14 +237,19 @@ class User {
       }
   }
 
-  public static function insertForChatBox($receiver_id,$receiver_token,$sender_token,$name,$message,$date,$status){
+  public static function insertForChatBox($receiver_id,$provider_token,$employer_token,$name,$message,$date,$status){
     global $db;
-    return $db->saveData(TBL_CHAT_BOX, "receiver_id='$receiver_id', receiver_token='$receiver_token', sender_token='$sender_token', sender_name='$name', message='$message', date='$date', status='$status'");
+    return $db->saveData(TBL_CHAT_BOX, "receiver_id='$receiver_id', provider_token='$provider_token', employer_token='$employer_token', sender_name='$name', message='$message', date='$date', status='$status'");
   }
 
-  public function getSingleUserByToken($sender_token){
-    global $db, $fun;
-    return $db->selectData(TBL_USER , "*" , "user_token ='$sender_token'"); 
+  // public function getSingleUserByToken($sender_token){
+  //   global $db, $fun;
+  //   return $db->selectData(TBL_USER , "*" , "user_token ='$sender_token'"); 
+  // }
+
+  public static function getSingleUserFromChatBox($employer_token){
+    global $db;
+    return $db->selectData(TBL_CHAT_BOX, "*", "employer_token='$employer_token'");
   }
 }
 
