@@ -195,6 +195,9 @@ if (isset($_POST['work_registration'])){
     }
 
 
+
+
+
     //header('Location: work_registration.php');
 }
 
