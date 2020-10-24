@@ -29,8 +29,7 @@ class User {
   }
   public function getSingleUser($id){
     global $db, $fun;
-    return $db->selectData(TBL_USER , "*" , "id ='$id' ");
-     
+    return $db->selectData(TBL_USER , "*" , "id ='$id' "); 
   }
 
     public static function  findUserByEmail($email){
@@ -230,8 +229,16 @@ class User {
         //           Functions::arrayPrinter($rows);
           return $rows;
       }
+  }
 
+  public static function insertForChatBox($receiver_id,$receiver_token,$sender_token,$name,$message,$date,$status){
+    global $db;
+    return $db->saveData(TBL_CHAT_BOX, "receiver_id='$receiver_id', receiver_token='$receiver_token', sender_token='$sender_token', sender_name='$name', message='$message', date='$date', status='$status'");
+  }
 
+  public function getSingleUserByToken($sender_token){
+    global $db, $fun;
+    return $db->selectData(TBL_USER , "*" , "user_token ='$sender_token'"); 
   }
 }
 

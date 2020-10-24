@@ -47,9 +47,17 @@
             <input type="hidden" class="form-control" name="receiver_id" value="<?php echo $id;?>">
             <input type="hidden" class="form-control" name="receiver_token" value="<?php echo $receiver_token;?>">
             <input type="hidden" class="form-control" name="sender_token" value="<?php echo $sender_token?>">
+            <?php
+              //if ($sender_token) :
+                //foreach($user->getSingleUserByToken($sender_token) as $user):
+              
+            ?>
+            <!-- <input type="hidden" class="form-control" name="sender_name" value=""> -->
+                <?php //endforeach; endif;?>
             <input type="text" class="form-control" name="message">
           </div>
           <div class="col-md-2">
+            <?php require_once "scr/inc/messages.php";?>
             <button type="submit" class="btn btn-success" name="chatbox_button">Send</button>
           </div>
       </div>
