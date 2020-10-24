@@ -226,13 +226,12 @@ class User {
                               ON users.user_token = work_category.user_token  
                               INNER JOIN category  
                               ON  work_category.category_slug = category.slug
-                              WHERE  user_token = '$token'");
+                              WHERE service_role = 'service_provider' AND users.user_token = '$token'");
       $row_cnt = $result->num_rows;
       if (!empty($result)) {
           while ($row = $result->fetch_assoc()) {
-              $rows[] = $row;
+             $rows[] = $row;
           }
-        //           Functions::arrayPrinter($rows);
           return $rows;
       }
   }
