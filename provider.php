@@ -71,7 +71,7 @@
                         <div class="card-body main-card">
                             <div class="row mb-1">
                                 <div class="col-md-2"><img src="<?=$user['profile_image'] ?>" alt="" class="icon-img"></div>
-                                <div class="col-md-10"><h5><?=$user['user_firstname'] .' '. $user['user_lastname']?></h5></div>
+                                <div class="col-md-10"><h5><?=ucword($user['user_firstname'] .' '. $user['user_lastname']);?></h5></div>
                             </div>
                             <p class="card-text text-truncate"><?=$user['description'];?></p>
                             <i class="fa fa-star star-icon"></i> <span>(1k.+)</span>

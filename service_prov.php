@@ -17,7 +17,7 @@
         <div class="row main-service-row">
           
           <div class="col-md-7"><h5><?=strtoupper($key['user_firstname']) . ' ' .  strtoupper($key['user_lastname']);?></php></h5></div>
-          <div class="col-md-5 mt-1 mb-2"><a href="chatbox.php?chat<?=$key['id'].' user_token='.$key['user_token'];?>" id="chat-btn">Chat With Seller</a></div>
+          <div class="col-md-5 mt-1 mb-2"><a href="chatbox.php?id=<?=$key['id'].'&'.'user_token='.$key['user_token'];?>" id="chat-btn">Chat With Seller</a></div>
         </div>
       </div>
       <div class="col-md-1" id="empty-service-pro-col"></div>
@@ -119,7 +119,7 @@
   <div class="row mt-5 ml-5">
     <div class="col-md-3 ml-5 mt-5">
       <img src="<?php echo $key['profile_image']; ?>" alt="" class="icon-img-three ml-1"><br><br>
-      <a href="chatbox.php?chat_id=<?=$key['id'].' user_token='.$key['user_token'];?>" id="chat-btn">Chat With Seller</a>
+      <a href="chatbox.php?id=<?=$key['id'].'&'.'user_token='.$key['user_token'];?>" id="chat-btn">Chat With Seller</a>
     </div>
     <div class="col-md-6 text-center about-wrapper mt-5">
       <h3>About Seller</h3>
