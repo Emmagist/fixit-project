@@ -14,6 +14,7 @@
                 <img src="<?=$user1['profile_image']?>" alt="profile-picture">
                 <div class="mt-5 ml-4">
                   <p id="pic-area-name" class="mb-3"><?=$user1['user_firstname'] . ' ' . $user1['user_lastname']?></p>
+                    <?php if ($_SESSION['service_role'] === 'service_provider'):?>
                   <a href="#">Top Rated Seller</a>
                   <i class="fa fa-star" id="star-icon">
                     <i class="fa fa-star">
@@ -24,6 +25,7 @@
                     </i>
                     </i>
                   </i>
+                     <?php endif;?>
                   <p class="verified-onsmall text-uppercase"><?=$user1['verified']?></p>
                 </div>
 
@@ -48,6 +50,7 @@
               <img src="<?=$user1['profile_image']?>" alt="profile-picture">
               <div class="mt-5">
                 <p id="pic-area-name"><?=$user1['user_firstname'] . ' ' . $user1['user_lastname']?></p>
+                <?php if ($_SESSION['service_role'] === 'service_provider'):?>
                 <a href="#">Top Rated Seller</a>
                 <p>
                 <i class="fa fa-star" id="star-icon">
@@ -56,6 +59,7 @@
                   </i>
                 </i>
                 </p>
+                <?php endif;?>
                 <p class="verified-onsmall text-uppercase"><?=$user1['verified']?></p>
               </div>  
               <div>
@@ -71,7 +75,13 @@
   </main>
   
   <main class="second-main p-5">
-    <h5 class="text-center">About Seller</h5>
+    <h5 class="text-center">
+    <?php if ($_SESSION['service_role'] === 'service_provider'):?>
+        About Seller
+    <?php else:?>
+        About You
+    <?php endif;?>
+    </h5>
     <div class="container" id="second-div">
       
       <div class="row" id="second-divch2">
@@ -85,8 +95,10 @@
           <p class="text-primary"><?=$user1['register_at']?></p>
         </div>
         <div class="col-4 mt-2">
+            <?php if ($_SESSION['service_role'] === 'service_provider'):?>
           <h6 class="detail text-muted">AVG RESPONSE TIME</h6>
           <p class="text-primary"> 15 minute</p>
+            <?php endif;?>
         </div>
         <?php endforeach;?>
       </div>
@@ -97,9 +109,12 @@
       </div>
   </main>
 
-  <main class="main" id="third-main">
+
+    <main class="main" id="third-main">
       <div class="container">
-            <button class="btn btn-outline-secondary " id="profileeditbtn" type="submit">Edit About</button>
+
+            <button class="btn btn-outline-secondary" id="profileeditbtn" type="submit">Edit Profile</button>
+            <?php if ($_SESSION['service_role'] === 'service_provider'):?>
             <div class="mt-5">
               <h5>CURRENT SKILLS</h5>
               <ul class="list-group">
@@ -109,10 +124,11 @@
                    <?=$user['name']?></li>
                     <?php endforeach;?>
               </ul>
-              <button class="btn btn-outline-secondary mt-5" id="profileeditbtn" type="submit">Edit Skill</button>
-              <button class="btn btn-outline-secondary mt-4" id="profileeditaddressbtn" type="submit" data-toggle="modal" data-target="#details-1">Edit Address</button>
+              <a href="work_registration.php" class="btn btn-outline-secondary mt-5" id="profileeditbtn" type="submit">Edit Skill</a>
             </div>
+            <?php endif;?>
       </div>
   </main>
+
 
   <?php require_once "scr/inc/footer.php"; ?>

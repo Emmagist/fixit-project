@@ -232,6 +232,12 @@ class User {
 
 
   }
+
+  public static function getProviderJobSkills($token){
+     global $db;
+     return $db->selectData(TBL_WORK_CATEGORY, "*", "user_token='$token'");
+  }
+
 }
 
 $user = new User;
