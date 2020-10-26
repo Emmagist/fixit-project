@@ -8,38 +8,71 @@ if ($_SESSION['service_role'] !== 'service_provider'){
   <div class="main">
 
       <div class="row justify-content-center mb-5">
-        <div class="col-md-6">
+        <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Registration for a work category</div>
+                <div class="card-header">Skill Set</div>
                 <div class="card-body">
                     <?php require_once "scr/inc/messages.php"; ?>
                     <?php require_once "scr/inc/session-mgs.php"; ?>
-                    <form method="post" enctype="multipart/form-data">
-                        <div class="form-group">
-                            <input type="hidden" name="user_token" id="" value="<?=$_SESSION['user_token']?>">
-                        </div>
-                        <div class="form-group">
-                            <label for="">Choose a category for your work</label>
-                            <select name="category_slug" id="" class="form-control" required>
-                                <option value="">--Select--</option>
-                            <?php foreach (Categories::getAllCategories() as $cat):?>
-                                <option value="<?=$cat['slug']?>"><?=$cat['name']?></option>
-                            <?php endforeach;?>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="">Price In Naira</label>
-                            <input type="text" name="price" class="form-control" placeholder="Enter Price" id="price" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="">Upload an image of your work</label>
-                            <input type="file" name="file" class="form-control" placeholder="Enter Image" id="file" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-sm" name="work_registration">Submit</button>
-                    </form>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Picture</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <?php foreach (User::getProviderJobSkills($_SESSION['user_token']) as $userSkill):?>
+                        <tr>
+                            <td class="text-capitalize"><?=$userSkill['category_slug']?></td>
+                            <td><?=$userSkill['price']?></td>
+                            <td>
+                                <img src="<?=$userSkill['work_image']?>" alt="" style="height: 50px;">
+                            </td>
+                            <td><a href="" class="btn btn-sm text-primary">Edit</a></td>
+                        </tr>
+                        <?php endforeach;?>
+                        </tbody>
+                    </table>
+
                 </div>
             </div>
         </div>
+          <div class="col-md-4">
+              <div class="card">
+                  <div class="card-header">Registration for a work category</div>
+                  <div class="card-body">
+                      <?php require_once "scr/inc/messages.php"; ?>
+                      <?php require_once "scr/inc/session-mgs.php"; ?>
+                      <form method="post" enctype="multipart/form-data">
+                          <div class="form-group">
+                              <input type="hidden" name="user_token" id="" value="<?=$_SESSION['user_token']?>">
+                          </div>
+                          <div class="form-group">
+                              <label for="">Choose a category for your work</label>
+                              <select name="category_slug" id="" class="form-control" required>
+                                  <option value="">--Select--</option>
+                                  <?php foreach (Categories::getAllCategories() as $cat):?>
+                                      <option value="<?=$cat['slug']?>"><?=$cat['name']?></option>
+                                  <?php endforeach;?>
+                              </select>
+                          </div>
+                          <div class="form-group">
+                              <label for="">Price In Naira</label>
+                              <input type="text" name="price" class="form-control" placeholder="Enter Price" id="price" required>
+                          </div>
+                          <div class="form-group">
+                              <label for="">Upload an image of your work</label>
+                              <input type="file" name="file" class="form-control" placeholder="Enter Image" id="file" required>
+                          </div>
+                          <button type="submit" class="btn btn-primary btn-sm" name="work_registration">Submit</button>
+                      </form>
+                  </div>
+              </div>
+          </div>
       </div>
     </div>
 

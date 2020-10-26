@@ -135,8 +135,8 @@
       <h3>About Seller</h3>
       <div class="table_wrapper">
         <div class="row table_bordered">
-          <div class="col-md-4 table_bord pt-2 pb-2">From <br><span class="text-primary"><?php echo $key['regester_at']; ?></span></div>
-          <div class="col-md-4 table_bord pt-2 pb-2">Member<br><span>Since <span class="text-primary"><?php echo $key['regester_at']; ?></span></span></div>
+          <div class="col-md-4 table_bord pt-2 pb-2">From <br><span class="text-primary"><?php echo $key['state_of_residence']; ?> State</span></div>
+          <div class="col-md-4 table_bord pt-2 pb-2">Member<br><span>Since <span class="text-primary"><?php echo $key['register_at']; ?></span></span></div>
           <div class="col-md-4 table_bordere pt-2 pb-2">Avg. Response Time<br><span class="text-primary">15 Mins</span></div>
         </div>
         <div class="row text-center pr-5" id="table_bordered">

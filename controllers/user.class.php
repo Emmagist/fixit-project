@@ -255,6 +255,12 @@ class User {
     global $db;
     return $db->selectData(TBL_CHAT_BOX, "*", "provider_token='$provider_token' AND status=0");
   }
+
+  public static function getProviderJobSkills($token){
+     global $db;
+     return $db->selectData(TBL_WORK_CATEGORY, "*", "user_token='$token'");
+  }
+
 }
 
 $user = new User;

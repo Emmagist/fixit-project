@@ -81,8 +81,11 @@
                         ?>
                         <a class="dropdown-item" href="user_profile.php?profile=<?=$_SESSION['user_token']?>">Profile</a>
                         <?php if(isset($_SESSION['user_token'], $_SESSION['verified'])):?>
-                        <a class="dropdown-item" href="work_registration.php">Post Work</a>
-                        <?php endif;?>
+                        <?php if ($_SESSION['service_role'] === 'service_provider'):?>
+                        <a class="dropdown-item" href="work_registration.php">Post Jobs</a>
+                        <?php
+                        endif;
+                        endif;?>
                     </div>
                 </li>
                 
