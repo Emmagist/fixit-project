@@ -659,6 +659,16 @@ body{
   border-radius: 15px;
 }
 
+.chat-wrapper-two{
+  background: url("../img/chat.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 45vh;
+  /* margin: 10 0 0 30%; */
+  width: 40%;
+  border-radius: 15px;
+}
+
 .chat-left{
   background: var(--white);
   border-radius: 15px;

@@ -1,8 +1,11 @@
 <?php
   require "process/chatbox.pr.php";
   $provider_token = $_GET['provider_token'];
-  $data = $user->getUserByServiceEmployer($provider_token);
-  Functions::arrayPrinter($data);
+  $employer_token = $_SESSION['user_token'];
+  foreach($user->getUserByServiceEmployer($employer_token) as $data){
+    $employer_name = $data['user_lastname'];
+  }
+  // Functions::arrayPrinter($employer_name);exit;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,6 +17,7 @@
   <link rel="stylesheet" href="scr/css/bootstrap.min.css">
 </head>
 <body style="background: rgb(39, 2, 2); justify-content:center">
+<a href="service_prov.php" class="back mt-3 text-white" style="border-radius:50%;font-weight:bolder;font-size:24px;background:black;width:40px;text-decoration:none"><<</a>
   <div class="chat-wrapper " >
     <div class="row">
       <div class="chat-left col-md-4">
@@ -32,12 +36,13 @@
       <?php foreach(User::getSingleUserFromChatBox($employer_token) as $getsender):?>
       <div class="chat-empty col-md-7"></div>
       <div class="chat-right col-md-4">
+        <p><?=$getsender['message'];?></p>
         <div class="row">
           <div class="col-md-2 mr-4 mt-4">
           <p><?=substr($getsender['time'],0,5);?></p>
           </div>
           <div class="col-md-8">
-            <p><?=$getsender['message'];?></p>
+            <p></p>
           </div>
         </div>
       </div>
@@ -46,28 +51,14 @@
     <form action="" class="chat-form" method="POST">
       <div class="main-chat row">
           <div class="col-md-10">
-            <input type="hidden" class="form-control" name="receiver_id" value="<?php echo $id;?>">
             <input type="hidden" class="form-control" name="receiver_token" value="<?php echo $provider_token;?>">
-           
             <input type="hidden" class="form-control" name="sender_token" value="<?php echo $employer_token?>">
-            <?php
-              //if ($sender_token) :
-                //foreach($user->getSingleUserByToken($sender_token) as $user):
-              
-            ?>
-            <!-- <input type="hidden" class="form-control" name="sender_name" value=""> -->
-                <?php //endforeach; endif;?>
+            <input type="hidden" class="form-control" name="sender_name" value="<?php echo $employer_name?>">
             <input type="text" class="form-control" name="message">
           </div>
           <div class="col-md-2">
             <?php require_once "scr/inc/messages.php";?>
-            <?php
-              if ($_SESSION['user_token'] == $receiver_token) {
-                echo "<button type='submit' class='btn btn-success' name='reply_button'>Send</button>";
-              }else {
-                echo "<button type='submit' class='btn btn-success' name='chatbox_button'>Send</button>";
-              }
-            ?>
+            <button type="submit" class="btn btn-success" name="chatbox_button">Send</button>
           </div>
       </div>
     </form>

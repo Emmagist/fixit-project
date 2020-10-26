@@ -2,6 +2,7 @@
   require_once "scr/inc/header2.php"; 
   include "process/user.pr.php";
   //require "controllers/init.php";
+  $provider_token = $_GET['user'];
 ?>
   <?php if (!isset($_GET['user'])):
     header("Location: provider.php");?>
@@ -15,8 +16,9 @@
           
           <div class="col-md-7"><h5><?=strtoupper($key['user_firstname']) . ' ' .  strtoupper($key['user_lastname']);?></php></h5></div>
           <div class="col-md-5 mt-1 mb-2">
-          <?php if($key['service_role'] == 'service_provider'):?>
-            <a href="chatbox.php?provider_token=<?=$key['user_token'];?>" id="chat-btn">View chats</a>
+          <?php $count = count(User::getChatByToken($provider_token))?>
+          <?php if($_SESSION['service_role'] == 'service_provider'):?>
+            <a href="view_chat.php?provider_token=<?=$key['user_token'];?>" id="chat-btn">View chats</a><i class="fa fa-bell" aria-hidden="true"><?=$count?></i>
           <?php else:?>
             <a href="chatbox.php?provider_token=<?=$key['user_token'];?>" id="chat-btn">Chat With Seller</a>
           <?php endif;?>
@@ -122,7 +124,12 @@
   <div class="row mt-5 ml-5">
     <div class="col-md-3 ml-5 mt-5">
       <img src="<?php echo $key['profile_image']; ?>" alt="" class="icon-img-three ml-1"><br><br>
-      <a href="chatbox.php?provider_token=<?=$key['user_token'];?>" id="chat-btn">Chat With Seller</a>
+      <?php $count = count(User::getChatByToken($provider_token))?>
+      <?php if($_SESSION['service_role'] == 'service_provider'):?>
+            <a href="view_chat.php?provider_token=<?=$key['user_token'];?>" id="chat-btn">View chats</a><i class="fa fa-bell" aria-hidden="true"><?=$count?></i>
+          <?php else:?>
+            <a href="chatbox.php?provider_token=<?=$key['user_token'];?>" id="chat-btn">Chat With Seller</a>
+          <?php endif;?>
     </div>
     <div class="col-md-6 text-center about-wrapper mt-5">
       <h3>About Seller</h3>
