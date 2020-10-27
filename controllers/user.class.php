@@ -251,11 +251,21 @@ class User {
     return $db->selectData(TBL_CHAT_BOX, "*", "employer_token='$employer_token'");
   }
 
-  public static function getChatByToken($provider_token){
+  public static function getSingleProviderFromChatBox($provider_token,$employer_token){
     global $db;
-    return $db->selectData(TBL_CHAT_BOX, "*", "provider_token='$provider_token' AND status=0");
+    return $db->selectData(TBL_CHAT_BOX, "*", "provider_token='$provider_token'AND employer_token='$employer_token'AND status=1");
   }
 
+  public static function getChatByToken($provider_token){
+    global $db;
+    return $db->selectData(TBL_CHAT_BOX, "DISTINCT employer_token, employer_name", 
+    "provider_token='$provider_token' AND status=0");
+  }
+
+  public static function getEmployerChatByToken($provider_token,$employer_token){
+    global $db;
+    return $db->selectData(TBL_CHAT_BOX, "*", "provider_token='$provider_token' AND employer_token='$employer_token' AND status=0");
+  }
   public static function getProviderJobSkills($token){
      global $db;
      return $db->selectData(TBL_WORK_CATEGORY, "*", "user_token='$token'");

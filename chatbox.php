@@ -18,22 +18,23 @@
 </head>
 <body style="background: rgb(39, 2, 2); justify-content:center">
 <a href="service_prov.php" class="back mt-3 text-white" style="border-radius:50%;font-weight:bolder;font-size:24px;background:black;width:40px;text-decoration:none"><<</a>
-  <div class="chat-wrapper " >
-    <div class="row">
+  <div class="chat-wrapper " data-spy="scroll" datatarget=".scroll" data-offset=50>
+  <div class="row scroll">
+    <?php foreach(User::getSingleProviderFromChatBox($provider_token,$employer_token) as $providerchat):?>
+    <?php foreach(User::getSingleUserFromChatBox($employer_token,$provider_token) as $getsender):?>
       <div class="chat-left col-md-4">
         <div class="row">
           <div class="col-md-8">
-            <p>rtertdtrfyrtfryt</p>
+            <p><?=$providerchat['message'];?></p>
           </div>
           <div class="col-md-2 mt-4">
-            <p>16:17</p>
+            <p><?=substr($providerchat['time'],0,5);?></p>
           </div>
         </div>
       </div>
       <div class="chat-empty text-white col-md-8"></div>
     </div>
     <div class="row">
-      <?php foreach(User::getSingleUserFromChatBox($employer_token) as $getsender):?>
       <div class="chat-empty col-md-7"></div>
       <div class="chat-right col-md-4">
         <p><?=$getsender['message'];?></p>
@@ -46,6 +47,7 @@
           </div>
         </div>
       </div>
+      <?php endforeach;?>
       <?php endforeach;?>
     </div>
     <form action="" class="chat-form" method="POST">

@@ -27,7 +27,7 @@
         $name = '';
         $message = $db->escape_string($_POST['message']);
         $date = date("yy/m/d");
-        $status = 0;
+        $status = 1;
 
         if (empty($error)) {
             User::insertForChatBox($provider_token,$employer_token,$name,$message,$date,$status);

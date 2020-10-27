@@ -481,6 +481,14 @@ body{
   width: 98%; 
   /* width:115.8%; */
 }
+.scrolling-wrapper{
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  .card{
+    display: inline-block;
+  }
+}
 /* service provider ends */
 
 
@@ -697,7 +705,7 @@ body{
 .chat-form{
   width: 90%;
   margin-left: 20px;
-  /* background: red; */
+  position: fixed;
 }
 /* .chat-empty{
   display: none;
