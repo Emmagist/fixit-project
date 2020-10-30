@@ -113,6 +113,33 @@ class Validation {
         return $error;
     }
 
+    public static function ValidateAboutModal($error){
+        if (empty($_POST['description'])) {
+           $error = "Field cannot be empty";
+        }elseif (empty($_POST['user_token'])) {
+            $error = "Invalid Token, Please provide a token or signup...";
+        }
+        return $error;
+    }
+
+    // public static function ValidateProfileModal($error){
+    //     if (empty($_POST['file'])) {
+    //        $error = "Field cannot be empty";
+    //     }elseif (empty($_POST['user_token'])) {
+    //         $error = "Invalid Token, Please provide a token or signup...";
+    //     }
+    //     return $error;
+    // }
+
+    public static function ValidateAddressModal($error){
+        if (empty($_POST['address'])) {
+           $error = "Field cannot be empty";
+        }elseif (empty($_POST['user_token'])) {
+            $error = "Invalid Token, Please provide a token or signup...";
+        }
+        return $error;
+    }
+
 }
 
 $val = new Validation();

@@ -53,10 +53,11 @@
       </div>
     </div>
   </div>
- 
- 
+
+
+  
+  <!-- <script src="js/jquery-3.5.1.min.js"></script>
+  <script src="js/bootstrap.js"></script> -->
+  <script src="js/homepage.js"></script>
 </body>
 </html>
-<script src="../js/jquery-3.5.1.min.js"></script>
-  <script src="../js/bootstrap.js"></script>
-  <script src="../js/homepage.js"></script>

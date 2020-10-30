@@ -18,36 +18,35 @@
 </head>
 <body style="background: rgb(39, 2, 2); justify-content:center">
 <a href="service_prov.php" class="back mt-3 text-white" style="border-radius:50%;font-weight:bolder;font-size:24px;background:black;width:40px;text-decoration:none"><<</a>
-  <div class="chat-wrapper " data-spy="scroll" datatarget=".scroll" data-offset=50>
-  <div class="row scroll">
-    <?php foreach(User::getSingleProviderFromChatBox($provider_token,$employer_token) as $providerchat):?>
-    <?php foreach(User::getSingleUserFromChatBox($employer_token,$provider_token) as $getsender):?>
+  <div class="chat-wrapper">
+    <div class="row">
+      <?php //foreach(User::getSingleProviderFromChatBox($provider_token,$employer_token) as $providerchat):?>
       <div class="chat-left col-md-4">
         <div class="row">
           <div class="col-md-8">
-            <p><?=$providerchat['message'];?></p>
+            <p>thtt</p>
           </div>
           <div class="col-md-2 mt-4">
-            <p><?=substr($providerchat['time'],0,5);?></p>
+            <p>tty</p>
           </div>
         </div>
       </div>
       <div class="chat-empty text-white col-md-8"></div>
+      <?php //endforeach;?>
     </div>
     <div class="row">
+      <?php foreach(User::getSingleUserFromChatBox($employer_token,$provider_token) as $getsender):?>
       <div class="chat-empty col-md-7"></div>
       <div class="chat-right col-md-4">
-        <p><?=$getsender['message'];?></p>
         <div class="row">
           <div class="col-md-2 mr-4 mt-4">
           <p><?=substr($getsender['time'],0,5);?></p>
           </div>
           <div class="col-md-8">
-            <p></p>
+          <p><?=$getsender['message'];?></p>
           </div>
         </div>
       </div>
-      <?php endforeach;?>
       <?php endforeach;?>
     </div>
     <form action="" class="chat-form" method="POST">

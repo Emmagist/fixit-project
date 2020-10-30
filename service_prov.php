@@ -20,7 +20,7 @@
           <?php if($_SESSION['service_role'] == 'service_provider'):?>
             <a href="view_chat.php?provider_token=<?=$key['user_token'];?>" id="chat-btn">View chats</a><i class="fa fa-bell" aria-hidden="true"><?=$count?></i>
           <?php else:?>
-            <a href="chatbox.php?provider_token=<?=$key['user_token'];?>" id="chat-btn">Chat With Seller</a>
+            <a href="chat.php?provider_token=<?=$key['user_token'];?>" id="chat-btn">Chat With Seller</a>
           <?php endif;?>
           </div>
         </div>
@@ -58,26 +58,74 @@
   </div>
   <div class=" main-service-prov pl-3">
     <div class="job_done">Order Jobs Done By <?php echo $key['user_lastname']; ?></div>
-    <div class="row   pb-4 pl-2 scrolling-wrapper">
+    <div class="row   pb-4 pl-2">
+            <?php foreach(User::getUserWorkDone($key['user_token']) as $work):?>
       <div class="col-md-4 pt-5 ">
         <div class="card service-prov-card-row card" style="width: 18rem;">
-          <img src="scr/img/slide1.jpg" class="card-img-top" alt="...">
-          <!-- <div class="card-body">
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div> -->
+          <img src="<?=$work['work_image']?>" class="card-img-top" alt="...">
         </div>
       </div>
-      <div class="col-md-4 pt-5">
-        <div class="card service-prov-card-row card" style="width: 18rem;">
-          <img src="scr/img/slide1.jpg" class="card-img-top" alt="...">
-        </div>
-      </div>
-      <div class="col-md-4 pt-5">
-        <div class="card service-prov-card-row card" style="width: 18rem;">
-          <img src="scr/img/slide1.jpg" class="card-img-top" alt="..." width="70%">
-        </div>
+      <?php endforeach?>
+      
+    </div>
+    <!-- <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active d-flex" data-interval="10000">
+                <img src="scr/img/slide1.jpg" class="d-block w-100 mt-4 mb-4 mr-3" alt="..." style="height:50vh;">
+                <img src="scr/img/slide1.jpg" class="d-block w-100 mt-4 mb-4 mr-3" alt="..." style="height:50vh;">
+                <img src="scr/img/slide1.jpg" class="d-block w-100 mt-4 mb-4 mr-3" alt="..." style="height:50vh;">
+              </div>
+              <div class="carousel-item" data-interval="2000">
+              <img src="scr/img/slide1.jpg" class="d-block w-100 mt-4 mb-4 mr-3" alt="..." style="height:50vh;">
+                <img src="scr/img/slide1.jpg" class="d-block w-100 mt-4 mb-4 mr-3" alt="..." style="height:50vh;">
+                <img src="scr/img/slide1.jpg" class="d-block w-100 mt-4 mb-4 mr-3" alt="..." style="height:50vh;">
+              </div>
+              <div class="carousel-item">
+              <img src="scr/img/slide1.jpg" class="d-block w-100 mt-4 mb-4 mr-3" alt="..." style="height:50vh;">
+                <img src="scr/img/slide1.jpg" class="d-block w-100 mt-4 mb-4 mr-3" alt="..." style="height:50vh;">
+                <img src="scr/img/slide1.jpg" class="d-block w-100 mt-4 mb-4 mr-3" alt="..." style="height:50vh;">
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+    </div> -->
+    <!-- <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+    <div class="carousel-item active">
+    </div>
+    <div class="carousel-item">
+      <div class="row">
+        <div class="col-md-3"><img src="scr/img/slide1.jpg" class="d-block w-100 mt-4 mb-4 mr-3" alt="..." style="height:50vh;"></div>
+        <div class="col-md-3"><img src="scr/img/slide1.jpg" class="d-block w-100 mt-4 mb-4 mr-3" alt="..." style="height:50vh;"></div>
+        <div class="col-md-3"><img src="scr/img/slide1.jpg" class="d-block w-100 mt-4 mb-4 mr-3" alt="..." style="height:50vh;"></div>
+        <div class="col-md-3"><img src="scr/img/slide1.jpg" class="d-block w-100 mt-4 mb-4 mr-3" alt="..." style="height:50vh;"></div>
       </div>
     </div>
+    <div class="carousel-item">
+      <div class="row">
+        <div class="col-md-3"><img src="scr/img/slide1.jpg" class="d-block w-100 mt-4 mb-4 mr-3" alt="..." style="height:50vh;"></div>
+        <div class="col-md-3"><img src="scr/img/slide1.jpg" class="d-block w-100 mt-4 mb-4 mr-3" alt="..." style="height:50vh;"></div>
+        <div class="col-md-3"><img src="scr/img/slide1.jpg" class="d-block w-100 mt-4 mb-4 mr-3" alt="..." style="height:50vh;"></div>
+        <div class="col-md-3"><img src="scr/img/slide1.jpg" class="d-block w-100 mt-4 mb-4 mr-3" alt="..." style="height:50vh;"></div>
+      </div>
+    </div>
+    
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+    </div> -->
   </div>
   <?php
     $email = $key['user_email'];
@@ -128,7 +176,7 @@
       <?php if($_SESSION['service_role'] == 'service_provider'):?>
             <a href="view_chat.php?provider_token=<?=$key['user_token'];?>" id="chat-btn">View chats</a><i class="fa fa-bell" aria-hidden="true"><?=$count?></i>
           <?php else:?>
-            <a href="chatbox.php?provider_token=<?=$key['user_token'];?>" id="chat-btn">Chat With Seller</a>
+            <a href="chat.php?provider_token=<?=$key['user_token'];?>" id="chat-btn">Chat With Seller</a>
           <?php endif;?>
     </div>
     <div class="col-md-6 text-center about-wrapper mt-5">
@@ -136,7 +184,7 @@
       <div class="table_wrapper">
         <div class="row table_bordered">
           <div class="col-md-4 table_bord pt-2 pb-2">From <br><span class="text-primary"><?php echo $key['state_of_residence']; ?> State</span></div>
-          <div class="col-md-4 table_bord pt-2 pb-2">Member<br><span>Since <span class="text-primary"><?php echo $key['register_at']; ?></span></span></div>
+          <div class="col-md-4 table_bord pt-2 pb-2">Member<br><span>Since <span class="text-primary"><?php echo substr($key['regester_at'],0,10); ?></span></span></div>
           <div class="col-md-4 table_bordere pt-2 pb-2">Avg. Response Time<br><span class="text-primary">15 Mins</span></div>
         </div>
         <div class="row text-center pr-5" id="table_bordered">

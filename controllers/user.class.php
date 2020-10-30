@@ -180,6 +180,27 @@ class User {
 
     }
 
+    public  function  multipleSelectQueryForServiceProvider(){
+      global  $db;
+      $rows = [];
+      $result = $db->query("SELECT * FROM users 
+                              INNER JOIN work_category 
+                              ON users.user_token = work_category.user_token  
+                              INNER JOIN category  
+                              ON  work_category.category_slug = category.slug
+                              WHERE service_role = 'service_provider'");
+      $row_cnt = $result->num_rows;
+      if (!empty($result)) {
+          while ($row = $result->fetch_assoc()) {
+              $rows[] = $row;
+          }
+        //           Functions::arrayPrinter($rows);
+          return $rows;
+      }
+
+
+  }
+
     public  static function searchByCategory($cat){
 
         global  $db;
@@ -253,13 +274,22 @@ class User {
 
   public static function getSingleProviderFromChatBox($provider_token,$employer_token){
     global $db;
-    return $db->selectData(TBL_CHAT_BOX, "*", "provider_token='$provider_token'AND employer_token='$employer_token'AND status=1");
+    return $db->selectData(TBL_CHAT_BOX, "*", "provider_token='$provider_token'
+                            AND employer_token='$employer_token' AND status=1");
+                            //Functions::arrayPrinter($data);
+
   }
 
   public static function getChatByToken($provider_token){
     global $db;
     return $db->selectData(TBL_CHAT_BOX, "DISTINCT employer_token, employer_name", 
     "provider_token='$provider_token' AND status=0");
+  }
+
+  public static function getProviderChatByToken($employer_token){
+    global $db;
+    return $db->selectData(TBL_CHAT_BOX, "DISTINCT provider_token, employer_name", 
+    "employer_token='$employer_token' AND status=1");
   }
 
   public static function getEmployerChatByToken($provider_token,$employer_token){
@@ -269,6 +299,31 @@ class User {
   public static function getProviderJobSkills($token){
      global $db;
      return $db->selectData(TBL_WORK_CATEGORY, "*", "user_token='$token'");
+  }
+
+  public static function upDateAboutModal($about,$token){
+    global $db, $fun;
+    return $db->updateData(TBL_USER,  "description = '$about'", "user_token = '$token'");
+  }
+
+  public static function upDateAddressModal($address,$token){
+    global $db;
+    return $db->updateData(TBL_USER,  "user_address = '$address'", "user_token = '$token'");
+  }
+
+  public static function upDateProfileModal($destination,$token){
+    global $db;
+    return $db->updateData(TBL_USER,  "destination = '$destination'", "user_token = '$token'");
+  }
+
+  public static function getUserWorkDone($token){
+    global $db;
+    return $db->selectData(TBL_WORK_CATEGORY, "*", "user_token = '$token'");
+  }
+
+  public static function getPopularWorkDone(){
+    global $db;
+    return $db->selectData(TBL_WORK_CATEGORY, "*");
   }
 
 }

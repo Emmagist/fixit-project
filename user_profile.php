@@ -13,7 +13,7 @@
              <div class="pic-area">
                 <img src="<?=$user1['profile_image']?>" alt="profile-picture">
                 <div class="mt-5 ml-4">
-                  <p id="pic-area-name" class="mb-3"><?=$user1['user_firstname'] . ' ' . $user1['user_lastname']?></p>
+                  <p id="pic-area-name" class="mb-3 text-primary"><?=ucwords($user1['user_firstname'] . ' ' . $user1['user_lastname']);?></p>
                     <?php if ($_SESSION['service_role'] === 'service_provider'):?>
                   <a href="#">Top Rated Seller</a>
                   <i class="fa fa-star" id="star-icon">
@@ -26,13 +26,18 @@
                     </i>
                   </i>
                      <?php endif;?>
-                  <p class="verified-onsmall text-uppercase"><?=$user1['verified']?></p>
+                  <p class="verified-onsmall text-uppercase text-primary"><?=$user1['verified']?></p>
                 </div>
 
              </div>
           <div>
-            <button class="btn btn-outline-secondary btnpic mt-3" id="profilebtnupdt1">Change Profile Picture</button>
+            <button class="btn btn-outline-secondary btnpic mt-3" id="profilebtnupdt1" data-toggle="modal" data-target="#myModal2">Change Profile Picture</button>
             <button class="btn  btnpic" id="profilebtnupdt2">Upgrade To Pro</button>  
+            <?php if($_SESSION['service_role'] == 'service_provider'):?>
+              <button class="btn  btnpic" id="profilebtnupdt2"><a href="view_chat.php?provider_token=<?=$_SESSION['user_token'];?>">View Chat</a></button>  
+            <?php elseif($_SESSION['service_role']=='service_employer'):?>
+              <button class="btn  btnpic" id="profilebtnupdt2"><a href="employer_view_chat.php?employer_token=<?=$_SESSION['user_token'];?>">View Chat</a></button>
+            <?php endif;?>
           </div>
             <?php endforeach;?>
         </div>
@@ -63,7 +68,7 @@
                 <p class="verified-onsmall text-uppercase"><?=$user1['verified']?></p>
               </div>  
               <div>
-                <button class="btn btn-outline-secondary btnpic mt-3" id="profilebtnupdt1">Change Profile Picture</button>
+                <button class="btn btn-outline-secondary btnpic mt-3" id="profilebtnupdt1" data-toggle="modal" data-target="#myModal2">Change Profile Picture</button>
                 <button class="btn  btnpic" id="profilebtnupdt2">Upgrade To Pro</button>
               </div>
               <?php endforeach;?>
@@ -113,7 +118,7 @@
     <main class="main" id="third-main">
       <div class="container">
 
-            <button class="btn btn-outline-secondary" id="profileeditbtn" type="submit">Edit Profile</button>
+            <button class="btn btn-outline-secondary" id="profileeditbtn" type="submit" data-toggle="modal" data-target="#myModal">Edit About</button>
             <?php if ($_SESSION['service_role'] === 'service_provider'):?>
             <div class="mt-5">
               <h5>CURRENT SKILLS</h5>
@@ -124,11 +129,12 @@
                    <?=$user['name']?></li>
                     <?php endforeach;?>
               </ul>
-              <a href="work_registration.php" class="btn btn-outline-secondary mt-5" id="profileeditbtn" type="submit">Edit Skill</a>
+              <a href="work_registration.php" class="btn btn-outline-secondary mt-5" id="profileeditbtn" type="submit">Edit Skills</a>
+              <button class="btn btn-outline-secondary" id="profileeditbtn" type="submit" data-toggle="modal" data-target="#myModal3">Edit Address</button>
             </div>
             <?php endif;?>
       </div>
   </main>
 
-
+  <?php require_once "scr/inc/modal.php"; ?>
   <?php require_once "scr/inc/footer.php"; ?>

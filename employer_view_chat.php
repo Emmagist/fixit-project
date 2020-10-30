@@ -1,10 +1,11 @@
+
 <?php 
     require "process/chatbox.pr.php";
 
-    foreach($user->getSingleServiceProvider($_GET['provider_token']) as $user):
-        $provider_name = $user['user_lastname'];
-        $image = $user['profile_image'];
-    endforeach;
+    foreach($user->getSingleServiceProvider($_GET['message']) as $data){
+        $provider_name = $data['user_lastname'];
+        $image = $data['profile_image'];
+    }
 
 ?>
 
@@ -69,7 +70,7 @@ body {
 </style>
 
 <body>
-<?php if(isset($_GET['provider_token'])):?>
+<?php if(isset($_GET['employer_token'])):?>
    <div class="container">
         <a href="service_prov.php" class="back" style="border-radius:50%;font-weight:bolder;font-size:24px;background:black;cursor:pointer; text-decoration:none"><<</a>
        <div class="row">
@@ -78,10 +79,10 @@ body {
             <ul class="list-group">
                 <?php 
                     
-                    foreach(User::getChatByToken($_GET['provider_token']) as $chat):
-                        $count = count(User::getChatByToken($_GET['provider_token']))
+                    foreach(User::getProviderChatByToken($_GET['employer_token']) as $chat):
+                        $count = count(User::getProviderChatByToken($_GET['employer_token']))
                 ?>
-                <li class="list-group-item"><a href="?message=<?=$chat['employer_token'].'&'.'provider_token='.$_GET['provider_token']?>" class="text-primary"><?=$count.' messages from '. $chat['employer_name'];?></a></li>
+                <li class="list-group-item"><a href="?message=<?=$chat['provider_token'].'&'.'employer_token='.$_GET['employer_token'];?>" class="text-primary"><?=$count.' messages from '. $chat['employer_name'];?></a></li>
                 <?php endforeach;?>
             </ul>
            </div>
@@ -139,14 +140,14 @@ body {
         <div class="col-md-8">
             <?php foreach(User::getEmployerChatByToken($_GET['provider_token'],$_GET['message']) as $getsender):?>
             <div class="contain" >
-            <img src="<?=$image?>" alt="Avatar" style="width:100%;">
+            <img src="" alt="Avatar" style="width:100%;">
             <p><?=$getsender['message']?></p>
             <span class="time-right"><?=substr($getsender['time'],0,5);?></span>
             </div>
             <?php endforeach;?>
             <?php foreach(User::getSingleProviderFromChatBox($_GET['provider_token'],$_GET['message']) as $providerchat):?>
             <div class="contain darker">
-            <img src="<?=$_SESSION['profile_image'];?>" alt="Avatar" class="right" style="width:100%;">
+            <img src="<?=$image?>" alt="Avatar" class="right" style="width:100%;">
             <p><?=$providerchat['message']?></p>
             <span class="time-left"><?=substr($providerchat['time'],0,5);?></span>
             </div>

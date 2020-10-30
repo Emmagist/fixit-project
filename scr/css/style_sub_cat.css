@@ -320,7 +320,12 @@ body{
   background: rgb(204, 172, 129);
   color: #fff;
   margin-top: 30px;
-  margin-bottom: 10%;
+  margin-bottom: 10px;
+}
+
+#profilebtnupdt2 a{
+  color: #fff;
+  text-decoration: none;
 }
 /* second main area */
 .second-main h5{
@@ -478,8 +483,9 @@ body{
   border-bottom: 1px solid var(--gray);
   border-right: 1px solid var(--gray);
   border-left: 1px solid var(--gray);
-  width: 98%; 
-  /* width:115.8%; */
+  /* width: 98%;  */
+  width:100.3%;
+  /* width:49vh; */
 }
 .scrolling-wrapper{
   overflow-x: scroll;
@@ -705,7 +711,6 @@ body{
 .chat-form{
   width: 90%;
   margin-left: 20px;
-  position: fixed;
 }
 /* .chat-empty{
   display: none;
