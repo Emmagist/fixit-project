@@ -62,7 +62,7 @@
                 <div class="col-md-3">
                     <div class="card" id="sub-cat-card">
                         <?php if(!empty($user['work_image'])) :?>
-                            <img src="<?=$user['work_image']?>" alt=""  class="card-img-top img-thumbnail">
+                            <img src="<?=$user['work_image']?>" alt=""  class="card-img-top img-thumbnail" style="height: 12.5rem">
                         <?php else:?>
                             <img src="https://via.placeholder.com/150" alt=""
                                  class="card-img-top img-thumbnail" style="height: 12.5rem">

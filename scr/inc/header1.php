@@ -67,77 +67,77 @@
     </style>
   </head>
 <body>
- <div class="mb-5" id="header-container">
- <header>
-        <div class="logo"><img src="scr/img/Fixitlogo transparent.png" alt="Fixit logo" class="logo-white"></div>
-        <nav class="navigation">
-            <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="about.php">About</a></li>
-                <li class="nav-item dropdown">
-                    <a class="text-white">
-                        Directories
-                    </a>
-                    <div class="dropdown-content bg-dark text-white" >
-                        <a class="dropdown-item" href="provider.php">Provider</a>
-                        <?php
-                            if ($fun->ifLoggedIn()):
-                        ?>
-                        <a class="dropdown-item" href="user_profile.php?profile=<?=$_SESSION['user_token']?>">Profile</a>
-                        <?php if(isset($_SESSION['user_token'], $_SESSION['verified'])):?>
-                        <?php if ($_SESSION['service_role'] === 'service_provider'):?>
-                        <a class="dropdown-item" href="work_registration.php">Post Jobs</a>
-                        <?php
-                        endif;
-                        endif;?>
-                    </div>
-                </li>
-                
-                <?php
-                    if ($fun->IsAdmin()):?>
-                        <li><a href="admin/index.php">Admin</a></li>
-                    <?php endif;?>
-                    <li><a href="logout.php" class="dash-nav-item text-danger">Logout</a></li>
-                    <li class="mt-3">
-                        <img src="https://img.icons8.com/color/48/000000/circled-user-male-skin-type-6.png" alt=""/>
+    <div class="mb-5" id="header-container">
+        <header>
+            <div class="logo"><img src="scr/img/Fixitlogo transparent.png" alt="Fixit logo" class="logo-white"></div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="about.php">About</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="text-white">
+                            Directories
+                        </a>
+                        <div class="dropdown-content bg-dark text-white" >
+                            <a class="dropdown-item" href="provider.php">Provider</a>
+                            <?php
+                                if ($fun->ifLoggedIn()):
+                            ?>
+                            <a class="dropdown-item" href="user_profile.php?profile=<?=$_SESSION['user_token']?>">Profile</a>
+                            <?php if(isset($_SESSION['user_token'], $_SESSION['verified'])):?>
+                            <?php if ($_SESSION['service_role'] === 'service_provider'):?>
+                            <a class="dropdown-item" href="work_registration.php">Post Jobs</a>
+                            <?php
+                            endif;
+                            endif;?>
+                        </div>
                     </li>
-                <?php else:?>
-                    <li><a href="login.php">Login</a></li>
-                <?php endif;?>
-            </ul>
-        </nav>
-        <div class="hamburger">
+                    
+                    <?php
+                        if ($fun->IsAdmin()):?>
+                            <li><a href="admin/index.php">Admin</a></li>
+                        <?php endif;?>
+                        <li><a href="logout.php" class="dash-nav-item text-danger">Logout</a></li>
+                        <li class="mt-3">
+                            <img src="https://img.icons8.com/color/48/000000/circled-user-male-skin-type-6.png" alt=""/>
+                        </li>
+                    <?php else:?>
+                        <li><a href="login.php">Login</a></li>
+                    <?php endif;?>
+                </ul>
+            </nav>
+            <div class="hamburger">
                 <div class="line line1"></div>
                 <div class="line line2"></div>
                 <div class="line line3"></div>
             </div>
-    </header>
+        </header>
 
-    <div class="container title">
-        <div class="logo-searcharea">
-        <h1>Welcome to <img src="scr/img/Fixitlogo transparent.png" alt="Fixit logo" class="logo-white"><h1>
-        </div>
-        <h4 class="text-white">THE BEST PLACE TO GET YOUR JOB DONE</h4>
-        <div class="card-body">
-            <input type="search" id="search_text" placeholder="What Are You Waiting For?" class="find-services form-control">
-        </div>
-        <div class="pupolar-container">
-        <p class="text-white mt-4"></p>
-        <ul class="">
-            <li class="list-title">Pupolar: <a href="">Web developemt</a> <a href="">Electrician</a> <a href="">Graphic designer</a></li>
-        </ul>
+        <div class="container title">
+            <div class="logo-searcharea" id="logo-searcharea" style="margin-left:-150px">
+                <h1>Welcome to <img src="scr/img/Fixitlogo transparent.png" alt="Fixit logo" class="logo-white" style="margin-top: 8px;"><h1>
+            </div>
+                <h4 class="text-white" style="margin-left: -70%;">THE BEST PLACE TO GET YOUR JOB DONE</h4>
+            <div class="card-body" style="width:70%; margin-left:-5px">
+                <input type="search" id="search_text" placeholder="What Are You Waiting For?" class="find-services form-control">
+            </div>
+            <div class="pupolar-container"  style="margin-left: -65%; margin-top:-10px">
+                <p class="text-white mt-4"></p>
+                <ul class="">
+                    <li class="list-title">Pupolar: <a href="">Web developemt</a> <a href="">Electrician</a> <a href="">Graphic designer</a></li>
+                </ul>
+            </div>
         </div>
     </div>
- </div>
- <div class="container">
-   <center>
-     <form action="">
-   <input type="search" id="search_text" placeholder="What Are You Waiting For?" class="find-services-onsmall form-control">
-   </form>
-   </center>
+    <div class="container">
+        <center>
+            <form action="">
+        <input type="search" id="search_text" placeholder="What Are You Waiting For?" class="find-services-onsmall form-control">
+        </form>
+        </center>
    
- </div>
- <div class="col-md-12">
+    </div>
+    <div class="col-md-12">
     <?php
     //require_once "scr/inc/messages.php";
     if (isset($_SESSION['message-success'])) {
@@ -146,24 +146,24 @@
     }
     require_once "scr/inc/session-mgs.php";
     ?>
- </div>
- <div class="container" id="index-loginbtn">
+    </div>
+    <div class="container" id="index-loginbtn">
      <?php
      if (!$fun->ifLoggedIn()):?>
          <a href="login.php" class="btn">SIGN IN</a>
          <a href="signup.php" class="btn">SIGN UP</a>
      <?php endif;?>
 
- </div>
- <div class="nav">
-    <div class="container">
-      <ul>
-          <?php foreach (Categories::getAllCategories() as $cat):?>
-        <li>
-            <a href="provider.php?cat=<?=$cat['slug']?>"><?=$cat['name']?></a>
-        </li>
-        <?php endforeach; ?>
-      </ul>
-    </div>      
-  </div>
+    </div>
+    <div class="nav">
+        <div class="container">
+        <ul>
+            <?php foreach (Categories::getAllCategories() as $cat):?>
+            <li>
+                <a href="provider.php?cat=<?=$cat['slug']?>"><?=$cat['name']?></a>
+            </li>
+            <?php endforeach; ?>
+        </ul>
+        </div>      
+    </div>
     

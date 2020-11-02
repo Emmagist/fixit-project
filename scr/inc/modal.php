@@ -1,6 +1,6 @@
 <?php require "process/modal.pr.php";?>
 <!-- The Modal -->
-<div class="modal" id="myModal">
+  <div class="modal" id="myModal">
     <div class="modal-dialog">
       <div class="modal-content">
       

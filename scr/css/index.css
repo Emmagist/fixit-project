@@ -454,7 +454,23 @@ left: 0;
 
 .paragraph {
   padding-top: 30px;
-  font-size:1.5rem;
+  font-size:1.8rem;
+  margin-top: 5px;
+}
+
+#paragraph{
+  padding-top: 30px;
+  font-size:2.6rem;
+  margin-top: 5px;
+}
+
+.prof_services-col{
+  font-size:16px;
+}
+
+.get-started-btn:hover{
+  background: var(--gray);
+  color: #fff;
 }
 
 .about_span-color {
@@ -610,16 +626,23 @@ left: 0;
   .title .logo-searcharea {
     font-size: 25px;
     color: #fff;
+    /* margin-left:-3%; */
     
+  }
+
+  .logo-white{
+    /* margin-top: 10px; */
   }
 
   .title .logo-searcharea img{ 
     margin-right: -40px;
+    /* margin-top: 50px; */
   }
 
   
   .title{
     margin-top: 13%;
+    font-size: 30px;
   }
 
   #header-container{
