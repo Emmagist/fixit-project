@@ -1,4 +1,6 @@
-<?php require "process/modal.pr.php";?>
+<?php require "process/modal.pr.php";
+  $token = $_GET['token'];
+?>
 <!-- The Modal -->
   <div class="modal" id="myModal">
     <div class="modal-dialog">

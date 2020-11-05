@@ -160,7 +160,7 @@
         <ul>
             <?php foreach (Categories::getAllCategories() as $cat):?>
             <li>
-                <a href="provider.php?cat=<?=$cat['slug']?>"><?=$cat['name']?></a>
+                <a href="category.php?cat=<?=$cat['slug'] .'&'.'id='.$cat['id'];?>"><?=$cat['name']?></a>
             </li>
             <?php endforeach; ?>
         </ul>

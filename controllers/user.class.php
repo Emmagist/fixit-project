@@ -267,9 +267,9 @@ class User {
   //   return $db->selectData(TBL_USER , "*" , "user_token ='$sender_token'"); 
   // }
 
-  public static function getSingleUserFromChatBox($employer_token){
+  public static function getSingleUserFromChatBox($employer_token,$provider_token){
     global $db;
-    return $db->selectData(TBL_CHAT_BOX, "*", "employer_token='$employer_token'");
+    return $db->selectData(TBL_CHAT_BOX, "*", "employer_token='$employer_token' AND provider_token='$provider_token'");
   }
 
   public static function getSingleProviderFromChatBox($provider_token,$employer_token){
@@ -313,7 +313,7 @@ class User {
 
   public static function upDateProfileModal($destination,$token){
     global $db;
-    return $db->updateData(TBL_USER,  "destination = '$destination'", "user_token = '$token'");
+    return $db->updateData(TBL_USER,  "profile_image = '$destination'", "user_token = '$token'");
   }
 
   public static function getUserWorkDone($token){
@@ -326,6 +326,20 @@ class User {
     return $db->selectData(TBL_WORK_CATEGORY, "*");
   }
 
+  public static function getAllSubCategories($id){
+    global $db;
+    return $db->selectData(TBL_WORK_CATEGORY, "*", "parent='$id'");
+  }
+
+  public static function searchByCategoryId($cat){
+    global $db;
+    return $db->selectData(TBL_WORK_CATEGORY, "*", "sub_cat = '$cat'");
+  }
+
+  // public static function multSelectQueryForCategory($id){
+  //   global $db;
+  //   return $db->selectData
+  // }
 }
 
 $user = new User;

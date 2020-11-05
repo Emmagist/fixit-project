@@ -66,20 +66,19 @@ body {
 <body>
 
 <h2>Chat Messages</h2>
-<?php if(User::getSingleProviderFromChatBox($provider_token,$employer_token)):?>
-<?php foreach(User::getSingleProviderFromChatBox($provider_token,$employer_token) as $provider):?>
-<?php foreach(User::getSingleUserFromChatBox($employer_token,$provider_token) as $getsender):?>
+
+
 <div class="container">
   <img src="" alt="Avatar" style="width:100%;">
-  <p><?=$provider['message']?></p>
-  <span class="time-right"><?=substr($provider['time'],0,5);?></span>
+  <p></p>
+  <span class="time-right"></span>
 </div>
-  <?php endif;?>
-
+<?php foreach(User::getSingleProviderFromChatBox($provider_token,$employer_token) as $provider):?>
+<?php foreach(User::getSingleUserFromChatBox($employer_token,$provider_token) as $getsender):?>
 <div class="container darker">
   <img src="<?=$image;?>" alt="Avatar" class="right" style="width:100%;">
-  <p><?=$getsender['message'];?></p>
-  <span class="time-left"><?=substr($getsender['time'],0,5);?></span>
+  <p><?=$getsender['message'];?></p><br><span><?=$provider['message']?></span>
+  <span class="time-left"><?=substr($getsender['time'],0,5);?></span><br><span><?=substr($provider['time'],0,5);?></span>
 </div>
 <?php endforeach;?>
 <?php endforeach;?>

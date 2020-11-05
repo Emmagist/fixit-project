@@ -62,40 +62,12 @@
             <?php foreach(User::getUserWorkDone($key['user_token']) as $work):?>
       <div class="col-md-4 pt-5 ">
         <div class="card service-prov-card-row card" style="width: 18rem;">
-          <img src="<?=$work['work_image']?>" class="card-img-top" alt="...">
+          <img src="<?=$work['work_image']?>" class="card-img-top" alt="..."style=" height:50vh">
         </div>
       </div>
       <?php endforeach?>
       
     </div>
-    <!-- <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active d-flex" data-interval="10000">
-                <img src="scr/img/slide1.jpg" class="d-block w-100 mt-4 mb-4 mr-3" alt="..." style="height:50vh;">
-                <img src="scr/img/slide1.jpg" class="d-block w-100 mt-4 mb-4 mr-3" alt="..." style="height:50vh;">
-                <img src="scr/img/slide1.jpg" class="d-block w-100 mt-4 mb-4 mr-3" alt="..." style="height:50vh;">
-              </div>
-              <div class="carousel-item" data-interval="2000">
-              <img src="scr/img/slide1.jpg" class="d-block w-100 mt-4 mb-4 mr-3" alt="..." style="height:50vh;">
-                <img src="scr/img/slide1.jpg" class="d-block w-100 mt-4 mb-4 mr-3" alt="..." style="height:50vh;">
-                <img src="scr/img/slide1.jpg" class="d-block w-100 mt-4 mb-4 mr-3" alt="..." style="height:50vh;">
-              </div>
-              <div class="carousel-item">
-              <img src="scr/img/slide1.jpg" class="d-block w-100 mt-4 mb-4 mr-3" alt="..." style="height:50vh;">
-                <img src="scr/img/slide1.jpg" class="d-block w-100 mt-4 mb-4 mr-3" alt="..." style="height:50vh;">
-                <img src="scr/img/slide1.jpg" class="d-block w-100 mt-4 mb-4 mr-3" alt="..." style="height:50vh;">
-              </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
-    </div> -->
     <!-- <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
     <div class="carousel-item active">

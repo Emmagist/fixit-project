@@ -5,6 +5,9 @@
 //  if (!isset($_SESSION['user_token'], $_SESSION['verified'])) {
 //    header('location: login.php');
 //  }
+// if (isset($_GET['id'])) {
+//     echo $id=$_GET['id'];
+// }
   
 ?>
   <div class="main">
