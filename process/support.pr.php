@@ -42,9 +42,9 @@
     $title = $db->escape_string($_POST['title']);
     $text = $db->escape_string($_POST['text']);
     $date = date("yy/m/d");
-    $status = 0
+    $status = 0;
 
-    if ($title = '') {
+    if ($title == '') {
       $error = 'Title can not be empty';
     }elseif ($text = '') {
       $error = 'Content can not be empty';

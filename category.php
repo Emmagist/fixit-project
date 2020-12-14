@@ -30,7 +30,8 @@ include "scr/inc/header1.php";
                 <?php if (isset($_GET['id'])):$id=$_GET['id'];?>
                     <?php foreach (User::getAllSubCategories($id) as $cat):?>
                         <li class="">
-                            <span><img src="scr/img/yellow.jpg" alt="" style="width:5%" class="mr-2 mb-2"></span><a href="?parent=<?=$cat['sub_cat']?>" style="color:gray;"><?=$cat['sub_cat']?></a>
+                            <span><img src="scr/img/yellow.jpg" alt="" style="width:5%" class="mr-2 mb-2"></span>
+                            <a href="?parent=<?=$cat['sub_cat']?>" style="color:gray;"><?=$cat['sub_cat']?></a>
                         </li>
                     <?php endforeach;?>
                 <?php endif;?>
@@ -42,37 +43,37 @@ include "scr/inc/header1.php";
 
           <?php if(isset($_GET['parent'])):?>
           <?php if(!empty(User::searchByCategoryId($_GET['parent']))):?>
-            <?php foreach ( User::searchByCategoryId($_GET['parent']) as $user):?>
+                <?php foreach ( User::searchByCategoryId($_GET['parent']) as $user):?>
                 <?php foreach(User::getSingleServiceProvider($user['user_token']) as $token):?>
-                        <div class="col-md-6 mb-4 img-container card-body">
-                            <a href="service_prov.php?user=<?=$user['user_token']?>">
-                              <?php if(!empty($user['work_image'])) :?>
-                                  <img src="<?=$user['work_image']?>" alt=""
-                                       class="card-img-top img-thumbnail" style="">
-                              <?php else:?>
-                                  <img src="https://via.placeholder.com/150" alt=""
-                                       class="card-img-top img-thumbnail" style="">
-                              <?php endif;?>
-                            </a>
-                            <div class="card-body">
-                                <div class="text-muted d-flex justify-content-between">
-                                    <div>
-                                        <span>
-                                            <img src="<?=$token['profile_image']?>" alt=""
-                                            class=""
-                                            style="width: 13%; height: 30px; border-radius: 50%">
-                                        </span>
-                                    </div>
-                                    <div><?=$token['user_firstname'] .' '. $token['user_lastname']?></div>
-                              </div>
-                              <div class="text-muted d-flex justify-content-between">
-                                  <div><span class="text-danger">Price: <?=$user['price']?></span></div>
-                                  <div><?=$user['sub_cat']?></div>
-                              </div>
-                          </div>
-                      </div>
-          <?php endforeach;?>
-          <?php endforeach;?>
+                    <div class="col-md-6 mb-4 img-container card-body">
+                        <a href="service_prov.php?user=<?=$user['user_token']?>">
+                            <?php if(!empty($user['work_image'])) :?>
+                                <img src="<?=$user['work_image']?>" alt=""
+                                    class="card-img-top img-thumbnail" style="">
+                            <?php else:?>
+                                <img src="https://via.placeholder.com/150" alt=""
+                                    class="card-img-top img-thumbnail" style="">
+                            <?php endif;?>
+                        </a>
+                        <div class="card-body">
+                            <div class="text-muted d-flex justify-content-between">
+                                <div>
+                                    <span>
+                                        <img src="<?=$token['profile_image']?>" alt=""
+                                        class=""
+                                        style="width: 13%; height: 30px; border-radius: 50%">
+                                    </span>
+                                </div>
+                                <div><?=$token['user_firstname'] .' '. $token['user_lastname']?></div>
+                            </div>
+                            <div class="text-muted d-flex justify-content-between">
+                                <div><span class="text-danger">Price: <?=$user['price']?></span></div>
+                                <div><?=$user['sub_cat']?></div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach;?>
+                <?php endforeach;?>
           <?php else:?>
                   <div class="col-md-6 mb-4 img-container card-body">
                       <P class="text-danger">NO DATE UNDER THIS CATEGORY AT THE MOMENT</p>

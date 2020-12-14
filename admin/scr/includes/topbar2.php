@@ -18,7 +18,7 @@
          if (!($fun->IsAdmin())) {
             echo "can't Access Date";
          }else {
-            echo date("r"); 
+            echo substr(date("r"),0,25); 
          }
         ?>
         </p>

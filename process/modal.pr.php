@@ -1,5 +1,4 @@
 <?php
-
     if (isset($_POST['about_modal'])) {
         $error = '';
         $error = Validation::ValidateAboutModal($error);
@@ -12,18 +11,23 @@
         }
     }
 
-    if (isset($_POST['profile_button'], $_FILES['file'])) {
-        $error = '';
+    if (isset($_POST['profile_button'])) {
+        $error = "";
         $token = $_POST['user_token'];
         $file_name = $_FILES['file']['name'];
         $file_size =$_FILES['file']['size'];
         $file_tmp =$_FILES['file']['tmp_name'];
         $file_type=$_FILES['file']['type'];
         $fileType = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
-        $destination = "scr/profile-uploads/".$file_name;
-        $error = Functions::uploadFile($error, $file_name, $file_size, $file_tmp,$file_type);
+        $destination = "scr/work-registration-pictures/".$file_name;
 
-        if (empty($error)) {
+        if ($file_size >  500000000){
+            $error = 'Sorry, your file must be less than 3mb';
+        }elseif ($fileType !== 'jpg' && $fileType !== 'jpeg' && $fileType !== 'png' ){
+            $error = 'Sorry, only jpg, png and jpeg format are allowed.';
+        }elseif ($file_size === 0){
+            $error = 'File can not be empty';
+        }elseif (empty($error)) {
             if (move_uploaded_file($file_tmp,$destination)){
                 User::upDateProfileModal($destination,$token);
                 $_SESSION['message-success'] = "Uploaded Successfully...";
@@ -42,5 +46,7 @@
             $_SESSION['message-success'] = "Updated Successfully...";
         }
     }
+
+    
 
 ?>

@@ -32,6 +32,7 @@ include "../scr/includes/header2.php";
                 <div class="row">
                     <div class="col-md-4 py-2">
                         <a href="add.php" class="btn btn-sm btn-info">Add Category</a>
+                        <a href="add_subcat.php" class="btn btn-sm btn-primary">Add Sub-category</a>
                     </div>
                     <div class="col-md-8">
                         <table class="table table-bordered">

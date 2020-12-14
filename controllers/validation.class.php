@@ -82,6 +82,8 @@ class Validation {
     public function ValidateCatRegistration($error){
         if (empty($_POST['name'])){
             $error = "Name can not be empty";
+        }elseif (empty($_POST['description'])){
+            $error = "Description can not be empty";
         }
         return $error;
     }
@@ -122,15 +124,6 @@ class Validation {
         return $error;
     }
 
-    // public static function ValidateProfileModal($error){
-    //     if (empty($_POST['file'])) {
-    //        $error = "Field cannot be empty";
-    //     }elseif (empty($_POST['user_token'])) {
-    //         $error = "Invalid Token, Please provide a token or signup...";
-    //     }
-    //     return $error;
-    // }
-
     public static function ValidateAddressModal($error){
         if (empty($_POST['address'])) {
            $error = "Field cannot be empty";
@@ -139,6 +132,24 @@ class Validation {
         }
         return $error;
     }
+
+    public function ValidateSubCatRegistration($error){
+        if (empty($_POST['select_id'])){
+            $error = "Id can not be empty";
+        }elseif (empty($_POST['sub_cat'])){
+            $error = "Sub category can not be empty";
+        }
+        return $error;
+    }
+
+    // public static function validationForWorkEditPrice($error){
+    //     if (empty($_POST['price'])){
+    //         $error = "Price field can not be empty";
+    //     }elseif (!is_numeric($_POST['price'])){
+    //         $error = "Price field must of type numeric";
+    //     }
+    //     return $error;
+    // }
 
 }
 

@@ -1,5 +1,5 @@
 <?php require "process/modal.pr.php";
-  $token = $_GET['token'];
+  // $token = $_GET['token'];
 ?>
 <!-- The Modal -->
   <div class="modal" id="myModal">
@@ -48,7 +48,7 @@
         
         <!-- Modal body -->
         <div class="modal-body">
-          <form action="" class="form-group" method="post">
+          <form action="" class="form-group" method="post" enctype="multipart/form-data">
             <?php require_once "scr/inc/session-mgs.php";?>
             <?php require_once "scr/inc/messages.php";?>
             <input type="hidden" class="form-control mb-4" placeholder="" name="user_token" value="<?php echo $_SESSION['user_token'];?>">

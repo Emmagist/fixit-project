@@ -145,24 +145,25 @@ class User {
     return $db->selectData(TBL_FAQ , "*");
   }
 
-    public function work_register($user_token,$category_slug,$price,$destination){
+    public function work_register($user_token,$category_slug,$sub_cat,$price,$destination){
         global $db;
         return $db->saveData(TBL_WORK_CATEGORY ,
             "user_token ='$user_token',
             category_slug = '$category_slug',
+            sub_cat = '$sub_cat',
              price = '$price',
               work_image = '$destination' ");
     }
 
-    public function checkTableworkcategory($user_token,$category_slug){
+    public function checkTableworkcategory($user_token,$sub_cat){
         global $db;
-        return $db->selectData(TBL_WORK_CATEGORY, "*", "user_token = '$user_token' AND category_slug ='$category_slug'");
+        return $db->selectData(TBL_WORK_CATEGORY, "*", "user_token = '$user_token' AND sub_cat ='$sub_cat'");
     }
 
     public  function  multSelectQueryForServiceProvider(){
         global  $db;
         $rows = [];
-        $result = $db->query("SELECT * FROM users 
+        $result = $db->query("SELECT * FROM users
                                 INNER JOIN work_category 
                                 ON users.user_token = work_category.user_token  
                                 INNER JOIN category  
@@ -328,7 +329,18 @@ class User {
 
   public static function getAllSubCategories($id){
     global $db;
-    return $db->selectData(TBL_WORK_CATEGORY, "*", "parent='$id'");
+    $rows = [];
+      $result = $db->query("SELECT * FROM category 
+                              INNER JOIN work_category  
+                              ON  work_category.sub_cat = category.sub_cat
+                              WHERE category.parent = '$id'");
+      $row_cnt = $result->num_rows;
+      if (!empty($result)) {
+          while ($row = $result->fetch_assoc()) {
+             $rows[] = $row;
+          }
+          return $rows;
+      }
   }
 
   public static function searchByCategoryId($cat){
@@ -336,10 +348,16 @@ class User {
     return $db->selectData(TBL_WORK_CATEGORY, "*", "sub_cat = '$cat'");
   }
 
-  // public static function multSelectQueryForCategory($id){
-  //   global $db;
-  //   return $db->selectData
-  // }
+  public static function editWorkPrice($price,$id){
+    global $db;
+    return $db->updateData(TBL_WORK_CATEGORY,  "price = '$price'", "id = '$id'");
+  }
+
+  public static function DeleteWorkPosted($id){
+    global $db, $fun;
+    $db->deleteData(TBL_WORK_CATEGORY, "id = '$id'");
+  }
+
 }
 
 $user = new User;

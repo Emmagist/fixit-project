@@ -46,6 +46,10 @@ include "../scr/includes/header2.php";
                                         <label for="">Name</label>
                                         <input type="text" name="name" id="name" class="form-control">
                                     </div>
+                                    <div class="form-group">
+                                        <label for="">Short Description</label>
+                                        <input type="text" name="description" id="name" class="form-control">
+                                    </div>
                                     <button type="submit" class="btn btn-sm btn-primary" name="add_cat">Add Category</button>
                                 </form>
                             </div>

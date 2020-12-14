@@ -99,27 +99,24 @@
     </a>
     </div> -->
   </div>
-  <?php
-    $email = $key['user_email'];
-    // echo $email;exit;
-    $email = User::getUserTestimony($email);
-    // $fun->arrayPrinter($email);exit;
-    if ($email) :
-      foreach ($email as $mail) :
-  ?>
+  
   <div class="mt-5">
-    <h3 class="ml-5 mb-4 testimonials">Testimonials</h3>
+    <?php
+      $email = User::getUserTestimony($key['user_email']);
+      
+      if ($email) :
+        echo "<h3 class='ml-5 mb-4 testimonials'>Testimonials</h3>";
+        foreach ($email as $mail) :
+    ?>
+    
     <div class="row" id="main-two-service-prov">
       <div class="col-md-1">
         <?php
-          $email = $mail['email_from'];
-          // echo $email;exit;
-          $picture = User::getUserTestimonyPics($email);
-          // $fun->arrayPrinter($email);exit;
+          $picture = User::getUserTestimonyPics($mail['email_from']);
           if ($picture) :
             foreach ($picture as $pic) :
         ?>
-        <img src="<?php echo $pic['profile_image']; ?>" alt="" class="icon-img-two">
+        <img src="<?php echo $pic['profile_image']; ?>" alt="" class="icon-img-two mt-3">
             <?php endforeach;
           endif; ?>
       </div>
@@ -132,14 +129,6 @@
       </div>
     </div>
     <?php endforeach; endif; ?>
-    <!-- <div class="row  pt-4" id="main-two-service-prov">
-      <div class="col-md-1"><img src="scr/img/2.jpg" alt="" class="icon-img-two"></div>
-      <div class="col-md-11 pl-3">
-      <div class=""><i class="fa fa-star service-star"> <span><i class="fa fa-star"></i></span> <span><i class="fa fa-star" style="color: gray;"></i></span> <span><i class="fa fa-star" style="color: gray;"></i></span> <span><i class="fa fa-star" style="color: gray;"></i></span></i></div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus maxime iusto facere, omnis repudiandae eligendi perferendis. Quia asperiores hic nam nostrum cupiditate possimus enim ea quaerat sequi, accusantium veniam itaque.</p>
-      <div class=""><i class="fa fa-thumbs-o-up mr-3 helpfull-icon"> Helpful</i> <span><i class="fa fa-thumbs-o-down helpfull-icon"> Not Helpful</i></span></div>
-      </div>
-    </div> -->
   </div>
   <div class="row mt-5 ml-5">
     <div class="col-md-3 ml-5 mt-5">
@@ -156,7 +145,7 @@
       <div class="table_wrapper">
         <div class="row table_bordered">
           <div class="col-md-4 table_bord pt-2 pb-2">From <br><span class="text-primary"><?php echo $key['state_of_residence']; ?> State</span></div>
-          <div class="col-md-4 table_bord pt-2 pb-2">Member<br><span>Since <span class="text-primary"><?php echo substr($key['regester_at'],0,10); ?></span></span></div>
+          <div class="col-md-4 table_bord pt-2 pb-2">Member<br><span>Since <span class="text-primary"><?php echo substr($key['register_at'],0,10); ?></span></span></div>
           <div class="col-md-4 table_bordere pt-2 pb-2">Avg. Response Time<br><span class="text-primary">15 Mins</span></div>
         </div>
         <div class="row text-center pr-5" id="table_bordered">
